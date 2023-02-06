@@ -21,6 +21,7 @@ i18n
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
     fallbackLng: "ru",
+    lng: "ru",
     debug: __IS_DEV__ ? true : false,
 
     interpolation: {
