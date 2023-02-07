@@ -6,7 +6,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar: React.FC<NavbarProps> = (props) => {
+export const Navbar: React.FC<NavbarProps> = (props: NavbarProps) => {
   const { className } = props;
 
   return (
