@@ -1,4 +1,5 @@
 {
   "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
-  "i18n-ally.keystyle": "flat"
+  "i18n-ally.keystyle": "flat",
+  "i18next.i18nPaths": "c:/Users/Lorans/Documents/ts-webpack-advanced-tutorial/public/locales,c:/Users/Lorans/Documents/ts-webpack-advanced-tutorial/src/shared/config/i18n"
 }
