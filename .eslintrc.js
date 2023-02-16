@@ -4,19 +4,25 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ["plugin:react/recommended", "standard-with-typescript", "prettier"],
+  extends: [
+    "plugin:react/recommended",
+    "standard-with-typescript",
+    "prettier",
+    "plugin:storybook/recommended",
+  ],
   overrides: [],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
     project: ["./tsconfig.json"],
   },
-
   plugins: ["react"],
   rules: {
     "react/jsx-filename-extension": [
       2,
-      { extensions: [".js", ".jsx", ".tsx"] },
+      {
+        extensions: [".js", ".jsx", ".tsx"],
+      },
     ],
     "import/no-unresolved": "off",
     // 'import/prefer-default-export': 'off',
@@ -32,11 +38,14 @@ module.exports = {
     "react/jsx-props-no-spreading": "warn",
     "react/function-component-definition": "off",
     "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "react/display-name": "off",
     // 'no-shadow': 'off',
     // 'import/extensions': 'off',
     // 'import/no-extraneous-dependencies': 'off',
     // 'no-underscore-dangle': 'off',
   },
+
   globals: {
     __IS_DEV__: true,
   },
