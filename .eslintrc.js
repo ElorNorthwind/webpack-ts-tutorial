@@ -10,7 +10,15 @@ module.exports = {
     "prettier",
     "plugin:storybook/recommended",
   ],
-  overrides: [],
+  overrides: [
+    {
+      // enable the rule specifically for TypeScript files
+      files: ["*.js", "*.jsx"],
+      rules: {
+        "@typescript-eslint/explicit-function-return-type": "off",
+      },
+    },
+  ],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
@@ -35,7 +43,7 @@ module.exports = {
     "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/naming-convention": "off",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-props-no-spreading": "warn",
+    "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/explicit-function-return-type": "warn",
