@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Theme } from "app/providers/ThemeProvider";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Button, ThemeButton } from "./Button";
+import { Button, ButtonSize, ButtonTheme } from "./Button";
 
 const ButtonStory: ComponentMeta<typeof Button> = {
   title: "shared/Button",
@@ -9,8 +9,23 @@ const ButtonStory: ComponentMeta<typeof Button> = {
   argTypes: {
     theme: {
       control: "inline-radio",
-      options: ["none", ThemeButton.CLEAR, ThemeButton.OUTLINE],
+      options: [
+        "none",
+        ButtonTheme.CLEAR,
+        ButtonTheme.OUTLINE,
+        ButtonTheme.BACKGROUND,
+        ButtonTheme.BACKGROUND_INVERTED,
+      ],
       defaultValue: "none",
+    },
+    size: {
+      control: "inline-radio",
+      options: [ButtonSize.M, ButtonSize.L, ButtonSize.XL],
+      defaultValue: ButtonSize.M,
+    },
+    square: {
+      control: "boolean",
+      defaultValue: false,
     },
   },
   args: { children: "Text" },

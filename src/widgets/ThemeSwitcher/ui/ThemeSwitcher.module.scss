@@ -2,3 +2,8 @@
   fill: var(--inverted-primary-color);
   stroke: none;
 }
+
+.themeIconThin path {
+  stroke: var(--inverted-primary-color);
+  fill: none;
+}
