@@ -21,12 +21,17 @@ jobs:
       - name: install modules
         run: npm install --quiet
       - name: build production project
+        if: always()
         run: npm run build:prod
       - name: lint typescript
+        if: always()
         run: npm run lint:ts
       - name: unit testing
+        if: always()
         run: npm run test:unit
       - name: build storybook
+        if: always()
         run: npm run storybook:build
       - name: perform screenshot test
+        if: always()
         run: npm run test:ui:ci
