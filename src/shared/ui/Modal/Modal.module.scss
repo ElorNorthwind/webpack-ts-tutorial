@@ -1,0 +1,33 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  background: var(--overlay-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--animation-length),
+    z-index 0s var(--animation-length);
+}
+
+.content {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: var(--bg-color);
+  max-width: 60%;
+  transition: var(--animation-length) transform;
+  transform: scale(0.2);
+}
+
+.opened {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: var(--modal-z-index);
+  transition: opacity var(--animation-length), z-index 0s;
+
+  .content {
+    transform: scale(1);
+  }
+}

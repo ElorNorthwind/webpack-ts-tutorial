@@ -3,11 +3,14 @@
 @import "./themes/dark";
 @import "./themes/normal";
 
-.app {
+body,
+.story_wrapper {
   font: var(--font-m);
-  background: var(--bg-color);
   color: var(--primary-color);
+}
 
+.app {
+  background: var(--bg-color);
   min-height: 100vh;
 }
 
