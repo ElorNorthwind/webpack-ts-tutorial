@@ -6,16 +6,16 @@ import { Input } from "shared/ui/Input/Input";
 
 const MainPage = (): JSX.Element => {
   const { t } = useTranslation();
-  const [value, setValue] = useState("");
-  const onChange = (val: string) => {
-    setValue(val);
-  };
+  // const [value, setValue] = useState("");
+  // const onChange = (val: string) => {
+  //   setValue(val);
+  // };
 
   return (
     <div>
       {t("Главная страница")} <BugButton />
       <br />
-      <Input value={value} onChange={onChange} placeholder="Я хуйня" />
+      {/* <Input value={value} onChange={onChange} placeholder="Я хуйня" /> */}
     </div>
   );
 };
