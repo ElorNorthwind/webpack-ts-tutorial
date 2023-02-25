@@ -14,8 +14,8 @@ const MainPage = (): JSX.Element => {
   return (
     <div>
       {t("Главная страница")} <BugButton />
-      <br />
-      {/* <Input value={value} onChange={onChange} placeholder="Я хуйня" /> */}
+      {/* <br />
+      <Input value={value} onChange={onChange} placeholder="текста кусок" /> */}
     </div>
   );
 };

@@ -8,5 +8,8 @@
   "Обновить страницу": "Refresh page",
   "Войти": "Log In",
   "Логин": "Login",
-  "Пароль": "Password"
+  "Пароль": "Password",
+  "Форма авторизации": "Login form",
+  "Неверный логин или пароль": "Wrong login or password",
+  "Выйти": "Logout"
 }

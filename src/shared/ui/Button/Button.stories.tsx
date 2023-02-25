@@ -27,6 +27,10 @@ const ButtonStory: ComponentMeta<typeof Button> = {
       control: "boolean",
       defaultValue: false,
     },
+    disabled: {
+      control: "boolean",
+      defaultValue: false,
+    },
   },
   args: { children: "Text" },
 };
