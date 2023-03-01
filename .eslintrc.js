@@ -48,6 +48,7 @@ module.exports = {
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/explicit-function-return-type": "warn",
     "react/display-name": "off",
+    "@typescript-eslint/no-dynamic-delete": "off",
     // 'no-shadow': 'off',
     // 'import/extensions': 'off',
     // 'import/no-extraneous-dependencies': 'off',

@@ -1,5 +1,5 @@
 import { Omit } from "@reduxjs/toolkit/dist/tsHelpers";
-import React, { InputHTMLAttributes, memo, useEffect, useRef } from "react";
+import React, { InputHTMLAttributes, memo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Input.module.scss";
 
@@ -26,7 +26,7 @@ export const Input: React.FC<InputProps> = memo((props: InputProps) => {
     ...otherProps
   } = props;
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>): void => {
     onChange?.(e.target.value);
   };
 
