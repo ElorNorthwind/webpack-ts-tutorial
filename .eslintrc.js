@@ -46,7 +46,7 @@ module.exports = {
     "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
     "@typescript-eslint/ban-ts-comment": "off",
-    "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "react/display-name": "off",
     "@typescript-eslint/no-dynamic-delete": "off",
     // 'no-shadow': 'off',
