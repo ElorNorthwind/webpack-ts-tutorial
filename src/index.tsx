@@ -8,15 +8,15 @@ import { StoreProvider } from "app/providers/StoreProvider";
 import "shared/config/i18n/i18n";
 
 render(
-  <StoreProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <StoreProvider>
       <ErrorBoundry>
         <ThemeProvider>
           <App />
         </ThemeProvider>
       </ErrorBoundry>
-    </BrowserRouter>
-  </StoreProvider>,
+    </StoreProvider>
+  </BrowserRouter>,
 
   document.getElementById("root")
 );
