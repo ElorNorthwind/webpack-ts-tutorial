@@ -32,22 +32,6 @@
   flex-direction: column;
 }
 
-.link {
-  margin-left: 10px;
-  opacity: 1;
-  transition: 0.2s opacity;
-}
-
-.item {
-  margin-top: 10px;
-  white-space: nowrap;
-}
-
-.icon {
-  stroke: var(--inverted-primary-color);
-  vertical-align: middle;
-}
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
   transition: width 0.2s;
@@ -59,11 +43,5 @@
 
   .lang {
     margin-left: 0px;
-  }
-
-  .link {
-    opacity: 0;
-    transition: 0.2s opacity;
-    width: 0;
   }
 }

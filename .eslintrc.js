@@ -55,6 +55,7 @@ module.exports = {
     // 'no-underscore-dangle': 'off',
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "@typescript-eslint/no-misused-promises": "off",
   },
 
   globals: {

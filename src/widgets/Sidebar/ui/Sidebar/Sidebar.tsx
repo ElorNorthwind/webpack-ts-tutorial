@@ -1,19 +1,17 @@
-import { useState } from "react";
-import AboutIcon from "shared/assets/icons/about.svg";
-import MainIcon from "shared/assets/icons/main.svg";
-import { RoutePaths } from "shared/config/routeConfig/routeConfig";
+import { memo, useState } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 import { LangSwitcher } from "widgets/LangSwitcher";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+import { SidebarItemsList } from "../../model/items";
+import { SidebarItem } from "../SidebarItem/SidebarItem";
 import cls from "./Sidebar.module.scss";
 
 interface SidebarProps {
   className?: string;
 }
 
-export const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
+export const Sidebar: React.FC<SidebarProps> = memo((props: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
   const { className } = props;
   const onToggle = (): void => {
@@ -28,23 +26,9 @@ export const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
       ])}
     >
       <div className={cls.items}>
-        <AppLink
-          to={RoutePaths.main}
-          className={cls.item}
-          theme={AppLinkTheme.SECONDARY}
-        >
-          <MainIcon className={cls.icon} />
-          <span className={cls.link}>Главная</span>
-        </AppLink>
-
-        <AppLink
-          to={RoutePaths.about}
-          className={cls.item}
-          theme={AppLinkTheme.SECONDARY}
-        >
-          <AboutIcon className={cls.icon} />
-          <span className={cls.link}>О сайте</span>
-        </AppLink>
+        {SidebarItemsList.map((item) => (
+          <SidebarItem item={item} collapsed={collapsed} key={item.path} />
+        ))}
       </div>
       <Button
         data-testid="sidebar-toggle"
@@ -62,4 +46,4 @@ export const Sidebar: React.FC<SidebarProps> = (props: SidebarProps) => {
       </div>
     </div>
   );
-};
+});
