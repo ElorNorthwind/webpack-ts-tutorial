@@ -5,14 +5,15 @@ import cls from "./Input.module.scss";
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
-  "value" | "onChange"
+  "value" | "onChange" | "placeholder"
 >;
 
 interface InputProps extends HTMLInputProps {
   className?: string;
   value?: string;
-  onChange?: (value?: string) => void;
+  onChange?: (value: string) => void;
   autoFocus?: boolean;
+  placeholder?: string | null;
 }
 
 export const Input: React.FC<InputProps> = memo((props: InputProps) => {
@@ -21,7 +22,7 @@ export const Input: React.FC<InputProps> = memo((props: InputProps) => {
     value,
     onChange,
     type = "text",
-    placeholder,
+    placeholder = "",
     autoFocus = false,
     ...otherProps
   } = props;
