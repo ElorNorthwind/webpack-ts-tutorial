@@ -5,7 +5,7 @@ import cls from "./Input.module.scss";
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
-  "value" | "onChange" | "placeholder"
+  "value" | "onChange" | "placeholder" | "readOnly"
 >;
 
 interface InputProps extends HTMLInputProps {
@@ -14,6 +14,7 @@ interface InputProps extends HTMLInputProps {
   onChange?: (value: string) => void;
   autoFocus?: boolean;
   placeholder?: string | null;
+  readOnly?: boolean;
 }
 
 export const Input: React.FC<InputProps> = memo((props: InputProps) => {
@@ -24,6 +25,7 @@ export const Input: React.FC<InputProps> = memo((props: InputProps) => {
     type = "text",
     placeholder = "",
     autoFocus = false,
+    readOnly = false,
     ...otherProps
   } = props;
 
@@ -33,7 +35,9 @@ export const Input: React.FC<InputProps> = memo((props: InputProps) => {
 
   return (
     <div
-      className={classNames(cls.inputWrapper, {}, [className])}
+      className={classNames(cls.inputWrapper, { [cls.editable]: !readOnly }, [
+        className,
+      ])}
       {...otherProps}
     >
       <input
@@ -41,6 +45,7 @@ export const Input: React.FC<InputProps> = memo((props: InputProps) => {
         value={value}
         onChange={onChangeHandler}
         placeholder=" "
+        readOnly={readOnly}
         autoFocus={autoFocus}
       />
       {placeholder && <span className={cls.placeholder}>{placeholder}</span>}

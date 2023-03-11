@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+}
+
+.label {
+  margin-right: 5px;
+}
+
+.select {
+  border-radius: 4px 4px 0 0;
+  background-color: var(--accent-shade);
+  outline: none;
+  color: var(--primary-color);
+  padding: 2px;
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.editable > .select {
+  background-color: var(--bg-hightlight-color);
+}
+
+.option {
+  color: var(--primary-color);
+  background-color: var(--bg-hightlight-color);
+}

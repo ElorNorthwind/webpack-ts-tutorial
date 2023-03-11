@@ -3,5 +3,7 @@
   "Редактировать": "Edit",
   "Ваше Имя": "Your name",
   "Ваша фамилия": "Your surname",
-  "Ваш возраст": "Your age"
+  "Ваш возраст": "Your age",
+  "Ошибка при загрузке профиля": "Error loading profile",
+  "Обновите страницу": "Refresh the page"
 }

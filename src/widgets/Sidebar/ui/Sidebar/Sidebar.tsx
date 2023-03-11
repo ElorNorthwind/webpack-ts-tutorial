@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useMemo, useState } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 import { LangSwitcher } from "widgets/LangSwitcher";
@@ -18,6 +18,14 @@ export const Sidebar: React.FC<SidebarProps> = memo((props: SidebarProps) => {
     setCollapsed((prev) => !prev);
   };
 
+  const itemList = useMemo(
+    () =>
+      SidebarItemsList.map((item) => (
+        <SidebarItem item={item} collapsed={collapsed} key={item.path} />
+      )),
+    [collapsed]
+  );
+
   return (
     <div
       data-testid="sidebar"
@@ -25,11 +33,7 @@ export const Sidebar: React.FC<SidebarProps> = memo((props: SidebarProps) => {
         className,
       ])}
     >
-      <div className={cls.items}>
-        {SidebarItemsList.map((item) => (
-          <SidebarItem item={item} collapsed={collapsed} key={item.path} />
-        ))}
-      </div>
+      <div className={cls.items}>{itemList}</div>
       <Button
         data-testid="sidebar-toggle"
         className={cls.collapseBtn}

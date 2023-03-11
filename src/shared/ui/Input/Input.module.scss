@@ -1,7 +1,9 @@
 .inputWrapper {
   position: relative;
-  background-color: var(--bg-hightlight-color);
+  // background-color: rgba(255, 255, 255, 0.4);
+  background-color: var(--accent-shade);
   border-bottom: 2px solid var(--primary-color);
+
   border-radius: 4px 4px 0 0;
   height: 2.8rem;
   overflow: hidden;
@@ -18,7 +20,12 @@
   }
 }
 
-.inputWrapper::before {
+.inputWrapper.editable {
+  background-color: var(--bg-hightlight-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.inputWrapper.editable::before {
   content: "";
   position: absolute;
   left: 0;
@@ -35,7 +42,7 @@
   right: 0;
 }
 
-.inputWrapper:has(input:focus) {
+.inputWrapper.editable:has(input:focus) {
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.08);
   border-bottom: 2px solid var(--secondary-color);
 }
@@ -55,5 +62,12 @@ input:not(:placeholder-shown) + .placeholder,
 input:focus + .placeholder {
   top: -0.2rem;
   font-size: 0.8rem;
-  opacity: 0.8;
+  opacity: 0.6;
+}
+
+.editable {
+  input:not(:placeholder-shown) + .placeholder,
+  input:focus + .placeholder {
+    opacity: 0.8;
+  }
 }
