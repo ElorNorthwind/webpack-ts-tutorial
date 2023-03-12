@@ -5,5 +5,10 @@
   "Ваша фамилия": "Your surname",
   "Ваш возраст": "Your age",
   "Ошибка при загрузке профиля": "Error loading profile",
-  "Обновите страницу": "Refresh the page"
+  "Обновите страницу": "Refresh the page",
+  "Серверная ошибка": "Server error",
+  "Отсутствует имя или фамилия": "Missing first or last name",
+  "Не указана страна": "Missing country",
+  "Некорректный возраст": "Incorrect age",
+  "Нет данных": "No data"
 }
