@@ -64,4 +64,5 @@ module.exports = {
     __API__: true,
     __PROJECT__: true,
   },
+  ignorePatterns: [".fttemplates/**/*"],
 };
