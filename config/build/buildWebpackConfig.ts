@@ -17,6 +17,7 @@ export function buildWebpackConfig(
       path: paths.build,
       assetModuleFilename: "images/[hash][ext][query]",
       clean: true,
+      publicPath: "/",
     },
     plugins: buildPlugins(options),
     module: {
