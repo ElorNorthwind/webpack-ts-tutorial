@@ -17,5 +17,7 @@
   "О сайте": "About",
   "Валюта": "Currency",
   "Страна": "Country",
-  "Статьи": "Articles"
+  "Статьи": "Articles",
+  "Статья не найдена": "Article not found",
+  "Произошла ошибка при загрузке статьи": "An error occured while loading the article"
 }

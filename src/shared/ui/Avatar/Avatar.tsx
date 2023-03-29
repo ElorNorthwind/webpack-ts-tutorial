@@ -3,7 +3,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Avatar.module.scss";
 
 interface AvatarProps {
-  src: string;
+  src?: string;
   className?: string;
   size?: number;
   alt?: string;
@@ -16,11 +16,6 @@ export const Avatar: React.FC<AvatarProps> = (props: AvatarProps) => {
   }, [size]);
 
   return (
-    <img
-      src={src}
-      alt={alt}
-      style={styles}
-      className={classNames(cls.avatar, {}, [className])}
-    />
+    <img src={src} alt={alt} style={styles} className={classNames(cls.avatar, {}, [className])} />
   );
 };

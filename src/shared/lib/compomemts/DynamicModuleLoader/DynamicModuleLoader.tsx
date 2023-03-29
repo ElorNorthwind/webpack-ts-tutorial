@@ -15,7 +15,7 @@ interface DynamicModuleLoaderProps {
 }
 
 export const DynamicModuleLoader: React.FC<DynamicModuleLoaderProps> = (
-  props: DynamicModuleLoaderProps
+  props: DynamicModuleLoaderProps,
 ) => {
   const { children, reducers, removeAfterUnmount } = props;
   const store = useStore() as ReduxStoreWithManager; // bad
@@ -34,7 +34,8 @@ export const DynamicModuleLoader: React.FC<DynamicModuleLoaderProps> = (
         });
       }
     };
-  }, [dispatch, reducers, removeAfterUnmount, store.reducerManager]);
+    // eslint-disable-next-line
+  }, []); // dispatch, reducers, removeAfterUnmount, store.reducerManager
 
   return <>{children}</>;
 };
