@@ -19,7 +19,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Trutovsky_001.jpg/1280px-Trutovsky_001.jpg",
       "views": 102,
       "createdAt": "19.03.2023",
-      "type": ["science", "art"],
+      "type": [
+        "science",
+        "art"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,6 +103,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Бла бла коммент",
+      "id": "nUxx1rH"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Тоже комментарий",
+      "id": "2Cbss2c"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "ds",
+      "id": "MQOdLgg"
     }
   ],
   "users": [
@@ -118,14 +139,28 @@
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
     }
   ],
-  "profile": {
-    "first": "Иван",
-    "lastname": "Ненастоящий",
-    "age": 35,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Иван",
+      "lastname": "Ненастоящий",
+      "age": 35,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Петр",
+      "lastname": "Петров",
+      "age": 35,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Klin",
+      "username": "user",
+      "avatar": "https://i.imgur.com/lzpIrMo.png"
+    }
+  ]
 }
