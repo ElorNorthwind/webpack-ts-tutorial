@@ -6,7 +6,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { ArticleDetails } from "./ArticleDetails";
 
 const ArticleDetailsStory: ComponentMeta<typeof ArticleDetails> = {
-  title: "entities/ArticleDetails",
+  title: "entities/Article/ArticleDetails",
   component: ArticleDetails,
 };
 export default ArticleDetailsStory;
@@ -19,6 +19,7 @@ const article: Article = {
   subtitle: "Как я гулял ваших мамок",
   img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Trutovsky_001.jpg/1280px-Trutovsky_001.jpg",
   views: 102,
+  user: { id: "1", username: "admin" },
   createdAt: "19.03.2023",
   type: [ArticleType.ART, ArticleType.SCTIENCE],
   blocks: [

@@ -1,0 +1,18 @@
+.BIG {
+  // .articleList {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   justify-content: space-between;
+  //   gap: 30px;
+  // }
+  .card {
+    margin-bottom: 30px;
+  }
+}
+
+.SMALL {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  gap: 30px;
+}

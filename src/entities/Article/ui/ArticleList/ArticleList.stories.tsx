@@ -1,7 +1,8 @@
-import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById";
-import { Article, ArticleBlockType, ArticleType } from "../types/article";
-import { ArticleDetailsSchema } from "../types/articleDetailsSchema";
-import { articleDetailsReducer } from "./articleDetailsSlice";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Theme } from "app/providers/ThemeProvider";
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Article, ArticleBlockType, ArticleType } from "../../model/types/article";
+import { ArticleList } from "./ArticleList";
 
 const article: Article = {
   id: "1",
@@ -9,9 +10,13 @@ const article: Article = {
   subtitle: "Как я гулял ваших мамок",
   img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Trutovsky_001.jpg/1280px-Trutovsky_001.jpg",
   views: 102,
-  user: { id: "1", username: "admin" },
   createdAt: "19.03.2023",
-  type: [ArticleType.ART, ArticleType.SCTIENCE],
+  user: {
+    id: "1",
+    username: "admin",
+    avatar: "https://i.imgur.com/lzpIrMo.png",
+  },
+  type: [ArticleType.SCTIENCE],
   blocks: [
     {
       id: "1",
@@ -23,37 +28,20 @@ const article: Article = {
         "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:",
       ],
     },
-    {
-      id: "2",
-      type: ArticleBlockType.CODE,
-      code: `<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;`,
-    },
   ],
 };
 
-describe("articleDetailsSlice.test", () => {
-  test("test fetch article details fullfiled", () => {
-    const state: DeepPartial<ArticleDetailsSchema> = {
-      data: article,
-    };
-    expect(
-      articleDetailsReducer(
-        state as ArticleDetailsSchema,
-        fetchArticleById.fulfilled(article, "", ""),
-      ),
-    ).toEqual({
-      isLoading: false,
-      error: undefined,
-      data: article,
-    });
-  });
+const ArticleListStory: ComponentMeta<typeof ArticleList> = {
+  title: "entities/Article/ArticleList",
+  component: ArticleList,
+  args: { articles: [article, article, article] },
+};
+export default ArticleListStory;
 
-  test("test fetch article pending", () => {
-    const state: DeepPartial<ArticleDetailsSchema> = { isLoading: false, error: "?!" };
-    expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.pending)).toEqual({
-      isLoading: true,
-      error: undefined,
-      data: undefined,
-    });
-  });
-});
+const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+
+export const Light = Template.bind({});
+
+export const Dark = Template.bind({});
+
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

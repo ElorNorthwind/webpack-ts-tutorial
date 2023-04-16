@@ -9,6 +9,7 @@ const article: Article = {
   img: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Trutovsky_001.jpg/1280px-Trutovsky_001.jpg",
   views: 102,
   createdAt: "19.03.2023",
+  user: { id: "1", username: "admin" },
   type: [ArticleType.ART, ArticleType.SCTIENCE],
   blocks: [
     {

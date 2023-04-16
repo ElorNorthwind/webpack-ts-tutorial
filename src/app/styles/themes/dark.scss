@@ -12,6 +12,7 @@
   --error-color-dark: rgb(205, 44, 44);
 
   --accent-shade: rgba(255 255 255 / 0.05);
+  --heavy-accent-shade: rgba(0, 0, 0, 0.8);
 
   //skeleton
   --skeleton-color: rgb(80, 80, 157);
@@ -19,4 +20,8 @@
 
   //code
   --code-bg: rgb(33, 33, 91);
+
+  //card
+  --card-bg: rgb(64, 64, 142);
+  --card-bg-opaque: rgba(64, 64, 142, 0.4);
 }
