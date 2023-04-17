@@ -1,0 +1,13 @@
+.articlesViewSelector {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.icon {
+  fill: var(--primary-color);
+}
+
+.notSelected .icon {
+  fill: var(--secondary-color);
+}
