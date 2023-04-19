@@ -1,0 +1,12 @@
+.page {
+  flex-grow: 1;
+  padding: 20px 40px 20px 40px;
+  height: calc(100vh - var(--navbar-height));
+  overflow-y: auto;
+  width: 100%;
+}
+
+.observer {
+  width: 100%;
+  height: 2px;
+}

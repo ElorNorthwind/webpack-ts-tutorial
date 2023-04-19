@@ -14,6 +14,7 @@ import {
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Page } from "shared/ui/Page/Page";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
@@ -58,15 +59,15 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   if (!id) {
     return (
-      <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         <Text title={t("Статья не найдена")} theme={TextTheme.ERROR} />
-      </div>
+      </Page>
     );
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+      <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         <Button onClick={onBackToList} theme={ButtonTheme.OUTLINE}>
           {t("Назад к списку статей")}
         </Button>
@@ -74,7 +75,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         <Text title={t("Комментарии")} className={cls.commentTitile} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={commentsIsLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

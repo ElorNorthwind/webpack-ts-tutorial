@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import { useTranslation } from "react-i18next";
 import { Input } from "shared/ui/Input/Input";
+import { Page } from "shared/ui/Page/Page";
 
 const MainPage = (): JSX.Element => {
   const { t } = useTranslation();
@@ -12,11 +13,11 @@ const MainPage = (): JSX.Element => {
   // };
 
   return (
-    <div>
+    <Page>
       {t("Главная страница")} <BugButton />
       {/* <br />
       <Input value={value} onChange={onChange} placeholder="текста кусок" /> */}
-    </div>
+    </Page>
   );
 };
 

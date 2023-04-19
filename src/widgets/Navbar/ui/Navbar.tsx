@@ -32,28 +32,20 @@ export const Navbar: React.FC<NavbarProps> = memo((props: NavbarProps) => {
 
   if (authData) {
     return (
-      <div className={classNames(cls.Navbar, {}, [className])}>
-        <Button
-          theme={ButtonTheme.CLEAR_INVERTED}
-          className={cls.links}
-          onClick={onLogout}
-        >
+      <header className={classNames(cls.Navbar, {}, [className])}>
+        <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onLogout}>
           {t("Выйти")}
         </Button>
-      </div>
+      </header>
     );
   }
 
   return (
-    <div className={classNames(cls.Navbar, {}, [className])}>
-      <Button
-        theme={ButtonTheme.CLEAR_INVERTED}
-        className={cls.links}
-        onClick={onOpenModal}
-      >
+    <header className={classNames(cls.Navbar, {}, [className])}>
+      <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onOpenModal}>
         {t("Войти")}
       </Button>
       <LoginModal isOpen={isAuthModalOpen} onClose={onCloseModal} />
-    </div>
+    </header>
   );
 });
