@@ -2,7 +2,6 @@ import { FC, memo, useCallback } from "react";
 // import { useTranslation } from "react-i18next";
 import { ArticleList, ArticlesViewSelector } from "entities/Article";
 import { ArticleView } from "entities/Article/model/types/article";
-import { fetchArticlesList } from "pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList";
 import { fetchNextArticlesPage } from "pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -15,9 +14,7 @@ import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEf
 import { Page } from "shared/ui/Page/Page";
 import {
   getArticlesPageError,
-  getArticlesPageHasMore,
   getArticlesPageIsLoading,
-  getArticlesPageNum,
   getArticlesPageView,
 } from "../../model/selectors/articlesPageSelectors";
 import {
@@ -26,6 +23,7 @@ import {
   getArticles,
 } from "../../model/slices/articlesPageSlice";
 import cls from "./ArticlesPage.module.scss";
+import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 
 interface ArticlesPageProps {
   className?: string;
@@ -55,8 +53,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({ page: 1 }));
+    dispatch(initArticlesPage());
   });
 
   if (error) {
