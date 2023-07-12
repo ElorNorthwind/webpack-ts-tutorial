@@ -1,9 +1,11 @@
 .wrapper {
   display: flex;
+  // white-space: nowrap;
 }
 
 .label {
   margin-right: 5px;
+  white-space: nowrap;
 }
 
 .select {

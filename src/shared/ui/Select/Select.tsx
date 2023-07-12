@@ -1,26 +1,26 @@
-import { ChangeEvent, memo, useMemo } from "react";
+import { ChangeEvent, useMemo } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Select.module.scss";
 
-export interface SelectOptions {
-  value: string;
+export interface SelectOptions<T extends string> {
+  value: T;
   content: string;
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
   className?: string;
   label?: string;
-  options?: SelectOptions[];
-  value?: string;
-  onChange?: (value: string) => void;
+  options?: Array<SelectOptions<T>>;
+  value?: T;
+  onChange?: (value: T) => void;
   readOnly?: boolean;
 }
 
-export const Select: React.FC<SelectProps> = memo((props: SelectProps) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
   const { className, label, options, value, onChange, readOnly } = props;
 
   const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.target.value);
+    onChange?.(e.target.value as T);
   };
 
   const optionList = useMemo(() => {
@@ -32,20 +32,11 @@ export const Select: React.FC<SelectProps> = memo((props: SelectProps) => {
   }, [options]);
 
   return (
-    <div
-      className={classNames(cls.weapper, { [cls.editable]: !readOnly }, [
-        className,
-      ])}
-    >
+    <div className={classNames(cls.wrapper, { [cls.editable]: !readOnly }, [className])}>
       {label && <span className={cls.label}>{label}</span>}
-      <select
-        disabled={readOnly}
-        className={cls.select}
-        value={value}
-        onChange={onChangeHandler}
-      >
+      <select disabled={readOnly} className={cls.select} value={value} onChange={onChangeHandler}>
         {optionList}
       </select>
     </div>
   );
-});
+};

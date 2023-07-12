@@ -26,5 +26,13 @@
   "Отправить комментариий": "Send comment",
   "Отправить": "Send",
   "Читать далее": "Read more",
-  "Назад к списку статей": "Back to article list"
+  "Назад к списку статей": "Back to article list",
+  "Сортировать по": "Sort by",
+  "Поиск": "Search",
+  "Порядок": "Order",
+  "по возрастанию": "ascending",
+  "по убыванию": "descending",
+  "дата создания": "created at",
+  "заголовок": "title",
+  "просмотры": "views"
 }

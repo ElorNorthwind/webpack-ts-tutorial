@@ -24,6 +24,7 @@ import {
 } from "../../model/slices/articlesPageSlice";
 import cls from "./ArticlesPage.module.scss";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
+import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
 
 interface ArticlesPageProps {
   className?: string;
@@ -41,13 +42,6 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const isLoading = useSelector(getArticlesPageIsLoading);
   const error = useSelector(getArticlesPageError);
   const view = useSelector(getArticlesPageView);
-  const onChangeView = useCallback(
-    (view: ArticleView) => {
-      dispatch(articlesPageActions.setView(view));
-    },
-    [dispatch],
-  );
-
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
@@ -63,8 +57,8 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <Page onScrollEnd={onLoadNextPart} className={classNames(cls.articlesPage, {}, [className])}>
-        <ArticlesViewSelector view={view} onViewClick={onChangeView} />
-        <ArticleList articles={articles} view={view} isLoading={isLoading} />
+        <ArticlesPageFilters />
+        <ArticleList className={cls.list} articles={articles} view={view} isLoading={isLoading} />
       </Page>
     </DynamicModuleLoader>
   );

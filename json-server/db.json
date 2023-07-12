@@ -17,8 +17,8 @@
       "title": "Гуляние ваших мамок",
       "subtitle": "Как я гулял ваших мамок",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Trutovsky_001.jpg/1280px-Trutovsky_001.jpg",
-      "views": 102,
-      "createdAt": "19.03.2023",
+      "views": 1302,
+      "createdAt": "12.03.2023",
       "userId": "1",
       "type": ["science", "art"],
       "blocks": [
@@ -101,8 +101,8 @@
       "title": "Гуляние ваших мамок 2",
       "subtitle": "Как я гулял ваших мамок",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Trutovsky_001.jpg/1280px-Trutovsky_001.jpg",
-      "views": 102,
-      "createdAt": "19.03.2023",
+      "views": 302,
+      "createdAt": "20.04.2023",
       "userId": "1",
       "type": ["science", "art"],
       "blocks": [
@@ -143,7 +143,7 @@
       "title": "Шатание ваших труб 2",
       "subtitle": "Как я гулял ваших мамок",
       "img": "http://dom.dacha-dom.ru/pechnaya/truba-53.jpg",
-      "views": 122,
+      "views": 522,
       "createdAt": "19.03.2022",
       "userId": "1",
       "type": ["science", "art", "dilly-dalling"],
@@ -182,13 +182,13 @@
     },
     {
       "id": "5",
-      "title": "Гуляние ваших мамок 2",
+      "title": "Гуляние ваших мамок 3",
       "subtitle": "Как я гулял ваших мамок",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Trutovsky_001.jpg/1280px-Trutovsky_001.jpg",
-      "views": 102,
-      "createdAt": "19.03.2023",
+      "views": 12,
+      "createdAt": "11.02.2023",
       "userId": "1",
-      "type": ["science", "art"],
+      "type": ["science"],
       "blocks": [
         {
           "id": "1",
@@ -224,11 +224,11 @@
     },
     {
       "id": "6",
-      "title": "Шатание ваших труб 2",
+      "title": "Шатание ваших труб 3",
       "subtitle": "Как я гулял ваших мамок",
       "img": "http://dom.dacha-dom.ru/pechnaya/truba-53.jpg",
-      "views": 122,
-      "createdAt": "19.03.2022",
+      "views": 72,
+      "createdAt": "29.03.2022",
       "userId": "1",
       "type": ["science", "art", "dilly-dalling"],
       "blocks": [
