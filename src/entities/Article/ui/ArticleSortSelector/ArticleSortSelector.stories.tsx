@@ -4,7 +4,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { ArticleSortSelector } from "./ArticleSortSelector";
 
 const ArticleSortSelectorStory: ComponentMeta<typeof ArticleSortSelector> = {
-  title: "shared/ArticleSortSelector",
+  title: "entities/Article/ArticleSortSelector",
   component: ArticleSortSelector,
 };
 export default ArticleSortSelectorStory;

@@ -25,6 +25,8 @@ import {
 import cls from "./ArticlesPage.module.scss";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
+import { useSearchParams } from "react-router-dom";
+import { constants } from "buffer";
 
 interface ArticlesPageProps {
   className?: string;
@@ -42,12 +44,13 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const isLoading = useSelector(getArticlesPageIsLoading);
   const error = useSelector(getArticlesPageError);
   const view = useSelector(getArticlesPageView);
+  const [searchParams] = useSearchParams();
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage());
+    dispatch(initArticlesPage(searchParams));
   });
 
   if (error) {

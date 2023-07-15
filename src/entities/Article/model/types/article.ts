@@ -37,9 +37,10 @@ export interface ArticleImageBlock extends ArticleBlockBase {
 export type ArticleBlock = ArticleTextBlock | ArticleCodeBlock | ArticleImageBlock;
 
 export enum ArticleType {
+  ALL = "all",
   SCTIENCE = "science",
   ART = "art",
-  IT = "IT",
+  IT = "it",
 }
 
 export enum ArticleView {

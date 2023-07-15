@@ -356,7 +356,7 @@
       "views": 102,
       "createdAt": "19.03.2023",
       "userId": "1",
-      "type": ["science", "art"],
+      "type": ["science", "art", "it"],
       "blocks": [
         {
           "id": "1",
@@ -479,7 +479,7 @@
       "title": "Шатание ваших труб 2",
       "subtitle": "Как я гулял ваших мамок",
       "img": "http://dom.dacha-dom.ru/pechnaya/truba-53.jpg",
-      "views": 122,
+      "views": 132,
       "createdAt": "19.03.2022",
       "userId": "1",
       "type": ["science", "art", "dilly-dalling"],
@@ -521,7 +521,7 @@
       "title": "Гуляние ваших мамок 2",
       "subtitle": "Как я гулял ваших мамок",
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Trutovsky_001.jpg/1280px-Trutovsky_001.jpg",
-      "views": 102,
+      "views": 182,
       "createdAt": "19.03.2023",
       "userId": "1",
       "type": ["science", "art"],

@@ -4,7 +4,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { ArticlesPageFilters } from "./ArticlesPageFilters";
 
 const ArticlesPageFiltersStory: ComponentMeta<typeof ArticlesPageFilters> = {
-  title: "shared/ArticlesPageFilters",
+  title: "pages/ArticlesPage/ArticlesPageFilters",
   component: ArticlesPageFilters,
 };
 export default ArticlesPageFiltersStory;

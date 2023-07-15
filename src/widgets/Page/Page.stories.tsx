@@ -1,11 +1,13 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Theme } from "app/providers/ThemeProvider";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import { Page } from "./Page";
 
 const PageStory: ComponentMeta<typeof Page> = {
-  title: "shared/Page",
+  title: "widgets/Page",
   component: Page,
+  decorators: [StoreDecorator({})],
 };
 export default PageStory;
 
