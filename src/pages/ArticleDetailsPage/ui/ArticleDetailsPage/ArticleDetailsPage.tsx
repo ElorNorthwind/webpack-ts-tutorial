@@ -31,6 +31,7 @@ import {
 import { getArticleRecomendationsIsLoading } from "../../model/selectors/recommendations";
 import fetchArticleRecommendations from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
 import { articleDetailsPageReducer } from "../../model/slices";
+import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -49,11 +50,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const recommendations = useSelector(getArticleRecomendations.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
   const recommendationsIsLoading = useSelector(getArticleRecomendationsIsLoading);
-  const navigate = useNavigate();
-
-  const onBackToList = useCallback(() => {
-    navigate(RoutePaths.articles);
-  }, [navigate]);
 
   const onSendComment = useCallback(
     (text: string) => {
@@ -78,9 +74,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-        <Button onClick={onBackToList} theme={ButtonTheme.OUTLINE}>
-          {t("Назад к списку статей")}
-        </Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text size={TextSize.L} title={t("Рекомендованные статьи")} className={cls.commentTitile} />
         <ArticleList
