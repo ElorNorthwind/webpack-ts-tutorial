@@ -1,4 +1,4 @@
-import { FC, memo, useCallback } from "react";
+import { FC, HTMLAttributeAnchorTarget, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Article, ArticleView } from "../../model/types/article";
@@ -12,6 +12,7 @@ interface ArticleListProps {
   articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => {
@@ -21,13 +22,19 @@ const getSkeletons = (view: ArticleView) => {
 };
 
 export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) => {
-  const { className, articles, isLoading, view = ArticleView.SMALL } = props;
+  const { className, articles, isLoading, view = ArticleView.SMALL, target } = props;
   const { t } = useTranslation();
 
   const renderArticle = useCallback(
     (article: Article) => {
       return (
-        <ArticleListItem className={cls.card} article={article} view={view} key={article.id} />
+        <ArticleListItem
+          className={cls.card}
+          article={article}
+          view={view}
+          key={article.id}
+          target={target}
+        />
       );
     },
     [view],
