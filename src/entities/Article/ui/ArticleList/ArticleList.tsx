@@ -1,12 +1,4 @@
-import {
-  FC,
-  HTMLAttributeAnchorTarget,
-  memo,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { FC, HTMLAttributeAnchorTarget, memo, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Article, ArticleView } from "../../model/types/article";
@@ -24,83 +16,89 @@ interface ArticleListProps {
   target?: HTMLAttributeAnchorTarget;
 }
 
-const getArticles = (
-  articles: Article[],
-  view: ArticleView,
-  target: HTMLAttributeAnchorTarget | undefined,
-) => {
-  return new Array(articles.length)
-    .fill(0)
-    .map((item, index) => (
-      <ArticleListItem
-        className={cls.card}
-        article={articles[index]}
-        view={view}
-        key={articles[index].id}
-        target={target}
-      />
-    ));
-};
-
-const getSkeletons = (view: ArticleView) => {
-  return new Array(view === ArticleView.SMALL ? 4 : 2)
-    .fill(0)
-    .map((item, index) => <ArticleListItemSkeleton className={cls.card} key={index} view={view} />);
-};
-
 export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) => {
   const { className, articles, isLoading, view = ArticleView.SMALL, target } = props;
   const { t } = useTranslation();
-  const [virtualItems, setVirtualItems] = useState<JSX.Element[]>([]);
 
-  // The virtualizer
+  const skeletonCount = isLoading ? (view === ArticleView.SMALL ? 4 : 2) : 0;
+  const itemCount = articles.length + skeletonCount;
+  const itemsPerRow = view === ArticleView.SMALL ? 4 : 1;
+  const rowCount = Math.ceil(itemCount / itemsPerRow);
+  const getRowHeight = (i: number) => {
+    // let baseSize = 280;
+    // if (view === ArticleView.BIG && i <= Math.ceil(articles.length / itemsPerRow)) {
+    //   console.log("XL");
+    //   baseSize = 667;
+    // } else if (view === ArticleView.BIG && i > Math.ceil(articles.length / itemsPerRow)) {
+    //   baseSize = 100;
+    //   console.log("L");
+    // }
+    const baseSize = view === ArticleView.SMALL ? 280 : 667;
+    return baseSize + 30;
+  };
+
   const rowVirtualizer = useVirtualizer({
-    count: articles.length + (isLoading ? (view === ArticleView.SMALL ? 4 : 2) : 0),
+    count: rowCount,
     getScrollElement: () => document.getElementById("page_wrapper"),
-    estimateSize: () => (view === ArticleView.SMALL ? 280 : 667) + 30,
+    estimateSize: (i) => getRowHeight(i),
   });
 
   useEffect(() => {
     rowVirtualizer.measure();
   }, [rowVirtualizer, view]);
 
-  useEffect(() => {
-    setVirtualItems(
-      getArticles(articles, view, target).concat(isLoading ? getSkeletons(view) : []),
-    );
-  }, [articles, view, target, isLoading]);
-
   if (!isLoading && !articles.length) {
     return <Text size={TextSize.L} title={t("Статьи не найдены")} />;
   }
 
   return (
-    <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
-      {articles.length > 0 ? (
-        <div
-          style={{
-            height: `${String(rowVirtualizer.getTotalSize())}px`,
-            width: "100%",
-            position: "relative",
-          }}
-        >
-          {rowVirtualizer.getVirtualItems().map((virtualItem) => (
+    <>
+      <div
+        className={classNames(cls.articleList, {}, [className, cls[view]])}
+        style={{
+          height: `${String(rowVirtualizer.getTotalSize())}px`,
+        }}
+      >
+        {rowVirtualizer.getVirtualItems().map(function (virtualItem) {
+          const rowItems = [];
+          const fromIndex = virtualItem.index * itemsPerRow;
+          const toIndex = Math.min(fromIndex + itemsPerRow, itemCount);
+          for (let i = fromIndex; i < toIndex; i++) {
+            if (articles[i]) {
+              rowItems.push(
+                <ArticleListItem
+                  className={cls.card}
+                  article={articles[i]}
+                  view={view}
+                  key={`${String(virtualItem.index)}-${i}`}
+                  target={target}
+                />,
+              );
+            } else {
+              rowItems.push(
+                <ArticleListItemSkeleton
+                  className={cls.card}
+                  key={`${String(virtualItem.index)}-${i}`}
+                  view={view}
+                />,
+              );
+            }
+          }
+
+          return (
             <div
               key={virtualItem.key}
+              className={cls.row}
               style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
                 height: `${String(virtualItem.size)}px`,
                 transform: `translateY(${String(virtualItem.start)}px)`,
               }}
             >
-              {virtualItems[virtualItem.index]}
+              {rowItems}
             </div>
-          ))}
-        </div>
-      ) : null}
-    </div>
+          );
+        })}
+      </div>
+    </>
   );
 });
