@@ -1,7 +1,6 @@
-import { FC, memo, useCallback } from "react";
+import { FC, memo, useCallback, useRef } from "react";
 // import { useTranslation } from "react-i18next";
-import { ArticleList, ArticlesViewSelector } from "entities/Article";
-import { ArticleView } from "entities/Article/model/types/article";
+import { ArticleList } from "entities/Article";
 import { fetchNextArticlesPage } from "pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
@@ -17,16 +16,11 @@ import {
   getArticlesPageIsLoading,
   getArticlesPageView,
 } from "../../model/selectors/articlesPageSelectors";
-import {
-  articlesPageActions,
-  articlesPageReducer,
-  getArticles,
-} from "../../model/slices/articlesPageSlice";
+import { articlesPageReducer, getArticles } from "../../model/slices/articlesPageSlice";
 import cls from "./ArticlesPage.module.scss";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
 import { useSearchParams } from "react-router-dom";
-import { constants } from "buffer";
 
 interface ArticlesPageProps {
   className?: string;
