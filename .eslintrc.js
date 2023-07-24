@@ -24,7 +24,7 @@ module.exports = {
     sourceType: "module",
     project: ["./tsconfig.json"],
   },
-  plugins: ["react", "react-hooks"],
+  plugins: ["react", "react-hooks", "fsd-lorans-plugin"],
   rules: {
     "react/jsx-filename-extension": [
       2,
@@ -57,6 +57,7 @@ module.exports = {
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
     "@typescript-eslint/no-misused-promises": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
+    "fsd-lorans-plugin/path-checker": "error",
   },
 
   globals: {

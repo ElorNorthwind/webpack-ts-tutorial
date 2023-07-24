@@ -1,6 +1,5 @@
 import { useTheme } from "app/providers/ThemeProvider";
 import { memo } from "react";
-// import ThemeIcon from "shared/assets/icons/theme.svg";
 import ThemeThinIcon from "shared/assets/icons/theme_thin.svg";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
@@ -10,19 +9,17 @@ interface ThemeSwitcherProps {
   className?: string;
 }
 
-export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = memo(
-  (props: ThemeSwitcherProps) => {
-    const { toggleTheme } = useTheme();
-    const { className } = props;
+export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = memo((props: ThemeSwitcherProps) => {
+  const { toggleTheme } = useTheme();
+  const { className } = props;
 
-    return (
-      <Button
-        theme={ButtonTheme.CLEAR}
-        onClick={toggleTheme}
-        className={classNames(cls.themeSwitcher, {}, [className])}
-      >
-        <ThemeThinIcon className={cls.themeIconThin} />
-      </Button>
-    );
-  }
-);
+  return (
+    <Button
+      theme={ButtonTheme.CLEAR}
+      onClick={toggleTheme}
+      className={classNames(cls.themeSwitcher, {}, [className])}
+    >
+      <ThemeThinIcon className={cls.themeIconThin} />
+    </Button>
+  );
+});

@@ -1,7 +1,7 @@
-import { FC, memo, useCallback, useRef } from "react";
+import { FC, memo, useCallback } from "react";
 // import { useTranslation } from "react-i18next";
 import { ArticleList } from "entities/Article";
-import { fetchNextArticlesPage } from "pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
 import {

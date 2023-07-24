@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Theme } from "app/providers/ThemeProvider";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+// eslint-disable-next-line fsd-lorans-plugin/path-checker
 import { Text } from "shared/ui/Text/Text";
 import { Card } from "./Card";
 

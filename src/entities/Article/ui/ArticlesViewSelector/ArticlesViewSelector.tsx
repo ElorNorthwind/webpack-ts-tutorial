@@ -1,10 +1,9 @@
-import { ArticleView } from "entities/Article/model/types/article";
+import { ArticleView } from "../../model/types/article";
 import { FC, memo } from "react";
 import listIcon from "shared/assets/icons/list.svg";
 import tilesIcon from "shared/assets/icons/tiles.svg";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { Icon } from "shared/ui/Icon/Icon";
 import cls from "./ArticlesViewSelector.module.scss";
 
 interface ArticlesViewSelectorProps {

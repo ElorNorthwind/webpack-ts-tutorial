@@ -1,4 +1,4 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "./classNames";
 
 describe("classNames", () => {
   test("with single param", () => {
@@ -6,9 +6,7 @@ describe("classNames", () => {
   });
 
   test("with additional classes", () => {
-    expect(classNames("class", {}, ["class1", "class2"])).toBe(
-      "class class1 class2"
-    );
+    expect(classNames("class", {}, ["class1", "class2"])).toBe("class class1 class2");
   });
 
   test("with mods", () => {
@@ -17,9 +15,7 @@ describe("classNames", () => {
 
   test("with mods false", () => {
     const expected = "class scrollable";
-    expect(classNames("class", { hover: false, scrollable: true })).toBe(
-      expected
-    );
+    expect(classNames("class", { hover: false, scrollable: true })).toBe(expected);
   });
 
   test("with mods undefined", () => {
