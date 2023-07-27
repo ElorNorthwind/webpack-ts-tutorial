@@ -1,0 +1,12 @@
+import { FC } from "react";
+import { Flex, FlexProps } from "../Flex/Flex";
+
+type HStackProps = Omit<FlexProps, "direction">;
+
+export const HStack: FC<HStackProps> = (props: HStackProps) => {
+  return (
+    <Flex direction="column" {...props}>
+      {props.children}
+    </Flex>
+  );
+};
