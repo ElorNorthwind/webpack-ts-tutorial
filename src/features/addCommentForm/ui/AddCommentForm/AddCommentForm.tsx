@@ -15,6 +15,7 @@ import {
   addCommentFormReducer,
 } from "../../model/slices/addCommentFormSlice";
 import cls from "./AddCommentForm.module.scss";
+import { HStack } from "shared/ui/Stack";
 
 export interface AddCommentFormProps {
   className?: string;
@@ -43,7 +44,7 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props: AddCommentFormProps
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.addCommentForm, {}, [className])}>
+      <HStack max gap="16" className={classNames(cls.addCommentForm, {}, [className])}>
         <Input
           className={cls.input}
           placeholder={t("Введите текст комментария")}
@@ -53,7 +54,7 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props: AddCommentFormProps
         <Button theme={ButtonTheme.OUTLINE} onClick={onSendHandler}>
           {t("Отправить")}
         </Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   );
 });

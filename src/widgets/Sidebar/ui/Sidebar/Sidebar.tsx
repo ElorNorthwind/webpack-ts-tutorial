@@ -7,6 +7,7 @@ import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
 import cls from "./Sidebar.module.scss";
+import { VStack } from "shared/ui/Stack/";
 
 interface SidebarProps {
   className?: string;
@@ -33,7 +34,7 @@ export const Sidebar: React.FC<SidebarProps> = memo((props: SidebarProps) => {
       data-testid="sidebar"
       className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}
     >
-      <nav className={cls.items}>{itemList}</nav>
+      <VStack className={cls.items}>{itemList}</VStack>
       <Button
         data-testid="sidebar-toggle"
         className={cls.collapseBtn}

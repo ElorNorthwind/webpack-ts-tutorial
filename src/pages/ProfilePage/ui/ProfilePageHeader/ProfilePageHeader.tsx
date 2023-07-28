@@ -11,8 +11,8 @@ import { useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { HStack } from "shared/ui/Stack/";
 import { Text } from "shared/ui/Text/Text";
-import cls from "./ProfilePageHeader.module.scss";
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -42,30 +42,26 @@ export const ProfilePageHeader: React.FC<ProfilePageHeaderProps> = (
   }, [dispatch]);
 
   return (
-    <div className={classNames(cls.profilePageHeader, {}, [className])}>
+    <HStack justify="between" className={classNames("", {}, [className])} max>
       <Text title={t("Профиль")} />
       {canEdit && (
-        <div className={cls.btnsWrapper}>
+        <HStack>
           {readonly ? (
-            <Button className={cls.editBtn} theme={ButtonTheme.OUTLINE} onClick={onEdit}>
+            <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
               {t("Редактировать")}
             </Button>
           ) : (
             <>
-              <Button
-                className={cls.editBtn}
-                theme={ButtonTheme.OUTLINE_RED}
-                onClick={onCalcelEdit}
-              >
+              <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCalcelEdit}>
                 {t("Отмена")}
               </Button>
-              <Button className={cls.saveBtn} theme={ButtonTheme.OUTLINE} onClick={onSave}>
+              <Button theme={ButtonTheme.OUTLINE} onClick={onSave}>
                 {t("Сохранить")}
               </Button>
             </>
           )}
-        </div>
+        </HStack>
       )}
-    </div>
+    </HStack>
   );
 };

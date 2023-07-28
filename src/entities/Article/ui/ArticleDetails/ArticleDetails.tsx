@@ -25,6 +25,7 @@ import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleC
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import cls from "./ArticleDetails.module.scss";
+import { HStack, VStack } from "shared/ui/Stack";
 
 interface ArticleDetailsProps {
   className?: string;
@@ -86,23 +87,25 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props: ArticleDetai
   } else {
     content = (
       <>
-        <div className={cls.avatarWrapper}>
+        <HStack justify="center" max className={cls.avatarWrapper}>
           <Avatar size={200} src={article?.img} className={cls.avatar} />
-        </div>
-        <Text
-          title={article?.title}
-          text={article?.subtitle}
-          className={cls.title}
-          size={TextSize.L}
-        />
-        <div className={cls.articleInfo}>
-          <Icon Svg={ViewesIcon} className={cls.icon} />
-          <Text text={String(article?.views)} />
-        </div>
-        <div className={cls.articleInfo}>
-          <Icon Svg={TimeIcon} className={cls.icon} />
-          <Text text={article?.createdAt} />
-        </div>
+        </HStack>
+        <VStack gap="4" max>
+          <Text
+            title={article?.title}
+            text={article?.subtitle}
+            className={cls.title}
+            size={TextSize.L}
+          />
+          <HStack className={cls.articleInfo}>
+            <Icon Svg={ViewesIcon} className={cls.icon} />
+            <Text text={String(article?.views)} />
+          </HStack>
+          <HStack className={cls.articleInfo}>
+            <Icon Svg={TimeIcon} className={cls.icon} />
+            <Text text={article?.createdAt} />
+          </HStack>
+        </VStack>
         {article?.blocks.map(renderBlock)}
       </>
     );
@@ -110,7 +113,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props: ArticleDetai
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-      <div className={classNames(cls.articleDetails, {}, [className])}>{content}</div>
+      <VStack gap="16" className={classNames(cls.articleDetails, {}, [className])}>
+        {content}
+      </VStack>
     </DynamicModuleLoader>
   );
 });
