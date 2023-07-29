@@ -34,7 +34,9 @@ export const Sidebar: React.FC<SidebarProps> = memo((props: SidebarProps) => {
       data-testid="sidebar"
       className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}
     >
-      <VStack className={cls.items}>{itemList}</VStack>
+      <VStack role="navigation" className={cls.items}>
+        {itemList}
+      </VStack>
       <Button
         data-testid="sidebar-toggle"
         className={cls.collapseBtn}
