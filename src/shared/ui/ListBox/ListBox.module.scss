@@ -6,7 +6,7 @@
 .trigger {
   border-radius: 4px 4px 0 0;
   background-color: var(--bg-hightlight-color);
-  outline: none;
+  outline-color: transparent;
   color: var(--primary-color);
   padding: 2px;
   border: none;
@@ -34,7 +34,7 @@
   border: 1px solid var(--primary-color);
   min-width: 100%;
   overflow: hidden;
-  outline: none;
+  outline-color: transparent;
 }
 .item {
   cursor: pointer;

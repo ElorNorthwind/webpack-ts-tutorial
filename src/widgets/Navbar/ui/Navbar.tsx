@@ -9,6 +9,8 @@ import cls from "./Navbar.module.scss";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RoutePaths } from "shared/config/routeConfig/routeConfig";
+import { Dropdown } from "shared/ui/Dropdown/Dropdown";
+import { Avatar } from "shared/ui/Avatar/Avatar";
 
 interface NavbarProps {
   className?: string;
@@ -44,9 +46,20 @@ export const Navbar: React.FC<NavbarProps> = memo((props: NavbarProps) => {
         >
           {t("Создать статью")}
         </AppLink>
-        <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onLogout}>
-          {t("Выйти")}
-        </Button>
+        <Dropdown
+          className={cls.dropdown}
+          items={[
+            {
+              content: t("Профиль"),
+              href: RoutePaths.profile + authData.id,
+            },
+            {
+              content: t("Выйти"),
+              onClick: onLogout,
+            },
+          ]}
+          trigger={<Avatar size={32} className={cls.avatar} src={authData.avatar} />}
+        />
       </header>
     );
   }

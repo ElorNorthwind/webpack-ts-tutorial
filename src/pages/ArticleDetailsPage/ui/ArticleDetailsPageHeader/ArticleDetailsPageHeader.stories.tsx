@@ -4,7 +4,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { ArticleDetailsPageHeader } from "./ArticleDetailsPageHeader";
 
 const ArticleDetailsPageHeaderStory: ComponentMeta<typeof ArticleDetailsPageHeader> = {
-  title: "shared/ArticleDetailsPageHeader",
+  title: "pages/ArticleDetailesPage/ArticleDetailsPageHeader",
   component: ArticleDetailsPageHeader,
 };
 export default ArticleDetailsPageHeaderStory;

@@ -1,0 +1,41 @@
+.dropdown {
+  position: relative;
+}
+.btn {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  outline-color: transparent;
+  cursor: pointer;
+}
+.menu {
+  background-color: var(--card-bg);
+  position: absolute;
+  z-index: 100;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px var(--accent-shade);
+  border: 1px solid var(--primary-color);
+  //   min-width: 100%;
+  //   padding: 5px;
+  overflow: hidden;
+  outline-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  background: none;
+  outline-color: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  &.active {
+    background-color: var(--inverted-bg-color);
+    color: var(--inverted-primary-color);
+  }
+  &.disabled {
+    opacity: 50%;
+  }
+}
