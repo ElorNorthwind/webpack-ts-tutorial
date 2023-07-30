@@ -1,10 +1,8 @@
-import { FC, HTMLAttributeAnchorTarget, memo, useCallback } from "react";
+import { FC, HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 import ViewsIcon from "shared/assets/icons/viewes.svg";
 import { RoutePaths } from "shared/config/routeConfig/routeConfig";
 import { classNames } from "shared/lib/classNames/classNames";
-import { useHover } from "shared/lib/hooks/useHover/useHover";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { Card } from "shared/ui/Card/Card";
@@ -30,7 +28,6 @@ interface ArticleListItemProps {
 export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleListItemProps) => {
   const { className, article, view, target } = props;
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   const types = <Text text={article.type.join(", ")} className={cls.types} />;
   const views = (
