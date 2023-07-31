@@ -15,6 +15,7 @@ interface InputProps extends HTMLInputProps {
   autoFocus?: boolean;
   placeholder?: string | null;
   readOnly?: boolean;
+  "data-testid"?: string;
 }
 
 export const Input: React.FC<InputProps> = memo((props: InputProps) => {
@@ -26,6 +27,7 @@ export const Input: React.FC<InputProps> = memo((props: InputProps) => {
     placeholder = "",
     autoFocus = false,
     readOnly = false,
+    "data-testid": dataTestId = "input",
     ...otherProps
   } = props;
 
@@ -35,9 +37,7 @@ export const Input: React.FC<InputProps> = memo((props: InputProps) => {
 
   return (
     <div
-      className={classNames(cls.inputWrapper, { [cls.editable]: !readOnly }, [
-        className,
-      ])}
+      className={classNames(cls.inputWrapper, { [cls.editable]: !readOnly }, [className])}
       {...otherProps}
     >
       <input
@@ -47,6 +47,7 @@ export const Input: React.FC<InputProps> = memo((props: InputProps) => {
         placeholder=" "
         readOnly={readOnly}
         autoFocus={autoFocus}
+        data-testid={dataTestId}
       />
       {placeholder && <span className={cls.placeholder}>{placeholder}</span>}
     </div>

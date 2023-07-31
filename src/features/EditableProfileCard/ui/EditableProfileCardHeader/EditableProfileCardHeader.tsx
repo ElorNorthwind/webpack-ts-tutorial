@@ -44,15 +44,27 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> = mem
         {canEdit && (
           <HStack>
             {readonly ? (
-              <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
+              <Button
+                theme={ButtonTheme.OUTLINE}
+                onClick={onEdit}
+                data-testid={"EditableProfileCardHeader.EditButton"}
+              >
                 {t("Редактировать")}
               </Button>
             ) : (
               <>
-                <Button theme={ButtonTheme.OUTLINE_RED} onClick={onCalcelEdit}>
+                <Button
+                  theme={ButtonTheme.OUTLINE_RED}
+                  onClick={onCalcelEdit}
+                  data-testid={"EditableProfileCardHeader.CancelButton"}
+                >
                   {t("Отмена")}
                 </Button>
-                <Button theme={ButtonTheme.OUTLINE} onClick={onSave}>
+                <Button
+                  theme={ButtonTheme.OUTLINE}
+                  onClick={onSave}
+                  data-testid={"EditableProfileCardHeader.SaveButton"}
+                >
                   {t("Сохранить")}
                 </Button>
               </>

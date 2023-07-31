@@ -25,14 +25,6 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
   const itemsPerRow = view === ArticleView.SMALL ? 4 : 1;
   const rowCount = Math.ceil(itemCount / itemsPerRow);
   const getRowHeight = (i: number) => {
-    // let baseSize = 280;
-    // if (view === ArticleView.BIG && i <= Math.ceil(articles.length / itemsPerRow)) {
-    //   console.log("XL");
-    //   baseSize = 667;
-    // } else if (view === ArticleView.BIG && i > Math.ceil(articles.length / itemsPerRow)) {
-    //   baseSize = 100;
-    //   console.log("L");
-    // }
     const baseSize = view === ArticleView.SMALL ? 280 : 667;
     return baseSize + 30;
   };

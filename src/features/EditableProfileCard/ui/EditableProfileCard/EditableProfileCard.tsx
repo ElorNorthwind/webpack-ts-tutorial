@@ -25,7 +25,7 @@ import { EditableProfileCardHeader } from "../EditableProfileCardHeader/Editable
 
 interface EditableProfileCardProps {
   className?: string;
-  id?: string;
+  id: string;
 }
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
@@ -131,7 +131,12 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         />
         {validateErrors?.length &&
           validateErrors.map((err) => (
-            <Text theme={TextTheme.ERROR} text={validateErrorTranslations[err]} key={err} />
+            <Text
+              theme={TextTheme.ERROR}
+              text={validateErrorTranslations[err]}
+              key={err}
+              data-testid={"EditableProfileCard.Error"}
+            />
           ))}
       </VStack>
     </DynamicModuleLoader>
