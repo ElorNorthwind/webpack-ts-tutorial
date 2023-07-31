@@ -30,16 +30,7 @@ export default {
   modulePaths: ["<rootDir>src"],
 
   // An array of file extensions your modules use
-  moduleFileExtensions: [
-    "js",
-    "mjs",
-    "cjs",
-    "jsx",
-    "ts",
-    "tsx",
-    "json",
-    "node",
-  ],
+  moduleFileExtensions: ["js", "mjs", "cjs", "jsx", "ts", "tsx", "json", "node"],
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: ['<rootDir'],
@@ -56,6 +47,19 @@ export default {
     "\\.s?css$": "identity-obj-proxy",
     "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
   },
+
+  reporters: [
+    "default",
+    [
+      "jest-html-reporters",
+      {
+        publicPath: "<rootDir>/reports/unit",
+        filename: "report.html",
+        openReport: true,
+        inlineSource: true,
+      },
+    ],
+  ],
 
   // A set of global variables that need to be available in all test environments
   globals: { __IS_DEV__: true, __API__: "", __PROJECT__: "jest" },
