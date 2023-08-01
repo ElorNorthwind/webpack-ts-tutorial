@@ -1,4 +1,4 @@
-import { getUserAuthData, userActions } from "entities/User";
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from "entities/User";
 import { LoginModal } from "features/AuthByUsername";
 import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -11,6 +11,7 @@ import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RoutePaths } from "shared/config/routeConfig/routeConfig";
 import { Dropdown } from "shared/ui/Dropdown/Dropdown";
 import { Avatar } from "shared/ui/Avatar/Avatar";
+import { HStack } from "shared/ui/Stack";
 
 interface NavbarProps {
   className?: string;
@@ -21,6 +22,8 @@ export const Navbar: React.FC<NavbarProps> = memo((props: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const authData = useSelector(getUserAuthData);
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
   const dispatch = useDispatch();
 
   const onOpenModal = useCallback(() => {
@@ -34,6 +37,8 @@ export const Navbar: React.FC<NavbarProps> = memo((props: NavbarProps) => {
   const onLogout = useCallback(() => {
     dispatch(userActions.logout());
   }, [dispatch]);
+
+  const isAdminPanelAvaliable = isAdmin || isManager;
 
   if (authData) {
     return (
@@ -49,6 +54,14 @@ export const Navbar: React.FC<NavbarProps> = memo((props: NavbarProps) => {
         <Dropdown
           className={cls.dropdown}
           items={[
+            ...(isAdminPanelAvaliable
+              ? [
+                  {
+                    content: t("Админка"),
+                    href: RoutePaths.admin_panel,
+                  },
+                ]
+              : []),
             {
               content: t("Профиль"),
               href: RoutePaths.profile + authData.id,
@@ -58,7 +71,12 @@ export const Navbar: React.FC<NavbarProps> = memo((props: NavbarProps) => {
               onClick: onLogout,
             },
           ]}
-          trigger={<Avatar size={32} className={cls.avatar} src={authData.avatar} />}
+          trigger={
+            <HStack>
+              <Text text={authData.username} theme={TextTheme.INVERTED} />
+              <Avatar size={32} className={cls.avatar} src={authData.avatar} />
+            </HStack>
+          }
         />
       </header>
     );
