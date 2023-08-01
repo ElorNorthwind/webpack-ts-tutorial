@@ -11,9 +11,9 @@ interface ProfilePageProps {
 const ProfilePage: React.FC<ProfilePageProps> = (props: ProfilePageProps) => {
   const { id } = useParams<{ id: string }>();
 
-  if (!id) {
-    return <Text text={"Oops"} />;
-  }
+  // if (!id) {
+  //   return <Text text={"Oops"} />;
+  // }
 
   return (
     <Page>

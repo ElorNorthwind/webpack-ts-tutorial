@@ -29,13 +29,13 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
 
-  if (!id) {
-    return (
-      <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-        <Text title={t("Статья не найдена")} theme={TextTheme.ERROR} />
-      </Page>
-    );
-  }
+  // if (!id) {
+  //   return (
+  //     <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
+  //       <Text title={t("Статья не найдена")} theme={TextTheme.ERROR} />
+  //     </Page>
+  //   );
+  // }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

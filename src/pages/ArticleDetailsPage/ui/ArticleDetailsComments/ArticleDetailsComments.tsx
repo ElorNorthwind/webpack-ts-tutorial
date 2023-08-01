@@ -1,4 +1,4 @@
-import { FC, memo, useCallback } from "react";
+import { FC, Suspense, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -14,7 +14,7 @@ import { CommentList } from "entities/Comment";
 import { VStack } from "shared/ui/Stack";
 
 interface ArticleDetailsCommentsProps {
-  id: string;
+  id?: string;
   className?: string;
 }
 
@@ -41,7 +41,9 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo(
     return (
       <VStack max gap={"16"} className={classNames("", {}, [className])}>
         <Text size={TextSize.L} title={t("Комментарии")} />
-        <AddCommentForm onSendComment={onSendComment} />
+        <Suspense fallback={t("Загрузка")}>
+          <AddCommentForm onSendComment={onSendComment} />
+        </Suspense>
         <CommentList isLoading={commentsIsLoading} comments={comments} />
       </VStack>
     );
