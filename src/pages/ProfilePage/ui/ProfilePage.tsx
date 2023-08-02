@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { Page } from "widgets/Page/Page";
 import { VStack } from "shared/ui/Stack/";
 import { EditableProfileCard } from "features/EditableProfileCard";
-import { Text } from "shared/ui/Text/Text";
 
 interface ProfilePageProps {
   className?: string;
@@ -10,10 +9,6 @@ interface ProfilePageProps {
 
 const ProfilePage: React.FC<ProfilePageProps> = (props: ProfilePageProps) => {
   const { id } = useParams<{ id: string }>();
-
-  // if (!id) {
-  //   return <Text text={"Oops"} />;
-  // }
 
   return (
     <Page>

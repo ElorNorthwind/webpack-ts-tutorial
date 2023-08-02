@@ -16,7 +16,7 @@ import { getProfileValidateErrors } from "../../model/selectors/getProfileValida
 import { ProfileCard } from "entities/Profile";
 import { profileActions, profileReducer } from "../../model/slice/profileSlice";
 import { fetchProfileData } from "../../model/service/fetchProfileData/fetchProfileData";
-import { ValidateProfileError } from "../../model/types/EditableProfileCardSchema";
+import { ValidateProfileError } from "../../model/const/const";
 import {
   DynamicModuleLoader,
   ReducersList,

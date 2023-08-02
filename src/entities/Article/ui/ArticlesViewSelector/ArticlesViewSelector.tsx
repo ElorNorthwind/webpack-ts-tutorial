@@ -1,4 +1,4 @@
-import { ArticleView } from "../../model/types/article";
+import { ArticleView } from "../../model/const/articleConsts";
 import { FC, memo } from "react";
 import listIcon from "shared/assets/icons/list.svg";
 import tilesIcon from "shared/assets/icons/tiles.svg";

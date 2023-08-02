@@ -1,6 +1,5 @@
 import { ArticleDetails } from "entities/Article";
 import { FC, memo } from "react";
-import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
@@ -8,7 +7,6 @@ import {
   ReducersList,
 } from "shared/lib/compomemts/DynamicModuleLoader/DynamicModuleLoader";
 import { Page } from "widgets/Page/Page";
-import { Text, TextTheme } from "shared/ui/Text/Text";
 import cls from "./ArticleDetailsPage.module.scss";
 import { articleDetailsPageReducer } from "../../model/slices";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
@@ -26,16 +24,7 @@ const reducers: ReducersList = {
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const { className } = props;
-  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
-
-  // if (!id) {
-  //   return (
-  //     <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-  //       <Text title={t("Статья не найдена")} theme={TextTheme.ERROR} />
-  //     </Page>
-  //   );
-  // }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

@@ -24,7 +24,7 @@ import { Card } from "shared/ui/Card/Card";
 import { SortOrder } from "shared/types";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
-import { ArticleType } from "entities/Article/model/types/article";
+import { ArticleType } from "entities/Article/model/const/articleConsts";
 
 interface ArticlesPageFiltersProps {
   className?: string;

@@ -1,7 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Theme } from "app/providers/ThemeProvider";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Article, ArticleBlockType, ArticleType, ArticleView } from "../../model/types/article";
+import { Article } from "../../model/types/article";
+import { ArticleBlockType, ArticleType, ArticleView } from "../../model/const/articleConsts";
 import { ArticleListItem } from "./ArticleListItem";
 
 const article: Article = {
