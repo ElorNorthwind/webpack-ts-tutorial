@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Theme } from "app/providers/ThemeProvider";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Dropdown } from "./Dropdown";
-import { Button } from "../Button/Button";
+import { Button } from "../../../Button/Button";
 
 const DropdownStory: ComponentMeta<typeof Dropdown> = {
   title: "shared/Dropdown",

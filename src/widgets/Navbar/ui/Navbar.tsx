@@ -9,10 +9,11 @@ import cls from "./Navbar.module.scss";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RoutePaths } from "shared/config/routeConfig/routeConfig";
-import { Dropdown } from "shared/ui/Dropdown/Dropdown";
+import { Dropdown, Popover } from "shared/ui/Popups";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import { HStack } from "shared/ui/Stack";
-
+import notificationIcon from "shared/assets/icons/notifications.svg";
+import { Icon } from "shared/ui/Icon/Icon";
 interface NavbarProps {
   className?: string;
 }
@@ -51,33 +52,45 @@ export const Navbar: React.FC<NavbarProps> = memo((props: NavbarProps) => {
         >
           {t("Создать статью")}
         </AppLink>
-        <Dropdown
-          className={cls.dropdown}
-          items={[
-            ...(isAdminPanelAvaliable
-              ? [
-                  {
-                    content: t("Админка"),
-                    href: RoutePaths.admin_panel,
-                  },
-                ]
-              : []),
-            {
-              content: t("Профиль"),
-              href: RoutePaths.profile + authData.id,
-            },
-            {
-              content: t("Выйти"),
-              onClick: onLogout,
-            },
-          ]}
-          trigger={
-            <HStack>
-              <Text text={authData.username} theme={TextTheme.INVERTED} />
-              <Avatar size={32} className={cls.avatar} src={authData.avatar} />
-            </HStack>
-          }
-        />
+        <HStack gap={"4"} className={cls.actions}>
+          <Popover
+            trigger={
+              <Button theme={ButtonTheme.CLEAR} className={cls.iconBtn}>
+                <Icon Svg={notificationIcon} inverted />
+              </Button>
+            }
+            placement="bottom-end"
+          >
+            bla bla bla
+          </Popover>
+
+          <Dropdown
+            items={[
+              ...(isAdminPanelAvaliable
+                ? [
+                    {
+                      content: t("Админка"),
+                      href: RoutePaths.admin_panel,
+                    },
+                  ]
+                : []),
+              {
+                content: t("Профиль"),
+                href: RoutePaths.profile + authData.id,
+              },
+              {
+                content: t("Выйти"),
+                onClick: onLogout,
+              },
+            ]}
+            trigger={
+              <HStack>
+                <Text text={authData.username} theme={TextTheme.INVERTED} />
+                <Avatar size={32} className={cls.avatar} src={authData.avatar} />
+              </HStack>
+            }
+          />
+        </HStack>
       </header>
     );
   }

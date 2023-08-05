@@ -1,10 +1,11 @@
 import { Fragment, ReactNode } from "react";
 import { Listbox as HListbox } from "@headlessui/react";
 import cls from "./ListBox.module.scss";
+import popupCls from "../../styles/popups.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { HStack } from "../Stack";
-import { Text } from "../Text/Text";
-import { flip, offset, shift, useFloating } from "@floating-ui/react-dom";
+import { HStack } from "../../../Stack";
+import { Text } from "../../../Text/Text";
+import { Placement, flip, offset, shift, useFloating } from "@floating-ui/react-dom";
 
 export interface ListBoxItem<T extends string> {
   value: T;
@@ -20,12 +21,22 @@ interface ListBoxProps {
   className?: string;
   label?: ReactNode;
   readOnly?: boolean;
+  placement?: Placement;
 }
 
 export function ListBox(props: ListBoxProps) {
-  const { items, value, defaultValue, onChange, label, readOnly, className } = props;
+  const {
+    items,
+    value,
+    defaultValue,
+    onChange,
+    label,
+    readOnly,
+    className,
+    placement = "bottom-end",
+  } = props;
   const { refs, floatingStyles } = useFloating({
-    placement: "bottom-end",
+    placement,
     middleware: [offset(5), flip({ padding: 5 }), shift({ padding: 5, crossAxis: true })],
   });
 
@@ -33,7 +44,7 @@ export function ListBox(props: ListBoxProps) {
     <HStack className={classNames("", {}, [className])}>
       <HListbox
         as="div"
-        className={classNames(cls.listBox, {}, [])}
+        className={classNames(cls.listBox, {}, [popupCls.popup])}
         value={value}
         onChange={onChange}
         disabled={readOnly}
@@ -46,7 +57,7 @@ export function ListBox(props: ListBoxProps) {
           {<span>˅</span>}
         </HListbox.Button>
         <HListbox.Options
-          className={classNames(cls.options, {}, [])}
+          className={classNames(cls.options, {}, [popupCls.panel])}
           style={floatingStyles}
           ref={refs.setFloating}
         >
@@ -62,14 +73,14 @@ export function ListBox(props: ListBoxProps) {
                   className={classNames(
                     cls.item,
                     {
-                      [cls.active]: active,
-                      [cls.selected]: selected,
-                      [cls.disabled]: item.unavailable,
+                      [popupCls.active]: active,
+                      [popupCls.selected]: selected,
+                      [popupCls.disabled]: item.unavailable,
                     },
                     [],
                   )}
                 >
-                  {selected && <span className={cls.checkMark}>✓</span>}
+                  {selected && <span className={popupCls.checkMark}>✓</span>}
                   {item.content}
                 </li>
               )}

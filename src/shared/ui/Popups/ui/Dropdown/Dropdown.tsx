@@ -1,9 +1,10 @@
 import { Menu } from "@headlessui/react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Dropdown.module.scss";
-import { flip, offset, shift, useFloating } from "@floating-ui/react-dom";
+import popupCls from "../../styles/popups.module.scss";
+import { Placement, flip, offset, shift, useFloating } from "@floating-ui/react-dom";
 import { Fragment, ReactNode } from "react";
-import { AppLink } from "../AppLink/AppLink";
+import { AppLink } from "../../../AppLink/AppLink";
 
 export interface DropdownItem {
   unavailable?: boolean;
@@ -16,21 +17,26 @@ interface DropdownProps {
   className?: string;
   items: DropdownItem[];
   trigger?: ReactNode;
+  placement?: Placement;
 }
 
 export function Dropdown(props: DropdownProps) {
-  const { className, trigger = "⌄⌄⌄", items } = props;
+  const { className, trigger = "⌄⌄⌄", placement = "bottom-start", items } = props;
   const { refs, floatingStyles } = useFloating({
-    placement: "bottom-start",
+    placement,
     middleware: [offset(5), flip({ padding: 5 }), shift({ padding: 5, crossAxis: true })],
   });
 
   return (
-    <Menu as="div" className={classNames(cls.dropdown, {}, [className])}>
-      <Menu.Button as={"div"} className={cls.btn} ref={refs.setReference}>
+    <Menu as="div" className={classNames("", {}, [className, popupCls.popup])}>
+      <Menu.Button as={"div"} className={popupCls.hiddenTrigger} ref={refs.setReference}>
         {trigger}
       </Menu.Button>
-      <Menu.Items className={cls.menu} style={floatingStyles} ref={refs.setFloating}>
+      <Menu.Items
+        className={classNames(cls.menu, {}, [popupCls.panel])}
+        style={floatingStyles}
+        ref={refs.setFloating}
+      >
         {items.map((item) => {
           const content = ({ active }: { active: boolean }) => (
             <button
@@ -39,7 +45,7 @@ export function Dropdown(props: DropdownProps) {
               disabled={item.unavailable}
               className={classNames(
                 cls.item,
-                { [cls.active]: active, [cls.disabled]: item.unavailable },
+                { [popupCls.active]: active, [popupCls.disabled]: item.unavailable },
                 [],
               )}
             >
