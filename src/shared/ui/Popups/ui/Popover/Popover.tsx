@@ -1,5 +1,4 @@
-import { FC, ReactNode, memo } from "react";
-import { useTranslation } from "react-i18next";
+import { ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import cls from "./Popover.module.scss";
 import popupCls from "../../styles/popups.module.scss";

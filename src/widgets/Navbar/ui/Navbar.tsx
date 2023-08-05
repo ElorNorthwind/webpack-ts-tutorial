@@ -1,19 +1,17 @@
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from "entities/User";
+import { getUserAuthData } from "entities/User";
 import { LoginModal } from "features/AuthByUsername";
 import { memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import cls from "./Navbar.module.scss";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RoutePaths } from "shared/config/routeConfig/routeConfig";
-import { Dropdown, Popover } from "shared/ui/Popups";
-import { Avatar } from "shared/ui/Avatar/Avatar";
 import { HStack } from "shared/ui/Stack";
-import notificationIcon from "shared/assets/icons/notifications.svg";
-import { Icon } from "shared/ui/Icon/Icon";
+import { NotificationButton } from "features/notificationButton";
+import { AvatarDropdown } from "features/avatarDropdown";
 interface NavbarProps {
   className?: string;
 }
@@ -23,9 +21,6 @@ export const Navbar: React.FC<NavbarProps> = memo((props: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const authData = useSelector(getUserAuthData);
-  const isAdmin = useSelector(isUserAdmin);
-  const isManager = useSelector(isUserManager);
-  const dispatch = useDispatch();
 
   const onOpenModal = useCallback(() => {
     setIsAuthModalOpen(true);
@@ -34,12 +29,6 @@ export const Navbar: React.FC<NavbarProps> = memo((props: NavbarProps) => {
   const onCloseModal = useCallback(() => {
     setIsAuthModalOpen(false);
   }, []);
-
-  const onLogout = useCallback(() => {
-    dispatch(userActions.logout());
-  }, [dispatch]);
-
-  const isAdminPanelAvaliable = isAdmin || isManager;
 
   if (authData) {
     return (
@@ -53,43 +42,8 @@ export const Navbar: React.FC<NavbarProps> = memo((props: NavbarProps) => {
           {t("Создать статью")}
         </AppLink>
         <HStack gap={"4"} className={cls.actions}>
-          <Popover
-            trigger={
-              <Button theme={ButtonTheme.CLEAR} className={cls.iconBtn}>
-                <Icon Svg={notificationIcon} inverted />
-              </Button>
-            }
-            placement="bottom-end"
-          >
-            bla bla bla
-          </Popover>
-
-          <Dropdown
-            items={[
-              ...(isAdminPanelAvaliable
-                ? [
-                    {
-                      content: t("Админка"),
-                      href: RoutePaths.admin_panel,
-                    },
-                  ]
-                : []),
-              {
-                content: t("Профиль"),
-                href: RoutePaths.profile + authData.id,
-              },
-              {
-                content: t("Выйти"),
-                onClick: onLogout,
-              },
-            ]}
-            trigger={
-              <HStack>
-                <Text text={authData.username} theme={TextTheme.INVERTED} />
-                <Avatar size={32} className={cls.avatar} src={authData.avatar} />
-              </HStack>
-            }
-          />
+          <NotificationButton />
+          <AvatarDropdown />
         </HStack>
       </header>
     );
