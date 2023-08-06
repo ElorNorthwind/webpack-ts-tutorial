@@ -4,12 +4,11 @@
   z-index: -1;
   opacity: 0;
   pointer-events: none;
-  background: var(--overlay-color);
+  // background: var(--overlay-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity var(--animation-length),
-    z-index 0s var(--animation-length);
+  transition: opacity var(--animation-length), z-index 0s var(--animation-length);
 }
 
 .content {
