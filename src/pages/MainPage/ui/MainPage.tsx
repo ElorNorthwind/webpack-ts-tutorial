@@ -1,7 +1,7 @@
 // import { useTranslation } from "react-i18next";
-import { ListBox } from "shared/ui/Popups";
-import { VStack } from "shared/ui/Stack";
-import { Page } from "widgets/Page/Page";
+import { ListBox } from "@/shared/ui/Popups";
+import { VStack } from "@/shared/ui/Stack";
+import { Page } from "@/widgets/Page/Page";
 
 const MainPage = (): JSX.Element => {
   // const { t } = useTranslation();

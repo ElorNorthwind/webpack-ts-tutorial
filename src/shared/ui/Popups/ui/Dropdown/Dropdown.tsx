@@ -1,5 +1,5 @@
 import { Menu } from "@headlessui/react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./Dropdown.module.scss";
 import popupCls from "../../styles/popups.module.scss";
 import { Placement, flip, offset, shift, useFloating } from "@floating-ui/react-dom";

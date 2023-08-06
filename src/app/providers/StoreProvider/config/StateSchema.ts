@@ -7,17 +7,17 @@ import {
   ReducersMapObject,
 } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
-import { ArticleDetailsSchema } from "entities/Article";
-import { CounterSchema } from "entities/Counter";
-import { UserSchema } from "entities/User";
-import { AddCommentFormSchema } from "features/addCommentForm";
-import { LoginSchema } from "features/AuthByUsername";
-import { ProfileSchema } from "features/EditableProfileCard";
-import { ScrollSaveSchema } from "features/ScrollSave";
-import { ArticleDetailsPageSchema } from "pages/ArticleDetailsPage";
-import { ArticlesPageSchema } from "pages/ArticlesPage";
+import { ArticleDetailsSchema } from "@/entities/Article";
+import { CounterSchema } from "@/entities/Counter";
+import { UserSchema } from "@/entities/User";
+import { AddCommentFormSchema } from "@/features/addCommentForm";
+import { LoginSchema } from "@/features/AuthByUsername";
+import { ProfileSchema } from "@/features/EditableProfileCard";
+import { ScrollSaveSchema } from "@/features/ScrollSave";
+import { ArticleDetailsPageSchema } from "@/pages/ArticleDetailsPage";
+import { ArticlesPageSchema } from "@/pages/ArticlesPage";
 import { NavigateOptions, To } from "react-router-dom";
-import { rtkApi } from "shared/api/rtkApi";
+import { rtkApi } from "@/shared/api/rtkApi";
 
 export interface StateSchema {
   counter: CounterSchema;

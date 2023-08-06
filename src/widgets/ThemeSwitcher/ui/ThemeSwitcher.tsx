@@ -1,8 +1,8 @@
-import { useTheme } from "app/providers/ThemeProvider";
+import { useTheme } from "@/app/providers/ThemeProvider";
 import { memo } from "react";
-import ThemeThinIcon from "shared/assets/icons/theme_thin.svg";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import ThemeThinIcon from "@/shared/assets/icons/theme_thin.svg";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import cls from "./ThemeSwitcher.module.scss";
 
 interface ThemeSwitcherProps {

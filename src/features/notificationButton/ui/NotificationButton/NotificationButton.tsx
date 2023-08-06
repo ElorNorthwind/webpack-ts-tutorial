@@ -1,14 +1,14 @@
 import { FC, memo, useCallback, useState } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./NotificationButton.module.scss";
-import { Popover } from "shared/ui/Popups";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { Icon } from "shared/ui/Icon/Icon";
-import notificationIcon from "shared/assets/icons/notifications.svg";
-import { NotificationList } from "entities/Notification";
-import { Drawer } from "shared/ui/Drawer/Drawer";
-import { useDevice } from "shared/lib/hooks/useDevice/useDevice";
-import { AnimationProvider } from "shared/lib/compomemts/AnimationProvider";
+import { Popover } from "@/shared/ui/Popups";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Icon } from "@/shared/ui/Icon/Icon";
+import notificationIcon from "@/shared/assets/icons/notifications.svg";
+import { NotificationList } from "@/entities/Notification";
+import { Drawer } from "@/shared/ui/Drawer/Drawer";
+import { useDevice } from "@/shared/lib/hooks/useDevice/useDevice";
+import { AnimationProvider } from "@/shared/lib/compomemts/AnimationProvider";
 // import { BrowserView, MobileView } from "react-device-detect";
 
 interface NotificationButtonProps {

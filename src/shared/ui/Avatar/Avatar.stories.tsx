@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "app/providers/ThemeProvider";
-import AvatarImg from "shared/assets/test/storybook_avatar.jpg";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/app/providers/ThemeProvider";
+import AvatarImg from "@/shared/assets/test/storybook_avatar.jpg";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Avatar } from "./Avatar";
 
 const AvatarStory: ComponentMeta<typeof Avatar> = {

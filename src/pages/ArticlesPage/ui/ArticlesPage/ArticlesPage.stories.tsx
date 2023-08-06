@@ -1,13 +1,13 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "app/providers/ThemeProvider";
-import { Article } from "entities/Article/model/types/article";
+import { Theme } from "@/app/providers/ThemeProvider";
+import { Article } from "@/entities/Article/model/types/article";
 import {
   ArticleBlockType,
   ArticleType,
   ArticleView,
-} from "entities/Article/model/const/articleConsts";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+} from "@/entities/Article/model/const/articleConsts";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import ArticlesPage from "./ArticlesPage";
 
 const article: Article = {

@@ -1,18 +1,18 @@
 import { FC, HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
-import ViewsIcon from "shared/assets/icons/viewes.svg";
-import { RoutePaths } from "shared/config/routeConfig/routeConfig";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { Card } from "shared/ui/Card/Card";
-import { Icon } from "shared/ui/Icon/Icon";
-import { Text } from "shared/ui/Text/Text";
+import ViewsIcon from "@/shared/assets/icons/viewes.svg";
+import { RoutePaths } from "@/shared/config/routeConfig/routeConfig";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Card } from "@/shared/ui/Card/Card";
+import { Icon } from "@/shared/ui/Icon/Icon";
+import { Text } from "@/shared/ui/Text/Text";
 import { Article, ArticleTextBlock } from "../../model/types/article";
 import { ArticleBlockType, ArticleView } from "../../model/const/articleConsts";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import cls from "./ArticleListItem.module.scss";
-import { AppLink } from "shared/ui/AppLink/AppLink";
+import { AppLink } from "@/shared/ui/AppLink/AppLink";
 
 interface ArticleListItemProps {
   className?: string;

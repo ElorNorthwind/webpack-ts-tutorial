@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { EditableProfileCard } from "./EditableProfileCard";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
 const EditableProfileCardStory: ComponentMeta<typeof EditableProfileCard> = {
   title: "features/EditableProfileCard",

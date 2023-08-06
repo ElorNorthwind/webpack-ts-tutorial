@@ -1,18 +1,18 @@
 import { FC, memo, useCallback, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import TimeIcon from "shared/assets/icons/time.svg";
-import ViewesIcon from "shared/assets/icons/viewes.svg";
-import { classNames } from "shared/lib/classNames/classNames";
+import TimeIcon from "@/shared/assets/icons/time.svg";
+import ViewesIcon from "@/shared/assets/icons/viewes.svg";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import {
   DynamicModuleLoader,
   ReducersList,
-} from "shared/lib/compomemts/DynamicModuleLoader/DynamicModuleLoader";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Avatar } from "shared/ui/Avatar/Avatar";
-import { Icon } from "shared/ui/Icon/Icon";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
-import { Text, TextAlign, TextSize, TextTheme } from "shared/ui/Text/Text";
+} from "@/shared/lib/compomemts/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Icon } from "@/shared/ui/Icon/Icon";
+import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { Text, TextAlign, TextSize, TextTheme } from "@/shared/ui/Text/Text";
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -26,7 +26,7 @@ import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleC
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import cls from "./ArticleDetails.module.scss";
-import { HStack, VStack } from "shared/ui/Stack";
+import { HStack, VStack } from "@/shared/ui/Stack";
 
 interface ArticleDetailsProps {
   className?: string;
