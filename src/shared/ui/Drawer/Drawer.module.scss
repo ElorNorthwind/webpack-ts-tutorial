@@ -24,7 +24,7 @@
   // overflow-y: auto;
   // overflow-x: hidden;
   //   pointer-events: none;
-  z-index: 100;
+  z-index: ar(--modal-z-index);
   position: fixed;
   left: 2vw;
   height: calc(100vh + 100px);
@@ -51,7 +51,6 @@
   pointer-events: auto;
   opacity: 1;
   z-index: var(--modal-z-index);
-  // transition: opacity var(--animation-length), z-index 0s;
 
   .content {
     transform: translateY(0%);
