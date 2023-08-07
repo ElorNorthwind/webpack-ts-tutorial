@@ -22,6 +22,7 @@ export function Popover(props: PopoverProps) {
   return (
     <HPopover className={classNames(cls.popover, {}, [className, popupCls.popup])}>
       <HPopover.Button
+        as={"div"}
         ref={refs.setReference}
         className={classNames("", {}, [popupCls.hiddenTrigger])}
       >

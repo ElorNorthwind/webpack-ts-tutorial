@@ -1,18 +1,12 @@
-// import { useTranslation } from "react-i18next";
+import { RatingCard } from "@/entities/Rating";
 import { ListBox } from "@/shared/ui/Popups";
 import { VStack } from "@/shared/ui/Stack";
 import { Page } from "@/widgets/Page/Page";
 
 const MainPage = (): JSX.Element => {
-  // const { t } = useTranslation();
-  // const [value, setValue] = useState("");
-  // const onChange = (val: string) => {
-  //   setValue(val);
-  // };
-
   return (
     <Page>
-      <VStack>
+      <VStack max>
         <div>Это див</div>
         <ListBox
           defaultValue="Выберите значение"
@@ -28,6 +22,11 @@ const MainPage = (): JSX.Element => {
         <div>Это див</div>
         <div>Это див</div>
         <div>Это див</div>
+        <RatingCard
+          title="оцени плез"
+          feedbackTitle="Оставь отзыв к оценочке, братюня"
+          hasFeedback
+        />
       </VStack>
     </Page>
   );

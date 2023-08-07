@@ -37,12 +37,13 @@ export function Dropdown(props: DropdownProps) {
         style={floatingStyles}
         ref={refs.setFloating}
       >
-        {items.map((item) => {
+        {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             <button
               type="button"
               onClick={item.onClick}
               disabled={item.unavailable}
+              // key={`dropdown-content-key-${index}`}
               className={classNames(
                 cls.item,
                 { [popupCls.active]: active, [popupCls.disabled]: item.unavailable },
@@ -56,7 +57,7 @@ export function Dropdown(props: DropdownProps) {
           if (item.href) {
             return (
               <Menu.Item
-                key={String(item.content)}
+                key={`dropdown-key-${index}`}
                 as={AppLink}
                 to={item.href}
                 disabled={item.unavailable}
@@ -66,7 +67,7 @@ export function Dropdown(props: DropdownProps) {
             );
           } else {
             return (
-              <Menu.Item key={String(item.content)} as={Fragment} disabled={item.unavailable}>
+              <Menu.Item key={`dropdown-key-${index}`} as={Fragment} disabled={item.unavailable}>
                 {content}
               </Menu.Item>
             );
