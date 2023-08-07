@@ -6,7 +6,7 @@ import { Portal } from "../Portal/Portal";
 import { Overlay } from "../Overlay/Overlay";
 // import { useDrag } from "@use-gesture/react";
 // import { a, useSpring, config } from "@react-spring/web";
-import { useAnimationLibs } from "@/shared/lib/compomemts/AnimationProvider";
+import { AnimationProvider, useAnimationLibs } from "@/shared/lib/compomemts/AnimationProvider";
 
 interface DrawerProps {
   className?: string;
@@ -93,7 +93,7 @@ export const DrawerContent: FC<DrawerProps> = memo((props: DrawerProps) => {
   );
 });
 
-export const Drawer = memo((props: DrawerProps) => {
+const DrawerAsync = (props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
@@ -101,4 +101,12 @@ export const Drawer = memo((props: DrawerProps) => {
   }
 
   return <DrawerContent {...props} />;
-});
+};
+
+export const Drawer = (props: DrawerProps) => {
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
+  );
+};
