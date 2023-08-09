@@ -1,7 +1,6 @@
 import { FC, memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import cls from "./RatingCard.module.scss";
 import { Card } from "@/shared/ui/Card/Card";
 import { HStack, VStack } from "@/shared/ui/Stack";
 import { Text } from "@/shared/ui/Text/Text";
@@ -16,16 +15,27 @@ interface RatingCardProps {
   className?: string;
   title?: string;
   feedbackTitle?: string;
+  feedbackText?: string;
   hasFeedback?: boolean;
   onCancel?: (starCount: number) => void;
   onAccept?: (starCount: number, feedback?: string) => void;
+  rate?: number;
 }
 
 export const RatingCard: FC<RatingCardProps> = memo((props: RatingCardProps) => {
-  const { className, title, feedbackTitle, hasFeedback, onCancel, onAccept } = props;
+  const {
+    className,
+    title,
+    feedbackTitle,
+    feedbackText,
+    hasFeedback,
+    onCancel,
+    onAccept,
+    rate = 0,
+  } = props;
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [starCount, setStarCount] = useState(0);
+  const [starCount, setStarCount] = useState(rate);
   const [feedback, setFeedback] = useState("");
   const isMobile = useDevice();
 
@@ -73,10 +83,10 @@ export const RatingCard: FC<RatingCardProps> = memo((props: RatingCardProps) => 
   );
 
   return (
-    <Card className={classNames(cls.ratingCard, {}, [className])}>
+    <Card className={classNames("", {}, [className])} max>
       <VStack align={"center"}>
-        <Text title={title} />
-        <StarRaiting size={40} onSelect={onSelectStars} />
+        <Text title={starCount ? t("Ваша оценка") : title} text={feedbackText} />
+        <StarRaiting selectedStars={starCount} size={40} onSelect={onSelectStars} />
       </VStack>
       {isMobile ? (
         <Drawer isOpen={isModalOpen} lazy onClose={calcelHandler}>
