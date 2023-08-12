@@ -5,7 +5,7 @@ import { EditableProfileCardHeader } from "./EditableProfileCardHeader";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
 const EditableProfileCardHeaderStory: ComponentMeta<typeof EditableProfileCardHeader> = {
-  title: "shared/EditableProfileCardHeader",
+  title: "features/EditableProfileCardHeader",
   component: EditableProfileCardHeader,
   decorators: [StoreDecorator({})],
 };

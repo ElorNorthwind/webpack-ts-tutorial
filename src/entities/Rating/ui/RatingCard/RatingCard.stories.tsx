@@ -1,10 +1,10 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "app/providers/ThemeProvider";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/app/providers/ThemeProvider";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { RatingCard } from "./RatingCard";
 
 const RatingCardStory: ComponentMeta<typeof RatingCard> = {
-  title: "shared/RatingCard",
+  title: "enttities/Rating/RatingCard",
   component: RatingCard,
 };
 export default RatingCardStory;

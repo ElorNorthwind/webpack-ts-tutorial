@@ -4,7 +4,7 @@ import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDe
 import ArticleEditPage from "./ArticleEditPage";
 
 const ArticleEditPageStory: ComponentMeta<typeof ArticleEditPage> = {
-  title: "shared/ArticleEditPage",
+  title: "pages/ArticleEditPage",
   component: ArticleEditPage,
 };
 export default ArticleEditPageStory;
