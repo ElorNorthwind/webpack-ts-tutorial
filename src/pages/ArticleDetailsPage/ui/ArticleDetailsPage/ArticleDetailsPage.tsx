@@ -6,7 +6,7 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from "@/shared/lib/compomemts/DynamicModuleLoader/DynamicModuleLoader";
-import { Page } from "@/widgets/Page/Page";
+import { Page } from "@/widgets/Page";
 import cls from "./ArticleDetailsPage.module.scss";
 import { articleDetailsPageReducer } from "../../model/slices";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";

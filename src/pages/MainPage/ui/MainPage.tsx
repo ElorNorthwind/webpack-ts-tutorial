@@ -1,7 +1,7 @@
 import { RatingCard } from "@/entities/Rating";
 import { ListBox } from "@/shared/ui/Popups";
 import { VStack } from "@/shared/ui/Stack";
-import { Page } from "@/widgets/Page/Page";
+import { Page } from "@/widgets/Page";
 
 const MainPage = (): JSX.Element => {
   return (

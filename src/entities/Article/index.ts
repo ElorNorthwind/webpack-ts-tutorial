@@ -1,4 +1,9 @@
-export { ArticleSortField, ArticleType, ArticleView } from "./model/const/articleConsts";
+export {
+  ArticleSortField,
+  ArticleType,
+  ArticleView,
+  ArticleBlockType,
+} from "./model/const/articleConsts";
 export type { Article } from "./model/types/article";
 export type { ArticleDetailsSchema } from "./model/types/articleDetailsSchema";
 export { ArticleDetails } from "./ui/ArticleDetails/ArticleDetails";

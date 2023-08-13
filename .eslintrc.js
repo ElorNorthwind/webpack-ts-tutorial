@@ -59,6 +59,20 @@ module.exports = {
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "fsd-lorans-plugin/path-checker": ["error", { alias: "@" }],
+    "fsd-lorans-plugin/public-api-imports": [
+      "error",
+      {
+        alias: "@",
+        testFilesPatterns: [
+          "**/*.test.ts",
+          "**/*.story.ts",
+          "**/StoreDecorator.tsx",
+          "**\\*.test.ts",
+          "**\\*.story.ts",
+          "**\\StoreDecorator.tsx",
+        ],
+      },
+    ],
   },
 
   globals: {

@@ -1,5 +1,4 @@
-import { CountrySelect } from "@/entities/Country";
-import { Country } from "@/entities/Country/model/types/country";
+import { CountrySelect, Country } from "@/entities/Country";
 import { Currency, CurrencySelect } from "@/entities/Currency";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
