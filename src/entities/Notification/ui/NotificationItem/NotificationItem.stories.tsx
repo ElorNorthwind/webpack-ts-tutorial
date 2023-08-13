@@ -5,7 +5,7 @@ import { NotificationItem } from "./NotificationItem";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
 const NotificationItemStory: ComponentMeta<typeof NotificationItem> = {
-  title: "enttities/Notifications/NotificationItem",
+  title: "entities/Notifications/NotificationItem",
   component: NotificationItem,
   decorators: [StoreDecorator({})],
   args: {

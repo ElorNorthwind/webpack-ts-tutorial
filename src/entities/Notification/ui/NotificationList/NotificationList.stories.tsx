@@ -6,7 +6,7 @@ import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDe
 import withMock from "storybook-addon-mock";
 
 const NotificationListStory: ComponentMeta<typeof NotificationList> = {
-  title: "enttities/Notifications/NotificationList",
+  title: "entities/Notifications/NotificationList",
   component: NotificationList,
   decorators: [StoreDecorator({}), withMock],
   parameters: {

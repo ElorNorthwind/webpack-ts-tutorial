@@ -4,7 +4,7 @@ import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { RatingCard } from "./RatingCard";
 
 const RatingCardStory: ComponentMeta<typeof RatingCard> = {
-  title: "enttities/Rating/RatingCard",
+  title: "entities/Rating/RatingCard",
   component: RatingCard,
 };
 export default RatingCardStory;
