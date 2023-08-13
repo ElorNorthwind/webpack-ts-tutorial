@@ -58,7 +58,7 @@ module.exports = {
     "@typescript-eslint/no-misused-promises": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
-    "fsd-lorans-plugin/path-checker": "error",
+    "fsd-lorans-plugin/path-checker": ["error", { alias: "@" }],
   },
 
   globals: {
