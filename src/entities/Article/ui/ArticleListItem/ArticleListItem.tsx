@@ -1,7 +1,7 @@
 import { FC, HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
 import ViewsIcon from "@/shared/assets/icons/viewes.svg";
-import { RoutePaths } from "@/shared/config/routeConfig/routeConfig";
+import { RoutePaths } from "@/shared/const/router";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
