@@ -1,3 +1,4 @@
+/* eslint-disable fsd-lorans-plugin/layer-imports */
 import { AppRouter } from "@/app/providers/router";
 import { getUserInited, userActions } from "@/entities/User";
 import { Suspense, useEffect } from "react";

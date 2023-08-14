@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "@/app/providers/ThemeProvider";
+import { Theme } from "@/shared/const/theme";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Country } from "../../model/types/country";
 import { CountrySelect } from "./CountrySelect";
@@ -13,9 +13,7 @@ const CountrySelectStory: ComponentMeta<typeof CountrySelect> = {
 };
 export default CountrySelectStory;
 
-const Template: ComponentStory<typeof CountrySelect> = (args) => (
-  <CountrySelect {...args} />
-);
+const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};

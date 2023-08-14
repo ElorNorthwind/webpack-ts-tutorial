@@ -73,6 +73,10 @@ module.exports = {
         ],
       },
     ],
+    "fsd-lorans-plugin/layer-imports": [
+      "error",
+      { alias: "@", ignoreImportPatterns: ["**/StoreProvider", "**/testing"] },
+    ],
   },
 
   globals: {

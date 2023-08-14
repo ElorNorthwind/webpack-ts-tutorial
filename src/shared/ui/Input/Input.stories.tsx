@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "@/app/providers/ThemeProvider";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Input } from "./Input";
+import { Theme } from "@/shared/const/theme";
 
 const InputStory: ComponentMeta<typeof Input> = {
   title: "shared/Input",

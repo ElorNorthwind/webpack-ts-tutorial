@@ -1,12 +1,10 @@
 import { FC, ReactNode, memo, useCallback, useEffect } from "react";
 import { Mods, classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./Drawer.module.scss";
-import { useTheme } from "@/app/providers/ThemeProvider";
 import { Portal } from "../Portal/Portal";
 import { Overlay } from "../Overlay/Overlay";
-// import { useDrag } from "@use-gesture/react";
-// import { a, useSpring, config } from "@react-spring/web";
 import { AnimationProvider, useAnimationLibs } from "@/shared/lib/compomemts/AnimationProvider";
+import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 
 interface DrawerProps {
   className?: string;

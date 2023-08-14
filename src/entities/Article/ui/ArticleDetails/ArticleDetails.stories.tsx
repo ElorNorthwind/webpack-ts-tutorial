@@ -1,10 +1,10 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "@/app/providers/ThemeProvider";
 import { Article } from "../../model/types/article";
 import { ArticleBlockType, ArticleType } from "../../model/const/articleConsts";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { ArticleDetails } from "./ArticleDetails";
+import { Theme } from "@/shared/const/theme";
 
 const ArticleDetailsStory: ComponentMeta<typeof ArticleDetails> = {
   title: "entities/Article/ArticleDetails",

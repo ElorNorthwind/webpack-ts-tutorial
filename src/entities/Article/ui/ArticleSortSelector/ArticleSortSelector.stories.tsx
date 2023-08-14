@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "@/app/providers/ThemeProvider";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { ArticleSortSelector } from "./ArticleSortSelector";
+import { Theme } from "@/shared/const/theme";
 
 const ArticleSortSelectorStory: ComponentMeta<typeof ArticleSortSelector> = {
   title: "entities/Article/ArticleSortSelector",

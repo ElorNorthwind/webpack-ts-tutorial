@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "@/app/providers/ThemeProvider";
+import { Theme } from "@/shared/const/theme";
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
 // import avatar from "shared/assets/test/storybook_avatar.jpg";
@@ -27,8 +27,7 @@ Light.decorators = [
         country: Country.Russia,
         city: "Комсомольск-на-Амуре",
         currency: Currency.RUB,
-        avatar:
-          "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
+        avatar: "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
       },
       readonly: true,
     },
@@ -47,8 +46,7 @@ Editable.decorators = [
         country: Country.Russia,
         city: "Комсомольск-на-Амуре",
         currency: Currency.RUB,
-        avatar:
-          "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
+        avatar: "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
       },
       readonly: false,
     },
@@ -69,8 +67,7 @@ Dark.decorators = [
         country: Country.Russia,
         city: "Комсомольск-на-Амуре",
         currency: Currency.RUB,
-        avatar:
-          "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
+        avatar: "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg",
       },
       readonly: true,
     },
