@@ -24,7 +24,7 @@ module.exports = {
     sourceType: "module",
     project: ["./tsconfig.json"],
   },
-  plugins: ["react", "react-hooks", "fsd-lorans-plugin"],
+  plugins: ["react", "react-hooks", "fsd-lorans-plugin", "unused-imports"],
   rules: {
     "react/jsx-filename-extension": [
       2,
@@ -55,6 +55,7 @@ module.exports = {
     // 'no-underscore-dangle': 'off',
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "unused-imports/no-unused-imports": "warn", // not sure I need that
     "@typescript-eslint/no-misused-promises": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
