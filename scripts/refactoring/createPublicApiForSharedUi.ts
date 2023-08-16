@@ -14,7 +14,7 @@ const files = project.getSourceFiles();
 const indexFilename = "index.ts";
 const layer = process.argv[2] || "shared";
 const slice = "ui";
-const dest = project.getDirectory(path.resolve(__dirname, "..", "src", layer, slice));
+const dest = project.getDirectory(path.resolve(__dirname, "..", "..", "src", layer, slice));
 const directories = dest?.getDirectories();
 
 directories?.forEach((directory) => {
@@ -34,7 +34,7 @@ directories?.forEach((directory) => {
       const folderLen = folderName.length;
       const moduleName = component.getBaseNameWithoutExtension();
       const modulePath = `.${component.getFilePath().slice(folderLen, -4)}`;
-      content += `export {${moduleName}} from "${modulePath}"\n`;
+      content += `export { ${moduleName} } from "${modulePath}"\n`;
     });
     // console.log(content)
     const file = directory.createSourceFile(`${folderName}/${indexFilename}`, content, {
