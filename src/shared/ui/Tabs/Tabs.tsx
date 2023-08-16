@@ -2,7 +2,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { ReactNode, useCallback } from "react";
 import cls from "./Tabs.module.scss";
 // eslint-disable-next-line fsd-lorans-plugin/path-checker
-import { Card, CardTheme } from "@/shared/ui/Card/Card";
+import { Card, CardTheme } from "@/shared/ui/Card";
 
 export interface TabItem<T extends string> {
   value: T;

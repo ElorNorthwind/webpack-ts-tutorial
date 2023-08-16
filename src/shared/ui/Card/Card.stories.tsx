@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Theme } from "@/shared/const/theme";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 // eslint-disable-next-line fsd-lorans-plugin/path-checker
-import { Text } from "@/shared/ui/Text/Text";
+import { Text } from "@/shared/ui/Text";
 import { Card } from "./Card";
 
 const CardStory: ComponentMeta<typeof Card> = {

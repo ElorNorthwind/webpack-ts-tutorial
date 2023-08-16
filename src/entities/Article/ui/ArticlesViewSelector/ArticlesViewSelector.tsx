@@ -3,7 +3,7 @@ import { FC, memo } from "react";
 import listIcon from "@/shared/assets/icons/list.svg";
 import tilesIcon from "@/shared/assets/icons/tiles.svg";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Button, ButtonTheme } from "@/shared/ui/Button";
 import cls from "./ArticlesViewSelector.module.scss";
 
 interface ArticlesViewSelectorProps {

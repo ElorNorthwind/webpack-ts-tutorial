@@ -9,10 +9,10 @@ import {
   ReducersList,
 } from "@/shared/lib/compomemts/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
-import { Icon } from "@/shared/ui/Icon/Icon";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
-import { Text, TextAlign, TextSize, TextTheme } from "@/shared/ui/Text/Text";
+import { Avatar } from "@/shared/ui/Avatar";
+import { Icon } from "@/shared/ui/Icon";
+import { Skeleton } from "@/shared/ui/Skeleton";
+import { Text, TextAlign, TextSize, TextTheme } from "@/shared/ui/Text";
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -38,7 +38,6 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props: ArticleDetai
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const isLoading = useSelector(getArticleDetailsIsLoading);
-  // const isLoading = true;
   const error = useSelector(getArticleDetailsError);
   const article = useSelector(getArticleDetailsData);
 
@@ -114,7 +113,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props: ArticleDetai
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-      <VStack gap="16" className={classNames(cls.articleDetails, {}, [className])}>
+      <VStack max gap="16" className={classNames(cls.articleDetails, {}, [className])}>
         {content}
       </VStack>
     </DynamicModuleLoader>

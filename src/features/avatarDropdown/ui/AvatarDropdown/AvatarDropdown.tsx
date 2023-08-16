@@ -8,8 +8,8 @@ import { useSelector } from "react-redux";
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from "@/entities/User";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { HStack } from "@/shared/ui/Stack";
-import { Text, TextTheme } from "@/shared/ui/Text/Text";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Text, TextTheme } from "@/shared/ui/Text";
+import { Avatar } from "@/shared/ui/Avatar";
 
 interface AvatarDropdownProps {
   className?: string;
