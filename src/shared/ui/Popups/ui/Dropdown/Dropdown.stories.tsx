@@ -1,6 +1,4 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "@/shared/const/theme";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Dropdown } from "./Dropdown";
 import { Button } from "../../../Button/Button";
 
@@ -28,8 +26,4 @@ export default DropdownStory;
 
 const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
 
-export const Light = Template.bind({});
-
-export const Dark = Template.bind({});
-
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Normal = Template.bind({});

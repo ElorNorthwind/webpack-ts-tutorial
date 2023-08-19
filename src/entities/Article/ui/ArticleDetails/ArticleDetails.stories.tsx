@@ -2,9 +2,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Article } from "../../model/types/article";
 import { ArticleBlockType, ArticleType } from "../../model/const/articleConsts";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { ArticleDetails } from "./ArticleDetails";
-import { Theme } from "@/shared/const/theme";
 
 const ArticleDetailsStory: ComponentMeta<typeof ArticleDetails> = {
   title: "entities/Article/ArticleDetails",
@@ -71,8 +69,8 @@ const article: Article = {
   ],
 };
 
-export const Light = Template.bind({});
-Light.decorators = [
+export const Normal = Template.bind({});
+Normal.decorators = [
   StoreDecorator({
     articleDetails: {
       data: article,
@@ -94,17 +92,6 @@ Error.decorators = [
   StoreDecorator({
     articleDetails: {
       error: "что то пошло не так",
-    },
-  }),
-];
-
-export const Dark = Template.bind({});
-
-Dark.decorators = [
-  ThemeDecorator(Theme.DARK),
-  StoreDecorator({
-    articleDetails: {
-      data: article,
     },
   }),
 ];

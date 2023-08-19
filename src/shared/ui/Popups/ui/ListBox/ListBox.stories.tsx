@@ -1,6 +1,4 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "@/shared/const/theme";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { ListBox } from "./ListBox";
 
 const ListBoxStory: ComponentMeta<typeof ListBox> = {
@@ -28,8 +26,4 @@ export default ListBoxStory;
 
 const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
 
-export const Light = Template.bind({});
-
-export const Dark = Template.bind({});
-
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Normal = Template.bind({});

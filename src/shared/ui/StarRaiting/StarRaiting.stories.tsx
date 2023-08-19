@@ -1,6 +1,4 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "@/shared/const/theme";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { StarRaiting } from "./StarRaiting";
 
 const StarRaitingStory: ComponentMeta<typeof StarRaiting> = {
@@ -11,8 +9,4 @@ export default StarRaitingStory;
 
 const Template: ComponentStory<typeof StarRaiting> = (args) => <StarRaiting {...args} />;
 
-export const Light = Template.bind({});
-
-export const Dark = Template.bind({});
-
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Normal = Template.bind({});

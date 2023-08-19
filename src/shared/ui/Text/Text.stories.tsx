@@ -1,6 +1,4 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "@/shared/const/theme";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Text, TextTheme } from "./Text";
 
 const TextStory: ComponentMeta<typeof Text> = {
@@ -19,9 +17,4 @@ export default TextStory;
 
 const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;
 
-export const Light = Template.bind({});
-Light.args = {};
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Normal = Template.bind({});

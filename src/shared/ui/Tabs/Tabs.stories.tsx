@@ -1,7 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Tabs } from "./Tabs";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "@/shared/const/theme";
 import { action } from "@storybook/addon-actions";
 
 const TabsStory: ComponentMeta<typeof Tabs> = {
@@ -21,9 +19,4 @@ export default TabsStory;
 
 const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
 
-export const Light = Template.bind({});
-Light.args = {};
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Normal = Template.bind({});

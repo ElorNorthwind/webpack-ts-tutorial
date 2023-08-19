@@ -11,4 +11,4 @@ const ${componentName}Story: ComponentMeta<typeof ${componentName}> = {
 export default ${componentName}Story;
 
 const Template: ComponentStory<typeof ${componentName}> = (args) => <${componentName} {...args} />;
-export const Light = Template.bind({});`;
+export const Normal = Template.bind({});`;

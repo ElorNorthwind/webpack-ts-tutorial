@@ -1,7 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { ArticleSortSelector } from "./ArticleSortSelector";
-import { Theme } from "@/shared/const/theme";
 
 const ArticleSortSelectorStory: ComponentMeta<typeof ArticleSortSelector> = {
   title: "entities/Article/ArticleSortSelector",
@@ -13,8 +11,4 @@ const Template: ComponentStory<typeof ArticleSortSelector> = (args) => (
   <ArticleSortSelector {...args} />
 );
 
-export const Light = Template.bind({});
-
-export const Dark = Template.bind({});
-
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Normal = Template.bind({});

@@ -12,4 +12,4 @@ export default EditableProfileCardStory;
 const Template: ComponentStory<typeof EditableProfileCard> = (args) => (
   <EditableProfileCard {...args} />
 );
-export const Light = Template.bind({});
+export const Normal = Template.bind({});

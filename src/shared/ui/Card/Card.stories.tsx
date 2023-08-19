@@ -1,6 +1,4 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "@/shared/const/theme";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 // eslint-disable-next-line fsd-lorans-plugin/path-checker
 import { Text } from "@/shared/ui/Text";
 import { Card } from "./Card";
@@ -14,8 +12,4 @@ export default CardStory;
 
 const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
-export const Light = Template.bind({});
-
-export const Dark = Template.bind({});
-
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+export const Normal = Template.bind({});

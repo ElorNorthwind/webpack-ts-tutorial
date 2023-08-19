@@ -1,6 +1,4 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "@/shared/const/theme";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Skeleton } from "./Skeleton";
 
 const SkeletonStory: ComponentMeta<typeof Skeleton> = {
@@ -15,7 +13,7 @@ export default SkeletonStory;
 
 const Template: ComponentStory<typeof Skeleton> = (args) => <Skeleton {...args} />;
 
-export const Light = Template.bind({});
+export const Normal = Template.bind({});
 
 export const Round = Template.bind({});
 Round.args = {
@@ -23,6 +21,3 @@ Round.args = {
   width: 100,
   border: "50%",
 };
-
-export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK)];

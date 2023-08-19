@@ -1,6 +1,4 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "@/shared/const/theme";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { CommentCard } from "./CommentCard";
 
 const CommentCardStory: ComponentMeta<typeof CommentCard> = {
@@ -18,9 +16,6 @@ export default CommentCardStory;
 
 const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
 
-export const Light = Template.bind({});
+export const Normal = Template.bind({});
 export const Loading = Template.bind({});
 Loading.args = { isLoading: true };
-export const Dark = Template.bind({});
-
-Dark.decorators = [ThemeDecorator(Theme.DARK)];

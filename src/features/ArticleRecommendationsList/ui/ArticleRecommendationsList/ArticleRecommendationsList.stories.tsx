@@ -41,4 +41,4 @@ export default ArticleRecommendationsListStory;
 const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => (
   <ArticleRecommendationsList {...args} />
 );
-export const Light = Template.bind({});
+export const Normal = Template.bind({});

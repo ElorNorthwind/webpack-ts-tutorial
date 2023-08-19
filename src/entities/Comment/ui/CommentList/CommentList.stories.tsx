@@ -1,6 +1,4 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Theme } from "@/shared/const/theme";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { CommentList } from "./CommentList";
 
 const CommentListStory: ComponentMeta<typeof CommentList> = {
@@ -25,9 +23,6 @@ export default CommentListStory;
 
 const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />;
 
-export const Light = Template.bind({});
+export const Normal = Template.bind({});
 export const Loading = Template.bind({});
 Loading.args = { isLoading: true };
-export const Dark = Template.bind({});
-
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
