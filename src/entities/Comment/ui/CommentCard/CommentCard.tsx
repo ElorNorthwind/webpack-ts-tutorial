@@ -1,11 +1,11 @@
 import { FC, memo } from "react";
-import { RoutePaths } from "@/shared/const/router";
+import { getRouteProfile } from "@/shared/const/router";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppLink } from "@/shared/ui/AppLink";
 import { Avatar } from "@/shared/ui/Avatar";
 import { Skeleton } from "@/shared/ui/Skeleton";
 import { Text } from "@/shared/ui/Text";
-import { Comment } from "../../model/types/comment"; // should error in eslint ;(
+import { Comment } from "../../model/types/comment";
 import cls from "./CommentCard.module.scss";
 import { VStack } from "@/shared/ui/Stack";
 
@@ -36,7 +36,7 @@ export const CommentCard: FC<CommentCardProps> = memo((props: CommentCardProps) 
 
   return (
     <VStack max className={classNames(cls.commentCard, {}, [className])}>
-      <AppLink to={`${RoutePaths.profile}${comment.user.id}`} className={cls.header}>
+      <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
         {comment.user?.avatar ? (
           <Avatar className={cls.avatar} size={30} src={comment.user.avatar} />
         ) : null}

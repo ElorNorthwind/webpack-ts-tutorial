@@ -8,7 +8,7 @@ import { Button, ButtonTheme } from "@/shared/ui/Button";
 import cls from "./Navbar.module.scss";
 import { Text, TextTheme } from "@/shared/ui/Text";
 import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink";
-import { RoutePaths } from "@/shared/const/router";
+import { getRouteArticleCreate } from "@/shared/const/router";
 import { HStack } from "@/shared/ui/Stack";
 import { NotificationButton } from "@/features/notificationButton";
 import { AvatarDropdown } from "@/features/avatarDropdown";
@@ -36,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = memo((props: NavbarProps) => {
         <Text className={cls.appName} title="Мамкогул 3000" theme={TextTheme.INVERTED} />
         <AppLink
           className={cls.createBtn}
-          to={RoutePaths.article_create}
+          to={getRouteArticleCreate()}
           theme={AppLinkTheme.SECONDARY}
         >
           {t("Создать статью")}

@@ -1,7 +1,7 @@
 import { FC, HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
 import ViewsIcon from "@/shared/assets/icons/viewes.svg";
-import { RoutePaths } from "@/shared/const/router";
+import { getRouteArticleDetails } from "@/shared/const/router";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Avatar } from "@/shared/ui/Avatar";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
@@ -50,7 +50,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
           <img src={article.img} className={cls.img} alt={article.title} />
           {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
           <div className={cls.footer}>
-            <AppLink to={RoutePaths.article_details + article.id} target={target}>
+            <AppLink to={getRouteArticleDetails(article.id)} target={target}>
               <Button theme={ButtonTheme.OUTLINE}>{t("Читать далее")}</Button>
             </AppLink>
             {views}
@@ -62,7 +62,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props: ArticleLis
     return (
       <AppLink
         target={target}
-        to={RoutePaths.article_details + article.id}
+        to={getRouteArticleDetails(article.id)}
         className={classNames(cls.articleListItem, {}, [className, cls[view]])}
       >
         <Card className={cls.card}>

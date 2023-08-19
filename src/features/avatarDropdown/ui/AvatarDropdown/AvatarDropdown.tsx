@@ -3,7 +3,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./AvatarDropdown.module.scss";
 import { Dropdown } from "@/shared/ui/Popups";
 import { useTranslation } from "react-i18next";
-import { RoutePaths } from "@/shared/const/router";
+import { getRouteAdmin, getRouteProfile } from "@/shared/const/router";
 import { useSelector } from "react-redux";
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from "@/entities/User";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -40,13 +40,13 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = (props: AvatarDropdownPro
           ? [
               {
                 content: t("Админка"),
-                href: RoutePaths.admin_panel,
+                href: getRouteAdmin(),
               },
             ]
           : []),
         {
           content: t("Профиль"),
-          href: RoutePaths.profile + authData.id,
+          href: getRouteProfile(authData.id),
         },
         {
           content: t("Выйти"),
