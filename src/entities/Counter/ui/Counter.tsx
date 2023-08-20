@@ -24,7 +24,7 @@ export const Counter: React.FC = () => {
       <Button data-testid="decrement-btn" onClick={handleDecrement}>
         -
       </Button>
-      <Button data-testid="decrement-btn" onClick={handleAddFive}>
+      <Button data-testid="add-five-btn" onClick={handleAddFive}>
         +5
       </Button>
       <h1 data-testid="value-title">{counterValue}</h1>
