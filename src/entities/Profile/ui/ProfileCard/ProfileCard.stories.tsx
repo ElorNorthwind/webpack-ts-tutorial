@@ -15,8 +15,7 @@ const ProfileCardStory: ComponentMeta<typeof ProfileCard> = {
       country: Country.Russia,
       city: "Комсомольск-на-Амуре",
       currency: Currency.RUB,
-      avatar:
-        "https://www.pngmart.com/files/22/User-Avatar-Profile-PNG-Isolated-Transparent-Picture.png",
+      avatar: "",
     },
   },
 };
