@@ -1,3 +1,4 @@
+import { Counter } from "@/entities/Counter";
 import { RatingCard } from "@/entities/Rating";
 import { ListBox } from "@/shared/ui/Popups";
 import { VStack } from "@/shared/ui/Stack";
@@ -27,6 +28,7 @@ const MainPage = (): JSX.Element => {
           feedbackTitle="Оставь отзыв к оценочке, братюня"
           hasFeedback
         />
+        <Counter />
       </VStack>
     </Page>
   );
