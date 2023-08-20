@@ -12,7 +12,7 @@
 storybook-static
 .loki/report.*
 .fttemplates
-/reports
+/reports/unit
 
 .DS_Store
 .DS_Store?
