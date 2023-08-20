@@ -1,8 +1,10 @@
 .icon {
   stroke: var(--primary-color);
+  color: var(--primary-color);
   stroke-width: 1px;
 }
 .inverted {
   stroke: var(--inverted-primary-color);
+  color: var(--inverted-primary-color);
   stroke-width: 1px;
 }

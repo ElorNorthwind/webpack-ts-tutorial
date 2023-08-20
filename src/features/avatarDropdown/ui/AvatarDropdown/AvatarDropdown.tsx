@@ -56,7 +56,7 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = (props: AvatarDropdownPro
       trigger={
         <HStack>
           <Text text={authData.username} theme={TextTheme.INVERTED} />
-          <Avatar size={32} className={cls.avatar} src={authData.avatar} />
+          <Avatar size={32} className={cls.avatar} src={authData.avatar} fallbackInverted={true} />
         </HStack>
       }
     />
