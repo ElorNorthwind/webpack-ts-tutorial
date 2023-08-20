@@ -6,7 +6,7 @@ import withMock from "storybook-addon-mock";
 
 const article: Article = {
   id: "1",
-  img: "https://i.imgur.com/lzpIrMo.png",
+  img: "https://onlinepngtools.com/images/examples-onlinepngtools/lawngreen-fill.png",
   createdAt: "20.01.2023",
   views: 123,
   user: { id: "1", username: "user" },
