@@ -6,7 +6,7 @@ import { Page } from "@/widgets/Page";
 
 const MainPage = (): JSX.Element => {
   return (
-    <Page>
+    <Page data-testid={"MainPage"}>
       <VStack max>
         <div>Это див</div>
         <ListBox

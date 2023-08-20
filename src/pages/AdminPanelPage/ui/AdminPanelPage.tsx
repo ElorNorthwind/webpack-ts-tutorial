@@ -3,7 +3,7 @@ import { Page } from "@/widgets/Page";
 
 const AdminPanelPage = (): JSX.Element => {
   const { t } = useTranslation();
-  return <Page>{t("Это админка (на самом деле нет)")}</Page>;
+  return <Page data-testid={"AdminPanelPage"}>{t("Это админка (на самом деле нет)")}</Page>;
 };
 
 export default AdminPanelPage;

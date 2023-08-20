@@ -16,7 +16,7 @@ const ProfilePage: React.FC<ProfilePageProps> = (props: ProfilePageProps) => {
   }
 
   return (
-    <Page>
+    <Page data-testid={"ProfilePage"}>
       <VStack gap="16" max>
         <EditableProfileCard id={id} />
         <ProfileRating profileId={id} />
