@@ -38,7 +38,11 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <Page onScrollEnd={onLoadNextPart} className={classNames(cls.articlesPage, {}, [className])}>
+      <Page
+        onScrollEnd={onLoadNextPart}
+        className={classNames(cls.articlesPage, {}, [className])}
+        data-testid="ArticlesPage"
+      >
         <ArticlesPageFilters />
         <ArticleInfiniteList className={cls.list} />
       </Page>
