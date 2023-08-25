@@ -718,6 +718,34 @@
       ],
       "blocks": [],
       "id": "Z25Vq2s"
+    },
+    {
+      "title": "Testing Article",
+      "subtitle": "Nothing to see here, move along",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Trutovsky_001.jpg/1280px-Trutovsky_001.jpg",
+      "views": 1302,
+      "createdAt": "12.03.2023",
+      "userId": "1",
+      "type": [
+        "science",
+        "art"
+      ],
+      "blocks": [],
+      "id": "ZvFAZVz"
+    },
+    {
+      "title": "Testing Article",
+      "subtitle": "Nothing to see here, move along",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Trutovsky_001.jpg/1280px-Trutovsky_001.jpg",
+      "views": 1302,
+      "createdAt": "12.03.2023",
+      "userId": "1",
+      "type": [
+        "science",
+        "art"
+      ],
+      "blocks": [],
+      "id": "JSqfqTx"
     }
   ],
   "comments": [
@@ -786,6 +814,12 @@
       "userId": "1",
       "text": "s",
       "id": "V3zjiq4"
+    },
+    {
+      "articleId": "JSqfqTx",
+      "userId": "4",
+      "text": "this is a test comment",
+      "id": "KUbl4kw"
     }
   ],
   "users": [

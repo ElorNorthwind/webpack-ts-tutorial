@@ -35,4 +35,12 @@ describe("article details spec", () => {
     cy.setRate(4, "this is a test feedback");
     cy.get("[data-selected=true]").should("have.length", 4);
   });
+
+  it("rating example with fixtures", () => {
+    cy.intercept("GET", "**/articles/*", { fixture: "article-details.json" });
+    cy.getByTestId("ArticleDetails.Info");
+    cy.getByTestId("RatingCard").scrollIntoView();
+    cy.setRate(4, "this is a test feedback");
+    cy.get("[data-selected=true]").should("have.length", 4);
+  });
 });
