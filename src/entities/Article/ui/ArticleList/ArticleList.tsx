@@ -48,6 +48,7 @@ export const ArticleList: FC<ArticleListProps> = memo((props: ArticleListProps) 
     <>
       <div
         className={classNames(cls.articleList, {}, [className, cls[view]])}
+        data-testid={"ArticleList"}
         style={{
           height: `${String(rowVirtualizer.getTotalSize())}px`,
         }}

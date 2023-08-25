@@ -7,7 +7,7 @@ describe("routing", () => {
       cy.get(selectByTestId("MainPage")).should("exist");
     });
     it("try to access profile page", () => {
-      cy.visit("/profile/1");
+      cy.visit("/profile/4");
       cy.get(selectByTestId("MainPage")).should("exist");
     });
     it("try to access non existant rout", () => {
@@ -21,7 +21,7 @@ describe("routing", () => {
       cy.login();
     });
     it("open profile page", () => {
-      cy.visit("/profile/1");
+      cy.visit("/profile/4");
       cy.get(selectByTestId("ProfilePage")).should("exist");
     });
     it("open article list", () => {

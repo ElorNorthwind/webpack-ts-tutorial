@@ -60,6 +60,7 @@ module.exports = {
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "fsd-lorans-plugin/path-checker": ["error", { alias: "@" }],
+    "@typescript-eslint/no-namespace": "off",
     "fsd-lorans-plugin/public-api-imports": [
       "error",
       {

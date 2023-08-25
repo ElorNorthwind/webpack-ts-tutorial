@@ -62,29 +62,40 @@ export const RatingCard: FC<RatingCardProps> = memo((props: RatingCardProps) => 
   }, [onCancel, starCount]);
 
   const formButtons = isMobile ? (
-    <Button onClick={acceptHandler} size={ButtonSize.L} fullWidth>
+    <Button onClick={acceptHandler} size={ButtonSize.L} fullWidth data-testid={"RatingCard.Submit"}>
       {t("Отправить")}
     </Button>
   ) : (
     <HStack justify="end" max gap={"16"}>
-      <Button onClick={calcelHandler} theme={ButtonTheme.OUTLINE_RED}>
+      <Button
+        onClick={calcelHandler}
+        theme={ButtonTheme.OUTLINE_RED}
+        data-testid={"RatingCard.Close"}
+      >
         {t("Закрыть")}
       </Button>
-      <Button onClick={acceptHandler}>{t("Отправить")}</Button>
+      <Button onClick={acceptHandler} data-testid={"RatingCard.Submit"}>
+        {t("Отправить")}
+      </Button>
     </HStack>
   );
 
   const modalContent = (
     <VStack max gap={"32"}>
       <Text title={feedbackTitle} />
-      <Input value={feedback} onChange={setFeedback} placeholder={t("Ваш отзыв")} />
+      <Input
+        value={feedback}
+        onChange={setFeedback}
+        placeholder={t("Ваш отзыв")}
+        data-testid={"RatingCard.Input"}
+      />
       {formButtons}
     </VStack>
   );
 
   return (
     <Card className={classNames("", {}, [className])} max>
-      <VStack align={"center"}>
+      <VStack align={"center"} data-testid={"RatingCard"}>
         <Text title={starCount ? t("Ваша оценка") : title} text={feedbackText} />
         <StarRaiting selectedStars={starCount} size={40} onSelect={onSelectStars} />
       </VStack>
