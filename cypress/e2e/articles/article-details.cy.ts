@@ -44,3 +44,5 @@ describe("article details spec", () => {
     cy.get("[data-selected=true]").should("have.length", 4);
   });
 });
+
+export {};

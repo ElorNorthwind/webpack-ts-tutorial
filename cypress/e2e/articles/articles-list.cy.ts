@@ -16,3 +16,5 @@ describe("article list spec", () => {
     cy.getByTestId("ArticleListItem").should("have.length.greaterThan", 3);
   });
 });
+
+export {};

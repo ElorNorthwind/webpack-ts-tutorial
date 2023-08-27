@@ -1,0 +1,11 @@
+{
+  "id": "1",
+  "first": "Иван",
+  "lastname": "Ненастоящий",
+  "age": 35,
+  "currency": "RUB",
+  "country": "Russia",
+  "city": "Moscow",
+  "username": "admin",
+  "avatar": "https://i.imgur.com/lzpIrMo.png"
+}

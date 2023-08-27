@@ -25,3 +25,5 @@ describe("user visits profile page", () => {
     cy.getByTestId("ProfileCard.lastname").should("have.value", newLastname);
   });
 });
+
+export {};

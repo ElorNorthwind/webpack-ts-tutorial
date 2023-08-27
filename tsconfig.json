@@ -26,6 +26,8 @@
     "./src/**/*.tsx",
     "./webpack.config.ts",
     "./scripts/**/*.ts",
-    "./*.config.ts"
+    "./*.config.ts",
+    "./cypress/**/*.ts",
+    "./cypress/**/*.tsx"
   ]
 }
