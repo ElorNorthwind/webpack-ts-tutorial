@@ -8,7 +8,7 @@ const MainPage = (): JSX.Element => {
   return (
     <Page data-testid={"MainPage"}>
       <VStack max>
-        <div>Это див</div>
+        <div>Это новая версия пиу пиу</div>
         <ListBox
           defaultValue="Выберите значение"
           onChange={(value: string) => {}}
