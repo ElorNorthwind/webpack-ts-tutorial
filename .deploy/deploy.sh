@@ -2,7 +2,7 @@ PROJECT_NAME=$1 # parameter
 BUILD_FOLDER="build"
 DEST_PATH="/var/www/$PROJECT_NAME/html"
 
-cd ~/"$PROJECT_NAME" # cd to project folder
+cd /home/lorans/"$PROJECT_NAME" # cd to project folder
 git pull
 npm install
 npm run build:prod # build the project
