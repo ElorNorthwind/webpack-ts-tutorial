@@ -14,6 +14,7 @@ import { VStack } from "@/shared/ui/Stack";
 import { ArticleRecommendationsList } from "@/features/ArticleRecommendationsList";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleRating } from "@/features/articleRating";
+import { getFeatureFlags } from "@/shared/lib/features";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -26,6 +27,7 @@ const reducers: ReducersList = {
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const { className } = props;
   const { id } = useParams<{ id: string }>();
+  const isArticleRatingEnabled = getFeatureFlags("isArticleRatingEnabled");
 
   if (!id) {
     return null;
@@ -37,7 +39,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         <VStack max gap="16">
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          <ArticleRating articleId={id} />
+          {isArticleRatingEnabled && <ArticleRating articleId={id} />}
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>

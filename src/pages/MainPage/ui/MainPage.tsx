@@ -1,10 +1,13 @@
 import { Counter } from "@/entities/Counter";
 import { RatingCard } from "@/entities/Rating";
+import { getFeatureFlags } from "@/shared/lib/features";
 import { ListBox } from "@/shared/ui/Popups";
 import { VStack } from "@/shared/ui/Stack";
 import { Page } from "@/widgets/Page";
 
 const MainPage = (): JSX.Element => {
+  const isCounterEnabled = getFeatureFlags("isCounterEnabled");
+
   return (
     <Page data-testid={"MainPage"}>
       <VStack max>
@@ -28,7 +31,7 @@ const MainPage = (): JSX.Element => {
           feedbackTitle="Оставь отзыв к оценочке, братюня"
           hasFeedback
         />
-        <Counter />
+        {isCounterEnabled && <Counter />}
       </VStack>
     </Page>
   );
