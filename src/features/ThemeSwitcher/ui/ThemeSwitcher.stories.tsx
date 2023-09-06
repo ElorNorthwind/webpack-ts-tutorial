@@ -1,10 +1,12 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
 const ThemeSwitcherStory: ComponentMeta<typeof ThemeSwitcher> = {
   title: "widget/ThemeSwitcher",
   component: ThemeSwitcher,
   args: {},
+  decorators: [StoreDecorator({})],
 };
 export default ThemeSwitcherStory;
 
