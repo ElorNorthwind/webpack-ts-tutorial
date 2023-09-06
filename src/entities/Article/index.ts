@@ -1,3 +1,4 @@
+export { initAuthData } from "../User/model/services/initAuthData";
 export {
   ArticleSortField,
   ArticleType,
