@@ -20,7 +20,10 @@
       "views": 1302,
       "createdAt": "12.03.2023",
       "userId": "1",
-      "type": ["science", "art"],
+      "type": [
+        "science",
+        "art"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -62,7 +65,11 @@
       "views": 122,
       "createdAt": "19.03.2022",
       "userId": "1",
-      "type": ["science", "art", "dilly-dalling"],
+      "type": [
+        "science",
+        "art",
+        "dilly-dalling"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -104,7 +111,10 @@
       "views": 302,
       "createdAt": "20.04.2023",
       "userId": "1",
-      "type": ["science", "art"],
+      "type": [
+        "science",
+        "art"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -146,7 +156,11 @@
       "views": 522,
       "createdAt": "19.03.2022",
       "userId": "1",
-      "type": ["science", "art", "dilly-dalling"],
+      "type": [
+        "science",
+        "art",
+        "dilly-dalling"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -188,7 +202,9 @@
       "views": 12,
       "createdAt": "11.02.2023",
       "userId": "1",
-      "type": ["science"],
+      "type": [
+        "science"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -230,7 +246,11 @@
       "views": 72,
       "createdAt": "29.03.2022",
       "userId": "1",
-      "type": ["science", "art", "dilly-dalling"],
+      "type": [
+        "science",
+        "art",
+        "dilly-dalling"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -272,7 +292,10 @@
       "views": 102,
       "createdAt": "19.03.2023",
       "userId": "1",
-      "type": ["science", "art"],
+      "type": [
+        "science",
+        "art"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -314,7 +337,11 @@
       "views": 122,
       "createdAt": "19.03.2022",
       "userId": "1",
-      "type": ["science", "art", "dilly-dalling"],
+      "type": [
+        "science",
+        "art",
+        "dilly-dalling"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -356,7 +383,11 @@
       "views": 102,
       "createdAt": "19.03.2023",
       "userId": "1",
-      "type": ["science", "art", "it"],
+      "type": [
+        "science",
+        "art",
+        "it"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -398,7 +429,11 @@
       "views": 122,
       "createdAt": "19.03.2022",
       "userId": "1",
-      "type": ["science", "art", "dilly-dalling"],
+      "type": [
+        "science",
+        "art",
+        "dilly-dalling"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -440,7 +475,10 @@
       "views": 102,
       "createdAt": "19.03.2023",
       "userId": "1",
-      "type": ["science", "art"],
+      "type": [
+        "science",
+        "art"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -482,7 +520,11 @@
       "views": 132,
       "createdAt": "19.03.2022",
       "userId": "1",
-      "type": ["science", "art", "dilly-dalling"],
+      "type": [
+        "science",
+        "art",
+        "dilly-dalling"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -524,7 +566,10 @@
       "views": 182,
       "createdAt": "19.03.2023",
       "userId": "1",
-      "type": ["science", "art"],
+      "type": [
+        "science",
+        "art"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -566,7 +611,11 @@
       "views": 122,
       "createdAt": "19.03.2022",
       "userId": "1",
-      "type": ["science", "art", "dilly-dalling"],
+      "type": [
+        "science",
+        "art",
+        "dilly-dalling"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -607,7 +656,10 @@
       "views": 1302,
       "createdAt": "12.03.2023",
       "userId": "1",
-      "type": ["science", "art"],
+      "type": [
+        "science",
+        "art"
+      ],
       "blocks": [],
       "id": "Y_Ys08z"
     },
@@ -618,7 +670,10 @@
       "views": 1302,
       "createdAt": "12.03.2023",
       "userId": "1",
-      "type": ["science", "art"],
+      "type": [
+        "science",
+        "art"
+      ],
       "blocks": [],
       "id": "kAKmnXP"
     },
@@ -629,7 +684,10 @@
       "views": 1302,
       "createdAt": "12.03.2023",
       "userId": "1",
-      "type": ["science", "art"],
+      "type": [
+        "science",
+        "art"
+      ],
       "blocks": [],
       "id": "sVwh9cs"
     },
@@ -640,7 +698,10 @@
       "views": 1302,
       "createdAt": "12.03.2023",
       "userId": "1",
-      "type": ["science", "art"],
+      "type": [
+        "science",
+        "art"
+      ],
       "blocks": [],
       "id": "fezHYub"
     },
@@ -651,7 +712,10 @@
       "views": 1302,
       "createdAt": "12.03.2023",
       "userId": "1",
-      "type": ["science", "art"],
+      "type": [
+        "science",
+        "art"
+      ],
       "blocks": [],
       "id": "Z25Vq2s"
     },
@@ -662,7 +726,10 @@
       "views": 1302,
       "createdAt": "12.03.2023",
       "userId": "1",
-      "type": ["science", "art"],
+      "type": [
+        "science",
+        "art"
+      ],
       "blocks": [],
       "id": "ZvFAZVz"
     }
@@ -740,10 +807,17 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_green_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       },
       "avatar": "https://i.imgur.com/lzpIrMo.png"
     },
@@ -751,10 +825,17 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_green_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       },
       "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
     },
@@ -762,10 +843,17 @@
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_green_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       },
       "avatar": "https://prefr.co/wp-content/uploads/2018/02/Hire-Community-Manager.jpg"
     },
@@ -773,10 +861,17 @@
       "id": "4",
       "username": "test",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_green_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
       },
       "avatar": "https://i.imgur.com/lzpIrMo.png"
     }
