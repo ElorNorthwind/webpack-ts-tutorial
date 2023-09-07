@@ -817,7 +817,8 @@
       "jsonSettings": {
         "theme": "app_green_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlePageVisited": true
       },
       "avatar": "https://i.imgur.com/lzpIrMo.png"
     },
