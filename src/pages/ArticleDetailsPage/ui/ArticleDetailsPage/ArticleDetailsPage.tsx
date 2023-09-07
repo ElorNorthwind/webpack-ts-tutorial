@@ -14,7 +14,7 @@ import { VStack } from "@/shared/ui/Stack";
 import { ArticleRecommendationsList } from "@/features/ArticleRecommendationsList";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleRating } from "@/features/articleRating";
-import { getFeatureFlags, toggleFeatures } from "@/shared/lib/features";
+import { ToggleFeatures } from "@/shared/lib/features";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -32,19 +32,13 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     return null;
   }
 
-  const articleRating = toggleFeatures({
-    name: "isCounterEnabled",
-    on: () => <ArticleRating articleId={id} />,
-    off: () => undefined,
-  });
-
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
         <VStack max gap="16">
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {articleRating}
+          <ToggleFeatures feature="isArticleRatingEnabled" on={<ArticleRating articleId={id} />} />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>
