@@ -5,6 +5,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import cls from "./ArticlesViewSelector.module.scss";
 import { ArticleView } from "@/entities/Article";
+import { Icon } from "@/shared/ui/Icon";
 
 interface ArticlesViewSelectorProps {
   className?: string;
@@ -36,6 +37,7 @@ export const ArticlesViewSelector: FC<ArticlesViewSelectorProps> = memo(
             onClick={onClick(viewType.view)}
             className={classNames("", { [cls.notSelected]: view !== viewType.view }, [])}
           >
+            {/* <Icon Svg={viewType.icon} height={24} width={24} className={cls.icon} /> */}
             <viewType.icon className={cls.icon}></viewType.icon>
           </Button>
         ))}

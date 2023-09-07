@@ -6,6 +6,7 @@ import cls from "./ThemeSwitcher.module.scss";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { saveJsonSettings } from "@/entities/User";
+import { Icon } from "@/shared/ui/Icon";
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -29,7 +30,8 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = memo((props: ThemeSwi
       onClick={onToggleHandler}
       className={classNames(cls.themeSwitcher, {}, [className])}
     >
-      <ThemeThinIcon className={cls.themeIconThin} />
+      <Icon Svg={ThemeThinIcon} width={40} height={40} inverted />
+      {/* <ThemeThinIcon className={cls.themeIconThin} /> */}
     </Button>
   );
 });

@@ -25,7 +25,7 @@ export const NotificationButton: FC<NotificationButtonProps> = memo(
 
     const notificationBtn = (
       <Button theme={ButtonTheme.CLEAR} className={cls.iconBtn} onClick={toggleClose}>
-        <Icon Svg={notificationIcon} inverted />
+        <Icon Svg={notificationIcon} inverted width={24} height={24} />
       </Button>
     );
 
