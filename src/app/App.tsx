@@ -11,6 +11,8 @@ import "./styles/index.scss";
 import { initAuthData } from "@/entities/Article";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { PageLoader } from "@/widgets/PageLoader";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { MainLayout } from "@/shared/layouts/MainLayout";
 
 const App = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -25,15 +27,32 @@ const App = (): JSX.Element => {
   }
 
   return (
-    <div className={classNames("app", {}, [])}>
-      <Suspense fallback="">
-        <Navbar />
-        <div className={"content-page"}>
-          <Sidebar />
-          {inited && <AppRouter />}
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <div className={classNames("app_redesigned", {}, [])}>
+          <Suspense fallback={<PageLoader />}>
+            <MainLayout
+              header={<Navbar />}
+              sidebar={<Sidebar />}
+              content={<AppRouter />}
+              toolbar={<div>Это тулбар</div>}
+            />
+          </Suspense>
         </div>
-      </Suspense>
-    </div>
+      }
+      off={
+        <div className={classNames("app", {}, [])}>
+          <Suspense fallback="">
+            <Navbar />
+            <div className={"content-page"}>
+              <Sidebar />
+              {inited && <AppRouter />}
+            </div>
+          </Suspense>
+        </div>
+      }
+    />
   );
 };
 

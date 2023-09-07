@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { StateSchema } from "@/app/providers/StoreProvider";
 import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
 import { TestProps } from "@/shared/types/tests";
+import { toggleFeatures } from "@/shared/lib/features";
 
 interface PageProps extends TestProps {
   className?: string;
@@ -44,7 +45,15 @@ export const Page: FC<PageProps> = (props: PageProps) => {
   return (
     <main
       ref={wrapperRef}
-      className={classNames(cls.page, {}, [className])}
+      className={classNames(
+        toggleFeatures({
+          name: "isAppRedesigned",
+          on: () => cls.pageRedesigned,
+          off: () => cls.page,
+        }),
+        {},
+        [className],
+      )}
       onScroll={onScroll}
       id={"page_wrapper"}
       data-testid={props["data-testid"] ?? "Page"}

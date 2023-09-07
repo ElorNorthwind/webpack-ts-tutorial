@@ -10,6 +10,7 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { HStack } from "@/shared/ui/Stack";
 import { Text, TextTheme } from "@/shared/ui/Text";
 import { Avatar } from "@/shared/ui/Avatar";
+import { ToggleFeatures } from "@/shared/lib/features";
 
 interface AvatarDropdownProps {
   className?: string;
@@ -55,8 +56,28 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = (props: AvatarDropdownPro
       ]}
       trigger={
         <HStack>
-          <Text text={authData.username} theme={TextTheme.INVERTED} />
-          <Avatar size={32} className={cls.avatar} src={authData.avatar} fallbackInverted={true} />
+          <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+              <Avatar
+                size={32}
+                className={cls.avatar}
+                src={authData.avatar}
+                fallbackInverted={true}
+              />
+            }
+            off={
+              <>
+                <Text text={authData.username} theme={TextTheme.INVERTED} />
+                <Avatar
+                  size={32}
+                  className={cls.avatar}
+                  src={authData.avatar}
+                  fallbackInverted={true}
+                />
+              </>
+            }
+          />
         </HStack>
       }
     />
