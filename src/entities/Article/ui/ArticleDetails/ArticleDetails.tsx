@@ -9,10 +9,10 @@ import {
   ReducersList,
 } from "@/shared/lib/compomemts/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Icon } from "@/shared/ui/Icon";
-import { Skeleton } from "@/shared/ui/Skeleton";
-import { Text, TextAlign, TextSize, TextTheme } from "@/shared/ui/Text";
+import { Avatar } from "@/shared/ui/deprecated/Avatar";
+import { Icon } from "@/shared/ui/deprecated/Icon";
+import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
+import { Text, TextAlign, TextSize, TextTheme } from "@/shared/ui/deprecated/Text";
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -26,7 +26,7 @@ import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleC
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import cls from "./ArticleDetails.module.scss";
-import { HStack, VStack } from "@/shared/ui/Stack";
+import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
 
 interface ArticleDetailsProps {
   className?: string;

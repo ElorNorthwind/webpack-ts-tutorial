@@ -1,7 +1,7 @@
-import { Button } from "@/shared/ui/Button";
+import { Button } from "@/shared/ui/deprecated/Button";
 import { useCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
 import { useCounterActions } from "../model/slice/counterSlice";
-import { HStack } from "@/shared/ui/Stack";
+import { HStack } from "@/shared/ui/deprecated/Stack";
 
 export const Counter: React.FC = () => {
   const counterValue = useCounterValue();

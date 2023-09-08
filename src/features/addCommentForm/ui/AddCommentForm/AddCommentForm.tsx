@@ -7,15 +7,15 @@ import {
   ReducersList,
 } from "@/shared/lib/compomemts/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { Input } from "@/shared/ui/Input";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
+import { Input } from "@/shared/ui/deprecated/Input";
 import { getAddCommentFormText } from "../../model/selectors/addCommentFormSelectors";
 import {
   addCommentFormActions,
   addCommentFormReducer,
 } from "../../model/slices/addCommentFormSlice";
 import cls from "./AddCommentForm.module.scss";
-import { HStack } from "@/shared/ui/Stack";
+import { HStack } from "@/shared/ui/deprecated/Stack";
 
 export interface AddCommentFormProps {
   className?: string;

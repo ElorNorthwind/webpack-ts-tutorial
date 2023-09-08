@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button } from "@/shared/ui/Button";
+import { Button } from "@/shared/ui/deprecated/Button";
 
 // Компонент для ручного тестирования ErrorBoundry
 export const BugButton: React.FC = () => {

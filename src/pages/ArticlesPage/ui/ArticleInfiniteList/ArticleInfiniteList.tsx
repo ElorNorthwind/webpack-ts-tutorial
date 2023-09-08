@@ -7,7 +7,7 @@ import {
   getArticlesPageView,
 } from "../../model/selectors/articlesPageSelectors";
 import { ArticleList } from "@/entities/Article";
-import { Text } from "@/shared/ui/Text";
+import { Text } from "@/shared/ui/deprecated/Text";
 
 interface ArticleInfiniteListProps {
   className?: string;

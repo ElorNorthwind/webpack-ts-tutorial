@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Loader } from "@/shared/ui/Loader";
-import { Modal } from "@/shared/ui/Modal";
+import { Loader } from "@/shared/ui/deprecated/Loader";
+import { Modal } from "@/shared/ui/deprecated/Modal";
 import { LoginFormAsync } from "../LoginForm/LoginForm.async";
 import cls from "./LoginModal.module.scss";
 
@@ -11,9 +11,7 @@ interface LoginModalProps {
   onClose: () => void;
 }
 
-export const LoginModal: React.FC<LoginModalProps> = (
-  props: LoginModalProps
-) => {
+export const LoginModal: React.FC<LoginModalProps> = (props: LoginModalProps) => {
   const { className, isOpen, onClose } = props;
 
   return (

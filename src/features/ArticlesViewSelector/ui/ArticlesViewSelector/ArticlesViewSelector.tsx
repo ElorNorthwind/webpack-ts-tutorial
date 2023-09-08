@@ -2,10 +2,10 @@ import { FC, memo } from "react";
 import listIcon from "@/shared/assets/icons/list.svg";
 import tilesIcon from "@/shared/assets/icons/tiles.svg";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
 import cls from "./ArticlesViewSelector.module.scss";
 import { ArticleView } from "@/entities/Article";
-import { Icon } from "@/shared/ui/Icon";
+import { Icon } from "@/shared/ui/deprecated/Icon";
 
 interface ArticlesViewSelectorProps {
   className?: string;
@@ -37,8 +37,7 @@ export const ArticlesViewSelector: FC<ArticlesViewSelectorProps> = memo(
             onClick={onClick(viewType.view)}
             className={classNames("", { [cls.notSelected]: view !== viewType.view }, [])}
           >
-            {/* <Icon Svg={viewType.icon} height={24} width={24} className={cls.icon} /> */}
-            <viewType.icon className={cls.icon}></viewType.icon>
+            <Icon Svg={viewType.icon} height={24} width={24} className={cls.icon} />
           </Button>
         ))}
       </div>

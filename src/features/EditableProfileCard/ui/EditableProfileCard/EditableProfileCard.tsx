@@ -6,8 +6,8 @@ import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitial
 import { Currency } from "@/entities/Currency";
 import { Country } from "@/entities/Country";
 import { useSelector } from "react-redux";
-import { Text, TextTheme } from "@/shared/ui/Text";
-import { VStack } from "@/shared/ui/Stack";
+import { Text, TextTheme } from "@/shared/ui/deprecated/Text";
+import { VStack } from "@/shared/ui/deprecated/Stack";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
 import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
 import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";

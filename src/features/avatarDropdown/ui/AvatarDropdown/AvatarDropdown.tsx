@@ -1,15 +1,15 @@
 import { FC, useCallback } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./AvatarDropdown.module.scss";
-import { Dropdown } from "@/shared/ui/Popups";
+import { Dropdown } from "@/shared/ui/deprecated/Popups";
 import { useTranslation } from "react-i18next";
 import { getRouteAdmin, getRouteProfile } from "@/shared/const/router";
 import { useSelector } from "react-redux";
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from "@/entities/User";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { HStack } from "@/shared/ui/Stack";
-import { Text, TextTheme } from "@/shared/ui/Text";
-import { Avatar } from "@/shared/ui/Avatar";
+import { HStack } from "@/shared/ui/deprecated/Stack";
+import { Text, TextTheme } from "@/shared/ui/deprecated/Text";
+import { Avatar } from "@/shared/ui/deprecated/Avatar";
 import { ToggleFeatures } from "@/shared/lib/features";
 
 interface AvatarDropdownProps {

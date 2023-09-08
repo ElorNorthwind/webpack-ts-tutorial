@@ -1,9 +1,9 @@
 import { FC, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { HStack } from "@/shared/ui/Stack";
-import { Text } from "@/shared/ui/Text";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
+import { HStack } from "@/shared/ui/deprecated/Stack";
+import { Text } from "@/shared/ui/deprecated/Text";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
 import { useSelector } from "react-redux";
 import { getUserAuthData } from "@/entities/User";
 import { getProfileData } from "../../model/selectors/getProfileData/getProfileData";

@@ -7,9 +7,9 @@ import {
   ReducersList,
 } from "@/shared/lib/compomemts/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
-import { Input } from "@/shared/ui/Input";
-import { Text, TextTheme } from "@/shared/ui/Text";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
+import { Input } from "@/shared/ui/deprecated/Input";
+import { Text, TextTheme } from "@/shared/ui/deprecated/Text";
 import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
@@ -40,14 +40,14 @@ const LoginForm: React.FC<LoginFormProps> = memo((props: LoginFormProps) => {
     (value: string) => {
       dispatch(loginActions.setUsername(value));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangePassword = useCallback(
     (value: string) => {
       dispatch(loginActions.setPassword(value));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onLoginClick = useCallback(async () => {
