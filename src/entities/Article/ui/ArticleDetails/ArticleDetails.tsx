@@ -26,7 +26,7 @@ import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleC
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import cls from "./ArticleDetails.module.scss";
-import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 
 interface ArticleDetailsProps {
   className?: string;

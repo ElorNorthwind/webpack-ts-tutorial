@@ -2,7 +2,7 @@ import { Counter } from "@/entities/Counter";
 import { RatingCard } from "@/entities/Rating";
 import { toggleFeatures } from "@/shared/lib/features";
 import { ListBox } from "@/shared/ui/deprecated/Popups";
-import { VStack } from "@/shared/ui/deprecated/Stack";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 import { Page } from "@/widgets/Page";
 
 const counter = toggleFeatures({

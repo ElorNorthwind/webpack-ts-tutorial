@@ -11,7 +11,7 @@ import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByAr
 import { Text, TextSize } from "@/shared/ui/deprecated/Text";
 import { AddCommentForm } from "@/features/addCommentForm";
 import { CommentList } from "@/entities/Comment";
-import { VStack } from "@/shared/ui/deprecated/Stack";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 interface ArticleDetailsCommentsProps {
   id?: string;

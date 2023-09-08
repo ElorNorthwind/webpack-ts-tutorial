@@ -7,7 +7,7 @@ import { getRouteAdmin, getRouteProfile } from "@/shared/const/router";
 import { useSelector } from "react-redux";
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from "@/entities/User";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { HStack } from "@/shared/ui/deprecated/Stack";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 import { Text, TextTheme } from "@/shared/ui/deprecated/Text";
 import { Avatar } from "@/shared/ui/deprecated/Avatar";
 import { ToggleFeatures } from "@/shared/lib/features";

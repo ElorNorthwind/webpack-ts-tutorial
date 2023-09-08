@@ -7,7 +7,7 @@ import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
 import { Text } from "@/shared/ui/deprecated/Text";
 import { Comment } from "../../model/types/comment";
 import cls from "./CommentCard.module.scss";
-import { VStack } from "@/shared/ui/deprecated/Stack";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 interface CommentCardProps {
   className?: string;

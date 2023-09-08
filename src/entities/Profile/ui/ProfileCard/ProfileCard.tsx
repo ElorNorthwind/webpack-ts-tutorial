@@ -8,7 +8,7 @@ import { Loader } from "@/shared/ui/deprecated/Loader";
 import { Text, TextAlign, TextTheme } from "@/shared/ui/deprecated/Text";
 import { Profile } from "../../model/types/profile";
 import cls from "./ProfileCard.module.scss";
-import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 
 interface ProfileCardProps {
   className?: string;
