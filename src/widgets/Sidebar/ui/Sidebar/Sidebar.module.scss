@@ -4,44 +4,44 @@
   background: var(--inverted-bg-color);
   position: relative;
   transition: width 0.2s;
-}
-
-.switchers {
-  position: absolute;
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.lang {
-  margin-left: 20px;
-}
-
-.collapseBtn {
-  position: absolute;
-  right: calc(0px - var(--font-line-l));
-  bottom: var(--font-line-l);
-  border-radius: 0 50% 50% 0;
-  z-index: 1;
-}
-
-.items {
-  margin-top: 20px;
-  margin-left: 25px;
-}
-
-.collapsed {
-  width: var(--sidebar-width-collapsed);
-  transition: width 0.2s;
 
   .switchers {
-    flex-direction: column;
-    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .lang {
-    margin-left: 0px;
+    margin-left: 20px;
+  }
+
+  .collapseBtn {
+    position: absolute;
+    right: calc(0px - var(--font-line-l));
+    bottom: var(--font-line-l);
+    border-radius: 0 50% 50% 0;
+    z-index: 1;
+  }
+
+  .items {
+    margin-top: 20px;
+    margin-left: 25px;
+  }
+
+  &.collapsed {
+    width: var(--sidebar-width-collapsed);
+    transition: width 0.2s;
+
+    .switchers {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lang {
+      margin-left: 0px;
+    }
   }
 }
 
@@ -50,8 +50,55 @@
   width: 220px;
   height: 100%;
   border-radius: 32px;
-}
+  position: relative;
+  transition: width 0.2s;
 
-.appLogo {
-  padding-top: 20px;
+  .appLogo {
+    padding-top: 20px;
+  }
+
+  .items {
+    margin-top: 40px;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .collapseBtn {
+    position: absolute;
+    right: 5px;
+    top: calc(50% - 12px);
+    z-index: 1;
+    transform: rotate(90deg);
+    transition: transform 0.3s;
+  }
+
+  .switchers {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 16px;
+  }
+
+  &.collapsed {
+    width: 50px;
+
+    .collapseBtn {
+      transform: rotate(270deg);
+    }
+
+    .items {
+      margin-top: 60px;
+    }
+
+    .switchers {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lang {
+      margin-left: 0px;
+    }
+  }
 }
