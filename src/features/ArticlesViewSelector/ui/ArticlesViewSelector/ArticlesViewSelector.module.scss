@@ -2,16 +2,28 @@
   width: 100%;
   display: flex;
   justify-content: end;
+
+  .icon {
+    fill: var(--primary-color);
+    // width: 24px;
+    // height: 24px;
+    stroke: none;
+  }
+
+  .notSelected .icon {
+    fill: var(--secondary-color);
+    // stroke-width: 1.6px;
+  }
 }
 
-.icon {
-  fill: var(--primary-color);
-  // width: 24px;
-  // height: 24px;
-  stroke: none;
-}
+.articlesViewSelectorRedesigned {
+  // width: 100%;
+  // display: flex;
+  // justify-content: end;
+  // flex-direction: column;
 
-.notSelected .icon {
-  fill: var(--secondary-color);
-  // stroke-width: 1.6px;
+  .notSelected {
+    color: var(--light-bg-redesigned);
+    // stroke-width: 1.6px;
+  }
 }

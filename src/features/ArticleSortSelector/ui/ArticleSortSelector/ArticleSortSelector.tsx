@@ -2,9 +2,13 @@ import { FC, memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./ArticleSortSelector.module.scss";
-import { Select, SelectOptions } from "@/shared/ui/deprecated/Select";
+import { Select as SelectDeprecated, SelectOptions } from "@/shared/ui/deprecated/Select";
 import { SortOrder } from "@/shared/types/sort";
 import { ArticleSortField } from "@/entities/Article";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { ListBox } from "@/shared/ui/redesigned/Popups";
+import { VStack } from "@/shared/ui/redesigned/Stack";
+import { Text } from "@/shared/ui/redesigned/Text";
 
 interface ArticleSortSelectorProps {
   className?: string;
@@ -50,20 +54,34 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo(
     );
 
     return (
-      <div className={classNames(cls.articleSortSelector, {}, [className])}>
-        <Select<ArticleSortField>
-          value={sort}
-          onChange={onChangeSort}
-          options={sortOptions}
-          label={t("Сортировать по") || ""}
-        />
-        <Select<SortOrder>
-          value={order}
-          onChange={onChangeOrder}
-          options={orderOptions}
-          label={t("Порядок") || ""}
-        />
-      </div>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <div className={classNames(cls.articleSortSelector, {}, [className])}>
+            <VStack>
+              <Text title={t("Сортировать по") + ":" || ""} />
+              <ListBox<ArticleSortField> value={sort} onChange={onChangeSort} items={sortOptions} />
+              <ListBox<SortOrder> value={order} onChange={onChangeOrder} items={orderOptions} />
+            </VStack>
+          </div>
+        }
+        off={
+          <div className={classNames(cls.articleSortSelector, {}, [className])}>
+            <SelectDeprecated<ArticleSortField>
+              value={sort}
+              onChange={onChangeSort}
+              options={sortOptions}
+              label={t("Сортировать по") || ""}
+            />
+            <SelectDeprecated<SortOrder>
+              value={order}
+              onChange={onChangeOrder}
+              options={orderOptions}
+              label={t("Порядок") || ""}
+            />
+          </div>
+        }
+      />
     );
   },
 );

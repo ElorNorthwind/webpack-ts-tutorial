@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from "react";
+import { Fragment, ReactNode, useMemo } from "react";
 import { Listbox as HListbox } from "@headlessui/react";
 import cls from "./ListBox.module.scss";
 import popupCls from "../../styles/popups.module.scss";
@@ -6,6 +6,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { HStack } from "../../../../redesigned/Stack";
 import { Text } from "../../../Text/Text";
 import { Placement, flip, offset, shift, useFloating } from "@floating-ui/react-dom";
+import { Button } from "../../../Button";
 
 export interface ListBoxItem<T extends string> {
   value: T;
@@ -13,18 +14,18 @@ export interface ListBoxItem<T extends string> {
   unavailable?: boolean;
 }
 
-interface ListBoxProps {
-  items?: Array<ListBoxItem<string>>;
-  onChange?: (value: string) => void;
-  value?: string;
-  defaultValue?: string;
+interface ListBoxProps<T extends string> {
+  items?: Array<ListBoxItem<T>>;
+  onChange?: (value: T) => void;
+  value?: T;
+  defaultValue?: T;
   className?: string;
   label?: ReactNode;
   readOnly?: boolean;
   placement?: Placement;
 }
 
-export function ListBox(props: ListBoxProps) {
+export function ListBox<T extends string>(props: ListBoxProps<T>) {
   const {
     items,
     value,
@@ -40,6 +41,10 @@ export function ListBox(props: ListBoxProps) {
     middleware: [offset(5), flip({ padding: 5 }), shift({ padding: 5, crossAxis: true })],
   });
 
+  const selectedItem = useMemo(() => {
+    return items?.find((item) => item.value === value);
+  }, [items, value]);
+
   return (
     <HStack className={classNames("", {}, [className])}>
       <HListbox
@@ -53,8 +58,7 @@ export function ListBox(props: ListBoxProps) {
           className={classNames(cls.trigger, { [cls.readonly]: readOnly }, [])}
           ref={refs.setReference}
         >
-          {value ?? defaultValue}
-          {<span>˅</span>}
+          {<Button variant="filled">{selectedItem?.content ?? defaultValue} ˅</Button>}
         </HListbox.Button>
         <HListbox.Options
           className={classNames(cls.options, {}, [popupCls.panel])}

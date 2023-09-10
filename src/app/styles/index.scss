@@ -4,6 +4,13 @@
 @import "./themes/normal";
 @import "./themes/green";
 
+body:has(.app_redesigned) {
+  background-color: var(--bg-redesigned);
+}
+body:has(.app) {
+  background-color: var(--inverted-bg-color);
+}
+
 body,
 .story_wrapper,
 .app,
