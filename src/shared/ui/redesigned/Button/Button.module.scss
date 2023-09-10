@@ -1,12 +1,19 @@
 .button {
   cursor: pointer;
   color: var(--text-redesigned);
+  display: flex;
+  align-items: center;
 
   &:hover {
     // opacity: 0.8;
     // fill-opacity: 0.8;
     // stroke-opacity: 0.8;
     color: var(--accent-redesigned);
+
+    .addonLeft svg,
+    .addonRight svg {
+      color: var(--accent-redesigned);
+    }
   }
 }
 
@@ -52,3 +59,35 @@
 .fullWidth {
   width: 100%;
 }
+
+.addonLeft,
+.addonRight {
+  display: flex;
+}
+
+.addonLeft svg,
+.addonRight svg {
+  color: var(--hint-redesigned);
+}
+
+.withAddon {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.withAddonLeft {
+  padding-left: 0px;
+}
+
+.withAddonRight {
+  padding-right: 0px;
+}
+
+// .focused {
+//   border: 2px solid var(--accent-redesigned);
+
+//   .addonLeft svg,
+//   .addonRight svg {
+//     color: var(--accent-redesigned);
+//   }
+// }

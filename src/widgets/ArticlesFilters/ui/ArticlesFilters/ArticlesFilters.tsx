@@ -9,6 +9,8 @@ import { ArticleSortField, ArticleType } from "@/entities/Article";
 import { SortOrder } from "@/shared/types/sort";
 import { ArticleTypeTabs } from "@/features/ArticleTypeTabs";
 import { Input } from "@/shared/ui/redesigned/Input";
+import SearchIcon from "@/shared/assets/icons/redesigned/search.svg";
+import { Icon } from "@/shared/ui/redesigned/Icon";
 
 interface ArticlesFiltersProps {
   className?: string;
@@ -39,7 +41,12 @@ export const ArticlesFilters: FC<ArticlesFiltersProps> = memo((props: ArticlesFi
   return (
     <Card className={classNames(cls.articlesFilters, {}, [className])} padding="24">
       <VStack gap="32">
-        <Input value={search} onChange={onChangeSearch} placeholder={t("Поиск")} />
+        <Input
+          value={search}
+          onChange={onChangeSearch}
+          placeholder={t("Поиск")}
+          addonLeft={<Icon Svg={SearchIcon} />}
+        />
         <ArticleTypeTabs className={cls.tabs} value={type} onChangeType={onChangeType} />
         <ArticleSortSelector
           order={order}

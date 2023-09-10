@@ -7,6 +7,8 @@ import { HStack } from "../../../../redesigned/Stack";
 import { Text } from "../../../Text/Text";
 import { Placement, flip, offset, shift, useFloating } from "@floating-ui/react-dom";
 import { Button } from "../../../Button";
+import ArrowIcon from "@/shared/assets/icons/redesigned/arrow-bottom.svg";
+import { Icon } from "../../../Icon";
 
 export interface ListBoxItem<T extends string> {
   value: T;
@@ -58,7 +60,11 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
           className={classNames(cls.trigger, { [cls.readonly]: readOnly }, [])}
           ref={refs.setReference}
         >
-          {<Button variant="filled">{selectedItem?.content ?? defaultValue} ˅</Button>}
+          {
+            <Button variant="filled" addonRight={<Icon Svg={ArrowIcon} />}>
+              {selectedItem?.content ?? defaultValue}
+            </Button>
+          }
         </HListbox.Button>
         <HListbox.Options
           className={classNames(cls.options, {}, [popupCls.panel])}
