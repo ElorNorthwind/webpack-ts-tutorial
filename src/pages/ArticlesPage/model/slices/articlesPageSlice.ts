@@ -5,6 +5,7 @@ import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from "@/shared/const/localstorage";
 import { fetchArticlesList } from "../services/fetchArticlesList/fetchArticlesList";
 import { ArticlesPageSchema } from "../types/articlesPageSchema";
 import { SortOrder } from "@/shared/types/sort";
+import { toggleFeatures } from "@/shared/lib/features";
 
 const articlesAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,
@@ -15,6 +16,8 @@ export const getArticles = articlesAdapter.getSelectors<StateSchema>(
   (state) => state.articlesPage || articlesAdapter.getInitialState(),
 );
 
+const tilesLimit = toggleFeatures({ name: "isAppRedesigned", on: () => 3, off: () => 4 });
+
 const articlesPageSlice = createSlice({
   name: "articlesPageSlice",
   initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
@@ -24,7 +27,7 @@ const articlesPageSlice = createSlice({
     entities: {},
     view: ArticleView.SMALL,
     page: 1,
-    limit: 4,
+    limit: tilesLimit,
     sort: ArticleSortField.CREATED,
     search: "",
     order: "asc",
@@ -55,7 +58,7 @@ const articlesPageSlice = createSlice({
     initState: (state) => {
       const view = localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView;
       state.view = view;
-      state.limit = view === ArticleView.BIG ? 2 : 4;
+      state.limit = view === ArticleView.BIG ? 2 : tilesLimit;
       state._inited = true;
     },
   },
