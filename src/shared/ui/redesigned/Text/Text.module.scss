@@ -55,3 +55,11 @@
     font-weight: 700;
   }
 }
+
+.nowrap {
+  white-space: nowrap;
+  .title,
+  .text {
+    white-space: nowrap;
+  }
+}

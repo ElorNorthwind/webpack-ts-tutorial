@@ -4,7 +4,7 @@ import cls from "./ListBox.module.scss";
 import popupCls from "../../styles/popups.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { HStack } from "../../../../redesigned/Stack";
-import { Text } from "../../../Text/Text";
+import { Text } from "../../../Text";
 import { Placement, flip, offset, shift, useFloating } from "@floating-ui/react-dom";
 import { Button } from "../../../Button";
 import ArrowIcon from "@/shared/assets/icons/redesigned/arrow-bottom.svg";
@@ -49,7 +49,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
 
   return (
     <HStack className={classNames("", {}, [className])}>
-      {label ?? <Text text={label} />}
+      {label ?? <Text text={label} nowrap />}
       <HListbox
         as="div"
         className={classNames(cls.listBox, {}, [popupCls.popup])}
