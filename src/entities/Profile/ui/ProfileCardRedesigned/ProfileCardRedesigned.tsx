@@ -37,16 +37,16 @@ export const ProfileCardRedesignedSkeleton = ({ className }: { className?: strin
         </HStack>
         <HStack gap="24" max>
           <VStack gap="16" max>
-            <Skeleton width={"100%"} height={38} />
-            <Skeleton width={"100%"} height={38} />
-            <Skeleton width={"100%"} height={38} />
-            <Skeleton width={"100%"} height={38} />
+            <Skeleton width={"100%"} height={38} border={"19px"} />
+            <Skeleton width={"100%"} height={38} border={"19px"} />
+            <Skeleton width={"100%"} height={38} border={"19px"} />
+            <Skeleton width={"100%"} height={38} border={"19px"} />
           </VStack>
           <VStack gap="16" max>
-            <Skeleton width={"100%"} height={38} />
-            <Skeleton width={"100%"} height={38} />
-            <Skeleton width={"100%"} height={38} />
-            <Skeleton width={"100%"} height={38} />
+            <Skeleton width={"100%"} height={38} border={"19px"} />
+            <Skeleton width={"100%"} height={38} border={"19px"} />
+            <Skeleton width={"100%"} height={38} border={"19px"} />
+            <Skeleton width={"100%"} height={38} border={"19px"} />
           </VStack>
         </HStack>
       </VStack>

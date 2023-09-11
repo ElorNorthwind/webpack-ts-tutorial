@@ -10,7 +10,7 @@ interface SkeletonProps {
 }
 
 export const Skeleton: FC<SkeletonProps> = memo((props: SkeletonProps) => {
-  const { className, height = "1rem", width = "100%", border = "3px" } = props;
+  const { className, height = "1rem", width = "100%", border = "12px" } = props;
 
   const styles: CSSProperties = {
     width,

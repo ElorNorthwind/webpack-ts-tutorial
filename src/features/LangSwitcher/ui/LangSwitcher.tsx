@@ -23,11 +23,7 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = memo((props: LangSwitch
     <ToggleFeatures
       feature="isAppRedesigned"
       on={
-        <Button
-          className={classNames(cls.langSwitcher, {}, [className])}
-          variant="clear"
-          onClick={toggle}
-        >
+        <Button className={className} variant="clear" onClick={toggle}>
           {t(short ? "Яз" : "Язык")}
         </Button>
       }
