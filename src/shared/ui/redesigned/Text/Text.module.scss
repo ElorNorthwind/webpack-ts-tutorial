@@ -48,3 +48,10 @@
 .right {
   text-align: right;
 }
+
+.bold {
+  .title,
+  .text {
+    font-weight: 700;
+  }
+}
