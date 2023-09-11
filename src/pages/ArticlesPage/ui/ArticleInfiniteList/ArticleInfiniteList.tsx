@@ -7,7 +7,9 @@ import {
   getArticlesPageView,
 } from "../../model/selectors/articlesPageSelectors";
 import { ArticleList } from "@/entities/Article";
-import { Text } from "@/shared/ui/deprecated/Text";
+import { Text as TextDeprecated } from "@/shared/ui/deprecated/Text";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { Text } from "@/shared/ui/redesigned/Text";
 
 interface ArticleInfiniteListProps {
   className?: string;
@@ -23,7 +25,13 @@ export const ArticleInfiniteList: FC<ArticleInfiniteListProps> = memo(
     const view = useSelector(getArticlesPageView);
 
     if (error) {
-      return <Text text={"Oops"} />;
+      return (
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          on={<Text text={"Oops"} />}
+          off={<TextDeprecated text={"Oops"} />}
+        />
+      );
     }
 
     return (
