@@ -49,6 +49,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
 
   return (
     <HStack className={classNames("", {}, [className])}>
+      {label ?? <Text text={label} />}
       <HListbox
         as="div"
         className={classNames(cls.listBox, {}, [popupCls.popup])}
@@ -98,7 +99,6 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
           ))}
         </HListbox.Options>
       </HListbox>
-      {label ?? <Text text={label} />}
     </HStack>
   );
 }

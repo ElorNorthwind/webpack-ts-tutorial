@@ -37,6 +37,11 @@
   padding: 8px 16px;
 }
 
+.s {
+  padding: 2px 15px;
+  font-size: var(--font-size-m);
+}
+
 .m {
   padding: 6px 15px;
   font-size: var(--font-size-m);
@@ -71,8 +76,8 @@
 }
 
 .withAddon {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .withAddonLeft {
