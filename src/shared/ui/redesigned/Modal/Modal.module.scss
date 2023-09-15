@@ -14,10 +14,22 @@
 .content {
   padding: 20px;
   border-radius: 5px;
-  background-color: var(--bg-color);
+
   max-width: 60%;
   transition: var(--animation-length) transform;
   transform: scale(0.2);
+}
+
+.modalNew {
+  .content {
+    background-color: var(--light-bg-redesigned);
+  }
+}
+
+.modalOld {
+  .content {
+    background-color: var(--bg-color);
+  }
 }
 
 .opened {

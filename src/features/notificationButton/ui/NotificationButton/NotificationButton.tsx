@@ -7,7 +7,7 @@ import { Icon as IconDeprecated } from "@/shared/ui/deprecated/Icon";
 import notificationIconDeprecated from "@/shared/assets/icons/notifications.svg";
 import notificationIcon from "@/shared/assets/icons/redesigned/notification.svg";
 import { NotificationList } from "@/entities/Notification";
-import { Drawer } from "@/shared/ui/deprecated/Drawer";
+import { Drawer } from "@/shared/ui/redesigned/Drawer";
 import { useDevice } from "@/shared/lib/hooks/useDevice/useDevice";
 import { ToggleFeatures } from "@/shared/lib/features";
 import { Icon } from "@/shared/ui/redesigned/Icon";
