@@ -22,7 +22,7 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(
     const { className, article, view, target } = props;
     const { t } = useTranslation();
 
-    const types = <Text text={article.type.join(", ")} />;
+    // const types = <Text text={article.type.join(", ")} />;
     const views = (
       <HStack>
         <Icon Svg={ViewsIcon} />
@@ -31,7 +31,7 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(
     );
     const userInfo = (
       <>
-        <Avatar size={32} src={article.user.avatar} />
+        <Avatar size={32} src={article.user.avatar} className={cls.avatar} />
         <Text text={article.user.username} bold />
       </>
     );

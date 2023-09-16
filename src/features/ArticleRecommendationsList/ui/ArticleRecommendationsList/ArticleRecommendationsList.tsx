@@ -5,6 +5,7 @@ import { Text, TextSize } from "@/shared/ui/deprecated/Text";
 import { ArticleList } from "@/entities/Article";
 import { VStack } from "@/shared/ui/redesigned/Stack";
 import { useArticlesReccomendationsList } from "../../api/articleRecommendationsApi";
+import { toggleFeatures } from "@/shared/lib/features";
 
 interface ArticleRecommendationsListProps {
   className?: string;
@@ -12,7 +13,13 @@ interface ArticleRecommendationsListProps {
 
 export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
   const { className } = props;
-  const { data: articles, isLoading, error } = useArticlesReccomendationsList(4);
+  const {
+    data: articles,
+    isLoading,
+    error,
+  } = useArticlesReccomendationsList(
+    toggleFeatures({ name: "isAppRedesigned", on: () => 3, off: () => 4 }),
+  );
   const { t } = useTranslation();
 
   if (isLoading || error || !articles) {
