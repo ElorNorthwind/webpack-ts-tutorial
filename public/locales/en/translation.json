@@ -41,5 +41,8 @@
   "Наука": "Science",
   "Статьи не найдены": "Articles not found",
   "Загрузка": "Loading",
-  "Рекомендованные статьи": "Recommended articles"
+  "Рекомендованные статьи": "Recommended articles",
+  "{{count}} просмотров_zero": "no views",
+  "{{count}} просмотров_one": "{{count}} view",
+  "{{count}} просмотров_other": "{{count}} views"
 }

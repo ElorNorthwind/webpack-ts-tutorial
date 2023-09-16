@@ -15,6 +15,9 @@ import { ArticleRecommendationsList } from "@/features/ArticleRecommendationsLis
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
 import { ArticleRating } from "@/features/articleRating";
 import { ToggleFeatures } from "@/shared/lib/features";
+import { StickyContentLayout } from "@/shared/layouts/StickyContentLayout";
+import { DetailsContainer } from "../DetailsContainer/DetailsContainer";
+import { AdditionalInfoContainer } from "../AdditionalInfoContainer/AdditionalInfoContainer";
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -34,15 +37,38 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
-        <VStack max gap="16">
-          <ArticleDetailsPageHeader />
-          <ArticleDetails id={id} />
-          <ToggleFeatures feature="isArticleRatingEnabled" on={<ArticleRating articleId={id} />} />
-          <ArticleRecommendationsList />
-          <ArticleDetailsComments id={id} />
-        </VStack>
-      </Page>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <StickyContentLayout
+            content={
+              <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
+                <VStack max gap="16">
+                  <DetailsContainer />
+                  <ArticleRating articleId={id} />
+                  <ArticleRecommendationsList />
+                  <ArticleDetailsComments id={id} />
+                </VStack>
+              </Page>
+            }
+            right={<AdditionalInfoContainer />}
+          />
+        }
+        off={
+          <Page className={classNames(cls.articleDetailsPage, {}, [className])}>
+            <VStack max gap="16">
+              <ArticleDetailsPageHeader />
+              <ArticleDetails id={id} />
+              <ToggleFeatures
+                feature="isArticleRatingEnabled"
+                on={<ArticleRating articleId={id} />}
+              />
+              <ArticleRecommendationsList />
+              <ArticleDetailsComments id={id} />
+            </VStack>
+          </Page>
+        }
+      />
     </DynamicModuleLoader>
   );
 };
