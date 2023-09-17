@@ -8,11 +8,26 @@
     // opacity: 0.8;
     // fill-opacity: 0.8;
     // stroke-opacity: 0.8;
-    color: var(--accent-redesigned);
-
-    .addonLeft svg,
-    .addonRight svg {
+    &.normal {
       color: var(--accent-redesigned);
+      .addonLeft svg,
+      .addonRight svg {
+        color: var(--accent-redesigned);
+      }
+    }
+    &.success {
+      color: var(--save-redesigned);
+      .addonLeft svg,
+      .addonRight svg {
+        color: var(--save-redesigned);
+      }
+    }
+    &.error {
+      color: var(--cancel-redesigned);
+      .addonLeft svg,
+      .addonRight svg {
+        color: var(--cancel-redesigned);
+      }
     }
   }
 }
@@ -26,10 +41,30 @@
 
 .outline {
   background: none;
-  border: 1px solid var(--icon-redesigned);
   border-radius: 34px;
-  &:hover {
-    border: 1px solid var(--accent-redesigned);
+
+  &.normal {
+    border: 1px solid var(--icon-redesigned);
+    &:hover {
+      border: 1px solid var(--accent-redesigned);
+    }
+  }
+
+  &.success {
+    border: 1px solid var(--save-redesigned);
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &.error {
+    border: 1px solid var(--cancel-redesigned);
+
+    &:hover {
+      opacity: 0.7;
+      color: var(--cancel-redesigned);
+    }
   }
 }
 
@@ -39,15 +74,6 @@
   outline: none;
   border-radius: 34px;
   padding: 8px 16px;
-}
-
-.red {
-  background: none;
-  border: 1px solid var(--cancel-redesigned);
-  border-radius: 34px;
-  &:hover {
-    border: 1px solid var(--cancel-redesigned);
-  }
 }
 
 .s {

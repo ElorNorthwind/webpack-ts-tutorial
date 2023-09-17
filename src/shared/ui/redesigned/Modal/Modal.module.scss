@@ -13,7 +13,6 @@
 
 .content {
   padding: 20px;
-  border-radius: 5px;
 
   max-width: 60%;
   transition: var(--animation-length) transform;
@@ -22,12 +21,14 @@
 
 .modalNew {
   .content {
+    border-radius: 16px;
     background-color: var(--light-bg-redesigned);
   }
 }
 
 .modalOld {
   .content {
+    border-radius: 5px;
     background-color: var(--bg-color);
   }
 }

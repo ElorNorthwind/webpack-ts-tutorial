@@ -40,7 +40,7 @@ export const Tabs = <T extends string>(props: TabsProps<T>) => {
             className={classNames(cls.tab, { [cls.selected]: isSelected }, [])}
             variant={isSelected ? "light" : "normal"}
             onClick={clickHandle(tab)}
-            border="round"
+            border="partial"
           >
             {tab.content}
           </Card>

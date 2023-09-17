@@ -27,7 +27,7 @@ export const AdditionalInfoContainer: FC<AdditionalInfoContainerProps> = memo(
     if (!article) return null;
 
     return (
-      <Card padding="24" border="round" className={classNames(cls.card, {}, [className])}>
+      <Card padding="24" border="partial" className={classNames(cls.card, {}, [className])}>
         <ArticleAdditionalInfo
           author={article.user}
           createdAt={article.createdAt}

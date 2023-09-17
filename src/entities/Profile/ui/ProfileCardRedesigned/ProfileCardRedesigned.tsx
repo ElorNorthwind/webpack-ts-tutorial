@@ -13,7 +13,7 @@ export const ProfileCardRedesignedError = ({ className }: { className?: string }
   const { t } = useTranslation("profile");
 
   return (
-    <Card max padding="24" className={className}>
+    <Card max padding="24" className={className} border="partial">
       <VStack gap="32" max>
         <HStack justify="center" gap="24" max className={className}>
           <Text
@@ -30,7 +30,7 @@ export const ProfileCardRedesignedError = ({ className }: { className?: string }
 
 export const ProfileCardRedesignedSkeleton = ({ className }: { className?: string }) => {
   return (
-    <Card max padding="24" className={className}>
+    <Card max padding="24" className={className} border="partial">
       <VStack gap="32" max>
         <HStack justify="center" max>
           <Skeleton width={128} height={128} border={"50%"} />
@@ -71,7 +71,13 @@ export const ProfileCardRedesigned: React.FC<ProfileCardProps> = (props: Profile
   const { t } = useTranslation("profile");
 
   return (
-    <Card max padding="24" variant={readOnly ? "light" : "normal"} className={className}>
+    <Card
+      max
+      padding="24"
+      variant={readOnly ? "light" : "normal"}
+      className={className}
+      border="partial"
+    >
       <VStack gap="32" max>
         {data?.avatar && (
           <HStack justify="center" max>
@@ -79,7 +85,7 @@ export const ProfileCardRedesigned: React.FC<ProfileCardProps> = (props: Profile
           </HStack>
         )}
 
-        <HStack gap={"24"} align="start">
+        <HStack gap={"24"} align="start" max>
           <VStack gap={"16"} max>
             <Input
               value={data?.lastname}

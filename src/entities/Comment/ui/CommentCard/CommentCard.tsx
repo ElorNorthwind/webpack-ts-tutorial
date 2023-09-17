@@ -54,7 +54,7 @@ export const CommentCard: FC<CommentCardProps> = memo((props: CommentCardProps) 
     <ToggleFeatures
       feature="isAppRedesigned"
       on={
-        <Card padding="24" max border="round">
+        <Card padding="24" max border="partial">
           <VStack
             max
             className={classNames(cls.commentCardRedesigned, {}, [className])}

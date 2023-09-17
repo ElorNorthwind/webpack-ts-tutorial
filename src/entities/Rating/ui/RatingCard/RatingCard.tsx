@@ -90,7 +90,12 @@ export const RatingCard: FC<RatingCardProps> = memo((props: RatingCardProps) => 
       feature="isAppRedesigned"
       on={
         <HStack justify="end" max gap={"16"}>
-          <Button onClick={calcelHandler} variant="red" data-testid={"RatingCard.Close"}>
+          <Button
+            onClick={calcelHandler}
+            variant="outline"
+            color="error"
+            data-testid={"RatingCard.Close"}
+          >
             {t("Закрыть")}
           </Button>
           <Button onClick={acceptHandler} data-testid={"RatingCard.Submit"}>
@@ -149,7 +154,7 @@ export const RatingCard: FC<RatingCardProps> = memo((props: RatingCardProps) => 
     <ToggleFeatures
       feature="isAppRedesigned"
       on={
-        <Card className={classNames("", {}, [className])} max border="round" padding="24">
+        <Card className={classNames("", {}, [className])} max border="partial" padding="24">
           <VStack align={"center"} data-testid={"RatingCard"}>
             <Text title={starCount ? t("Ваша оценка") : title} text={feedbackText} />
             <StarRaiting selectedStars={starCount} size={40} onSelect={onSelectStars} />

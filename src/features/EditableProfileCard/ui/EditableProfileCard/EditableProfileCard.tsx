@@ -6,7 +6,7 @@ import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitial
 import { Currency } from "@/entities/Currency";
 import { Country } from "@/entities/Country";
 import { useSelector } from "react-redux";
-import { Text, TextTheme } from "@/shared/ui/deprecated/Text";
+import { Text as TextDeprecated, TextTheme } from "@/shared/ui/deprecated/Text";
 import { VStack } from "@/shared/ui/redesigned/Stack";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";
 import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
@@ -22,6 +22,8 @@ import {
   ReducersList,
 } from "@/shared/lib/compomemts/DynamicModuleLoader/DynamicModuleLoader";
 import { EditableProfileCardHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { Text } from "@/shared/ui/redesigned/Text";
 
 interface EditableProfileCardProps {
   className?: string;
@@ -131,11 +133,25 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         />
         {validateErrors?.length &&
           validateErrors.map((err) => (
-            <Text
-              theme={TextTheme.ERROR}
-              text={validateErrorTranslations[err]}
+            <ToggleFeatures
               key={err}
-              data-testid={"EditableProfileCard.Error"}
+              feature="isAppRedesigned"
+              on={
+                <Text
+                  variant="error"
+                  text={validateErrorTranslations[err]}
+                  key={err}
+                  data-testid={"EditableProfileCard.Error"}
+                />
+              }
+              off={
+                <TextDeprecated
+                  theme={TextTheme.ERROR}
+                  text={validateErrorTranslations[err]}
+                  key={err}
+                  data-testid={"EditableProfileCard.Error"}
+                />
+              }
             />
           ))}
       </VStack>
