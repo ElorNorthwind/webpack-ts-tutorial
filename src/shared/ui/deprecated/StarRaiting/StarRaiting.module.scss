@@ -2,14 +2,24 @@
   cursor: pointer;
 }
 
+.isSelected {
+  cursor: auto;
+}
+
 .normal {
   fill: none;
 }
 
-.hovered {
-  fill: var(--primary-color);
+.ratingRedesigned {
+  stroke: var(--icon-redesigned);
+
+  .hovered {
+    fill: var(--icon-redesigned);
+  }
 }
 
-.isSelected {
-  cursor: auto;
+.ratingDeprecated {
+  .hovered {
+    fill: var(--primary-color);
+  }
 }

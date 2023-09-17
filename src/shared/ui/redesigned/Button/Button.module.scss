@@ -41,6 +41,15 @@
   padding: 8px 16px;
 }
 
+.red {
+  background: none;
+  border: 1px solid var(--cancel-redesigned);
+  border-radius: 34px;
+  &:hover {
+    border: 1px solid var(--cancel-redesigned);
+  }
+}
+
 .s {
   padding: 2px 15px;
   font-size: var(--font-size-m);

@@ -1,15 +1,20 @@
 import { FC, memo, useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Card } from "@/shared/ui/deprecated/Card";
+import { Card as CardDeprecated } from "@/shared/ui/deprecated/Card";
 import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
-import { Text } from "@/shared/ui/deprecated/Text";
+import { Text as TextDeprecated } from "@/shared/ui/deprecated/Text";
 import { StarRaiting } from "@/shared/ui/deprecated/StarRaiting";
 import { Modal } from "@/shared/ui/redesigned/Modal";
-import { Input } from "@/shared/ui/deprecated/Input";
-import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/deprecated/Button";
+import { Input as InputDeprecated } from "@/shared/ui/deprecated/Input";
+import { Button as ButtonDeprecated, ButtonSize, ButtonTheme } from "@/shared/ui/deprecated/Button";
 import { useDevice } from "@/shared/lib/hooks/useDevice/useDevice";
 import { Drawer } from "@/shared/ui/redesigned/Drawer";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { Text } from "@/shared/ui/redesigned/Text";
+import { Input } from "@/shared/ui/redesigned/Input";
+import { Button } from "@/shared/ui/redesigned/Button";
+import { Card } from "@/shared/ui/redesigned/Card";
 
 interface RatingCardProps {
   className?: string;
@@ -62,52 +67,121 @@ export const RatingCard: FC<RatingCardProps> = memo((props: RatingCardProps) => 
   }, [onCancel, starCount]);
 
   const formButtons = isMobile ? (
-    <Button onClick={acceptHandler} size={ButtonSize.L} fullWidth data-testid={"RatingCard.Submit"}>
-      {t("Отправить")}
-    </Button>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <Button onClick={acceptHandler} size="l" fullWidth data-testid={"RatingCard.Submit"}>
+          {t("Отправить")}
+        </Button>
+      }
+      off={
+        <ButtonDeprecated
+          onClick={acceptHandler}
+          size={ButtonSize.L}
+          fullWidth
+          data-testid={"RatingCard.Submit"}
+        >
+          {t("Отправить")}
+        </ButtonDeprecated>
+      }
+    />
   ) : (
-    <HStack justify="end" max gap={"16"}>
-      <Button
-        onClick={calcelHandler}
-        theme={ButtonTheme.OUTLINE_RED}
-        data-testid={"RatingCard.Close"}
-      >
-        {t("Закрыть")}
-      </Button>
-      <Button onClick={acceptHandler} data-testid={"RatingCard.Submit"}>
-        {t("Отправить")}
-      </Button>
-    </HStack>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <HStack justify="end" max gap={"16"}>
+          <Button onClick={calcelHandler} variant="red" data-testid={"RatingCard.Close"}>
+            {t("Закрыть")}
+          </Button>
+          <Button onClick={acceptHandler} data-testid={"RatingCard.Submit"}>
+            {t("Отправить")}
+          </Button>
+        </HStack>
+      }
+      off={
+        <HStack justify="end" max gap={"16"}>
+          <ButtonDeprecated
+            onClick={calcelHandler}
+            theme={ButtonTheme.OUTLINE_RED}
+            data-testid={"RatingCard.Close"}
+          >
+            {t("Закрыть")}
+          </ButtonDeprecated>
+          <ButtonDeprecated onClick={acceptHandler} data-testid={"RatingCard.Submit"}>
+            {t("Отправить")}
+          </ButtonDeprecated>
+        </HStack>
+      }
+    />
   );
 
   const modalContent = (
-    <VStack max gap={"32"}>
-      <Text title={feedbackTitle} />
-      <Input
-        value={feedback}
-        onChange={setFeedback}
-        placeholder={t("Ваш отзыв")}
-        data-testid={"RatingCard.Input"}
-      />
-      {formButtons}
-    </VStack>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <VStack max gap={"32"}>
+          <Text title={feedbackTitle} />
+          <Input
+            value={feedback}
+            onChange={setFeedback}
+            label={t("Ваш отзыв")}
+            data-testid={"RatingCard.Input"}
+          />
+          {formButtons}
+        </VStack>
+      }
+      off={
+        <VStack max gap={"32"}>
+          <TextDeprecated title={feedbackTitle} />
+          <InputDeprecated
+            value={feedback}
+            onChange={setFeedback}
+            placeholder={t("Ваш отзыв")}
+            data-testid={"RatingCard.Input"}
+          />
+          {formButtons}
+        </VStack>
+      }
+    />
   );
 
   return (
-    <Card className={classNames("", {}, [className])} max>
-      <VStack align={"center"} data-testid={"RatingCard"}>
-        <Text title={starCount ? t("Ваша оценка") : title} text={feedbackText} />
-        <StarRaiting selectedStars={starCount} size={40} onSelect={onSelectStars} />
-      </VStack>
-      {isMobile ? (
-        <Drawer isOpen={isModalOpen} lazy onClose={calcelHandler}>
-          {modalContent}
-        </Drawer>
-      ) : (
-        <Modal isOpen={isModalOpen} lazy>
-          {modalContent}
-        </Modal>
-      )}
-    </Card>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <Card className={classNames("", {}, [className])} max border="round" padding="24">
+          <VStack align={"center"} data-testid={"RatingCard"}>
+            <Text title={starCount ? t("Ваша оценка") : title} text={feedbackText} />
+            <StarRaiting selectedStars={starCount} size={40} onSelect={onSelectStars} />
+          </VStack>
+          {isMobile ? (
+            <Drawer isOpen={isModalOpen} lazy onClose={calcelHandler}>
+              {modalContent}
+            </Drawer>
+          ) : (
+            <Modal isOpen={isModalOpen} lazy>
+              {modalContent}
+            </Modal>
+          )}
+        </Card>
+      }
+      off={
+        <CardDeprecated className={classNames("", {}, [className])} max>
+          <VStack align={"center"} data-testid={"RatingCard"}>
+            <TextDeprecated title={starCount ? t("Ваша оценка") : title} text={feedbackText} />
+            <StarRaiting selectedStars={starCount} size={40} onSelect={onSelectStars} />
+          </VStack>
+          {isMobile ? (
+            <Drawer isOpen={isModalOpen} lazy onClose={calcelHandler}>
+              {modalContent}
+            </Drawer>
+          ) : (
+            <Modal isOpen={isModalOpen} lazy>
+              {modalContent}
+            </Modal>
+          )}
+        </CardDeprecated>
+      }
+    />
   );
 });

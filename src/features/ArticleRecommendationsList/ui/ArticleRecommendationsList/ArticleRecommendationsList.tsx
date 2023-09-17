@@ -1,11 +1,12 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
-import { Text, TextSize } from "@/shared/ui/deprecated/Text";
+import { Text as TextDeprecated, TextSize } from "@/shared/ui/deprecated/Text";
 import { ArticleList } from "@/entities/Article";
 import { VStack } from "@/shared/ui/redesigned/Stack";
 import { useArticlesReccomendationsList } from "../../api/articleRecommendationsApi";
-import { toggleFeatures } from "@/shared/lib/features";
+import { ToggleFeatures, toggleFeatures } from "@/shared/lib/features";
+import { Text } from "@/shared/ui/redesigned/Text";
 
 interface ArticleRecommendationsListProps {
   className?: string;
@@ -28,8 +29,13 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
 
   return (
     <VStack className={classNames("", {}, [className])} data-testid={"ArticleRecommendationsList"}>
-      <Text size={TextSize.L} title={t("Рекомендованные статьи")} className={""} />
-      <ArticleList articles={articles} className={""} target={"_blank"} />
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={<Text size="l" title={t("Рекомендованные статьи")} />}
+        off={<TextDeprecated size={TextSize.L} title={t("Рекомендованные статьи")} />}
+      />
+
+      <ArticleList articles={articles} target={"_blank"} />
     </VStack>
   );
 });

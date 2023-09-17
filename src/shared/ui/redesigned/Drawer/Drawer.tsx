@@ -18,10 +18,6 @@ interface DrawerProps {
 
 const height = window.innerHeight - 100;
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 export const DrawerContent: FC<DrawerProps> = memo((props: DrawerProps) => {
   const { className, children, isOpen = false, onClose } = props;
   const { Spring, Gesture } = useAnimationLibs();

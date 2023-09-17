@@ -14,10 +14,6 @@ interface ModalProps {
   lazy?: boolean;
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
 export const Modal: React.FC<ModalProps> = (props: ModalProps) => {
   const { className, children, isOpen, onClose, lazy } = props;
   const { isMounted, close } = useModal({ onClose, isOpen });

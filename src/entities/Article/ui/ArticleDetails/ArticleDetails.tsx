@@ -106,20 +106,42 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props: ArticleDetai
 
   if (isLoading) {
     content = (
-      <>
-        <SkeletonDeprecated className={cls.avatar} width={200} height={200} border={"50%"} />
-        <SkeletonDeprecated className={cls.title} width={300} height={32} />
-        <SkeletonDeprecated className={cls.skeleton} width={600} height={24} />
-        <SkeletonDeprecated className={cls.skeleton} width={"100%"} height={200} />
-        <SkeletonDeprecated className={cls.skeleton} width={"100%"} height={200} />
-      </>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <>
+            <Skeleton className={cls.avatar} width={200} height={200} border={"50%"} />
+            <Skeleton className={cls.title} width={300} height={32} />
+            <Skeleton className={cls.skeleton} width={600} height={24} />
+            <Skeleton className={cls.skeleton} width={"100%"} height={200} />
+            <Skeleton className={cls.skeleton} width={"100%"} height={200} />
+          </>
+        }
+        off={
+          <>
+            <SkeletonDeprecated className={cls.avatar} width={200} height={200} border={"50%"} />
+            <SkeletonDeprecated className={cls.title} width={300} height={32} />
+            <SkeletonDeprecated className={cls.skeleton} width={600} height={24} />
+            <SkeletonDeprecated className={cls.skeleton} width={"100%"} height={200} />
+            <SkeletonDeprecated className={cls.skeleton} width={"100%"} height={200} />
+          </>
+        }
+      />
     );
   } else if (error) {
     content = (
-      <TextDeprecated
-        align={TextAlign.CENTER}
-        title={t("Произошла ошибка при загрузке статьи")}
-        theme={TextTheme.ERROR}
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <Text align="center" title={t("Произошла ошибка при загрузке статьи")} variant="error" />
+        }
+        off={
+          <TextDeprecated
+            align={TextAlign.CENTER}
+            title={t("Произошла ошибка при загрузке статьи")}
+            theme={TextTheme.ERROR}
+          />
+        }
       />
     );
   } else {
