@@ -18,8 +18,9 @@ const ThemeProvider: FC<ThemeProviderProps> = (props: ThemeProviderProps) => {
     if (!isThemeInitiated && defaultTheme) {
       setTheme(defaultTheme);
       setThemeInitiated(true);
+      document.body.className = theme;
     }
-  }, [defaultTheme, isThemeInitiated]);
+  }, [defaultTheme, isThemeInitiated, theme]);
 
   const defaultProps = useMemo(() => ({ theme, setTheme }), [theme]);
 
