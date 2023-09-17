@@ -61,7 +61,7 @@ const LoginForm: React.FC<LoginFormProps> = memo((props: LoginFormProps) => {
     const result = await dispatch(loginByUserName({ username, password }));
     if (result.meta.requestStatus === "fulfilled") {
       onSuccess();
-      forceUpdate();
+      // forceUpdate();
       window.location.reload();
     }
   }, [dispatch, username, password, onSuccess, forceUpdate]);
