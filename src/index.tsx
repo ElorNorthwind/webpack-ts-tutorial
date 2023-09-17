@@ -5,6 +5,7 @@ import { ErrorBoundry } from "@/app/providers/ErrorBoundry";
 import { StoreProvider } from "@/app/providers/StoreProvider";
 import "@/shared/config/i18n/i18n";
 import { createRoot } from "react-dom/client";
+import { ForceUpdateProvider } from "@/shared/lib/render/forceUpdate";
 
 const domNode = document.getElementById("root");
 
@@ -17,9 +18,11 @@ root.render(
   <BrowserRouter>
     <StoreProvider>
       <ErrorBoundry>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
+        <ForceUpdateProvider>
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
+        </ForceUpdateProvider>
       </ErrorBoundry>
     </StoreProvider>
   </BrowserRouter>,
