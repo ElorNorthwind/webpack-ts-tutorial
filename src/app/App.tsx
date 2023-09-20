@@ -14,10 +14,12 @@ import { PageLoader } from "@/widgets/PageLoader";
 import { ToggleFeatures } from "@/shared/lib/features";
 import { MainLayout } from "@/shared/layouts/MainLayout";
 import { AppLoaderLayout } from "@/shared/layouts/AppLoaderLayout";
+import { useAppToolbar } from "./lib/useAppToolbar";
 
 const App = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
+  const toolbar = useAppToolbar();
 
   useEffect(() => {
     if (!inited) {
@@ -41,7 +43,7 @@ const App = (): JSX.Element => {
               header={<Navbar />}
               sidebar={<Sidebar />}
               content={<AppRouter />}
-              toolbar={<div>Это тулбар</div>}
+              toolbar={toolbar}
             />
           </Suspense>
         </div>
