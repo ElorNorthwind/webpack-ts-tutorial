@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { NotificationButton } from "./NotificationButton";
-import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
 const NotificationButtonStory: ComponentMeta<typeof NotificationButton> = {
   title: "features/NotificationButton",

@@ -22,7 +22,7 @@ import { Text } from "@/shared/ui/redesigned/Text";
 import { Input } from "@/shared/ui/redesigned/Input";
 import { Button } from "@/shared/ui/redesigned/Button";
 import { VStack } from "@/shared/ui/redesigned/Stack";
-import { useForceUpdate } from "@react-spring/shared";
+// import { useForceUpdate } from "@react-spring/shared";
 
 export interface LoginFormProps {
   className?: string;
@@ -41,7 +41,7 @@ const LoginForm: React.FC<LoginFormProps> = memo((props: LoginFormProps) => {
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
-  const forceUpdate = useForceUpdate();
+  // const forceUpdate = useForceUpdate();
 
   const onChangeUsername = useCallback(
     (value: string) => {
@@ -64,7 +64,7 @@ const LoginForm: React.FC<LoginFormProps> = memo((props: LoginFormProps) => {
       // forceUpdate();
       window.location.reload();
     }
-  }, [dispatch, username, password, onSuccess, forceUpdate]);
+  }, [dispatch, username, password, onSuccess]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>

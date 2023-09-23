@@ -1,12 +1,11 @@
 /* eslint-disable fsd-lorans-plugin/layer-imports */
 import { AppRouter } from "@/app/providers/router";
 import { getUserInited } from "@/entities/User";
-import { Suspense, useEffect } from "react";
+import { Suspense, memo, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
-
 import "./styles/index.scss";
 import { initAuthData } from "@/entities/Article";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -15,8 +14,9 @@ import { ToggleFeatures } from "@/shared/lib/features";
 import { MainLayout } from "@/shared/layouts/MainLayout";
 import { AppLoaderLayout } from "@/shared/layouts/AppLoaderLayout";
 import { useAppToolbar } from "./lib/useAppToolbar";
+import { withTheme } from "./providers/ThemeProvider/ui/withTheme";
 
-const App = (): JSX.Element => {
+const App = memo((): JSX.Element => {
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
   const toolbar = useAppToolbar();
@@ -61,6 +61,6 @@ const App = (): JSX.Element => {
       }
     />
   );
-};
+});
 
-export default App;
+export default withTheme(App);

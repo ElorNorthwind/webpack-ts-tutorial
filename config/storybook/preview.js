@@ -4,6 +4,7 @@ import { RouterDecorator } from "../../src/shared/config/storybook/RouterDecorat
 import { StyleDecorator } from "../../src/shared/config/storybook/StyleDecorator/StyleDecorator";
 import { SuspenceDecorator } from "../../src/shared/config/storybook/SuspenceDecorator/SuspenceDecorator";
 import { PaddingDecorator } from "../../src/shared/config/storybook/PaddingDecorator/PaddingDecorator";
+import { FeatureFlagsDecorator } from "../../src/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator";
 // import { ThemeDecorator } from "../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 
 export const parameters = {
@@ -29,4 +30,5 @@ addDecorator(StyleDecorator);
 addDecorator(RouterDecorator);
 addDecorator(SuspenceDecorator);
 addDecorator(PaddingDecorator());
+addDecorator(FeatureFlagsDecorator({}));
 // addDecorator(ThemeDecorator(Theme.LIGHT));

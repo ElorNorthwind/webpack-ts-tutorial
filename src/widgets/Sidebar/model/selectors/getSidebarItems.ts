@@ -1,4 +1,3 @@
-import { createSelector } from "@reduxjs/toolkit";
 import { getUserAuthData } from "@/entities/User";
 
 import AboutIconDeprecated from "@/shared/assets/icons/about.svg";

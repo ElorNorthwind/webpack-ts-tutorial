@@ -18,7 +18,6 @@ import { ArticlePageGreeting } from "@/features/articlePageGreeting";
 import { ToggleFeatures } from "@/shared/lib/features";
 import { StickyContentLayout } from "@/shared/layouts/StickyContentLayout";
 import { ViewSelectorContainer } from "../ViewSelectorContainer/ViewSelectorContainer";
-import { ArticlesFilters } from "@/widgets/ArticlesFilters";
 import { FiltersContainer } from "../FiltersContainer/FiltersContainer";
 
 interface ArticlesPageProps {

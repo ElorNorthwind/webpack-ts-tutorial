@@ -30,7 +30,6 @@ import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { renderArticleBlock } from "./renderBlock";
 import { ToggleFeatures } from "@/shared/lib/features";
 import { Text } from "@/shared/ui/redesigned/Text";
-import { Icon } from "@/shared/ui/redesigned/Icon";
 import { AppImage } from "@/shared/ui/redesigned/AppImage";
 import { Skeleton } from "@/shared/ui/redesigned/Skeleton";
 
